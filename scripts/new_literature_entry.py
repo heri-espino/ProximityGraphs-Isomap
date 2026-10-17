@@ -9,7 +9,6 @@ import csv
 import re
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "literature/MANIFEST.csv"
 KEY_PATTERN = re.compile(r"[A-Za-z][A-Za-z0-9_-]*\Z")

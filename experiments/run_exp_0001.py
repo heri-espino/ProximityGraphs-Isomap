@@ -5,7 +5,7 @@ import csv
 import json
 import platform
 import subprocess
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import numpy as np
@@ -65,7 +65,7 @@ def main() -> None:
 
     metadata = {
         "experiment_id": config["experiment_id"],
-        "run_at_utc": datetime.now(timezone.utc).isoformat(),
+        "run_at_utc": datetime.now(UTC).isoformat(),
         "source_config": str(args.config),
         "config": config,
         "python_version": platform.python_version(),

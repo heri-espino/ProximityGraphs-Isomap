@@ -9,7 +9,6 @@ import re
 import subprocess
 from pathlib import Path
 
-
 JOURNAL_ENTRY_PATTERN = re.compile(r"journal/\d{4}-\d{2}/\d{4}-\d{2}-\d{2}-[\w-]+\.md$")
 RESEARCH_PREFIXES = (
     "src/", "tests/", "notes/", "literature/", "experiments/", "results/",

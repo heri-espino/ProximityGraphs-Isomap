@@ -1,7 +1,7 @@
 # AI handoff — current research session
 
 **Last updated:** 2026-10-16  
-**Latest journal entry:** [2026-10-16 — Conda environment and first Swiss-roll smoke run](journal/2026-10/2026-10-16-conda-and-first-swiss-roll-run.md)  
+**Latest journal entry:** [2026-10-16 — Ruff CI compatibility fixes](journal/2026-10/2026-10-16-ci-lint-fix.md)  
 **Project stage:** exploratory research scaffold; not a validated novel method
 
 > This is the **current operational snapshot**, not a substitute for the chronological journal or primary evidence. Start with [`journal/README.md`](journal/README.md), [`journal/LATEST.md`](journal/LATEST.md), and its linked entry **before** reading this file.
@@ -42,6 +42,11 @@ Investigate whether radius and other proximity graphs can support manifold dimen
 1. Import a small set of baseline papers with PDFs, Docling Markdown, and annotated result records. Confirm any claimed theorems against the original PDF.
 2. Implement baseline embeddings before proposing a new optimizer; benchmark under identical datasets and frozen evaluation criteria.
 3. Update this handoff, `journal/LATEST.md`, the latest journal entry, and the context summaries after **each substantive repository-editing session**.
+
+## CI status
+
+- GitHub Actions on the Conda-preparation commit installed the editable package and ran **16/16 passing tests**, but Ruff failed on four auto-fixable diagnostics: one UP017 datetime alias and three I001 import-block spacing issues.
+- A follow-up commit removes those diagnostics. **This correction remains unverified by the next CI run at handoff time.** A clean Sphinx build is not yet established. The Conda solve itself is not tested in the CI pip-based workflow.
 
 ## Most recent checks
 

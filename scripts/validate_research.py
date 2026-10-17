@@ -9,7 +9,6 @@ import csv
 import re
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 FIELDS = (
     "paper_id", "citation_key", "title", "year", "doi", "pdf_path", "markdown_path",
