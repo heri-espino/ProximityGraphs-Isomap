@@ -3,8 +3,8 @@
 **Updated:** 2026-10-16 (Conda setup and exploratory smoke)
 
 - [ ] Create the Conda environment with `conda env create -f environment.yml`, activate it, test installation, and rerun EXP-0001 from a Git checkout with SHA and `conda list --explicit` archived.
-- [ ] Confirm that follow-up GitHub Actions passes Ruff, research validation and Sphinx; inspect failures rather than assuming source edits are correct.
-- [ ] Run **Ruff and Sphinx** on a connected environment/CI; local sandbox passed 16 tests and structural checks but could not download the missing development dependencies. Capture exact environment versions in first run metadata.
+- [x] Confirmed GitHub Actions run 38997728144 on Python 3.11/3.12: 16 tests, Ruff, integrity validation, Sphinx all passed for commit `e7cc9bc`.
+- [x] **Ruff and Sphinx passed in pip-based GitHub CI** (run 38997728144, Python 3.11/3.12). Conda solving and Conda-based EXP-0001 remain unverified; capture environment versions in the first Conda run.
 - [ ] Import primary-source PDFs in `literature/pdf/`, extract Markdown using Docling into `literature/markdown/`, and verify page-specific key results in `literature/references/`. Record one entry per source in `MANIFEST.csv` and verified theorems in `KEY_RESULTS.md`.
 - [ ] Conduct a targeted novelty review of disconnected Isomap, landmark and joint/weighted MDS, manifold stitching, and graph-based geodesic approximation; cite verified source entries from `literature/references/`.
 - [ ] Implement *standard* Isomap and Euclidean MDS baselines with consistent shortest-path conventions and disconnected behavior.

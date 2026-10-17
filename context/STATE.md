@@ -57,3 +57,8 @@ Using Euclidean distances to arrange disconnected components can preserve ambien
 
 - First GitHub Actions run for commit `9dc79d6` installed and passed 16 tests, but Ruff reported UP017 in `experiments/run_exp_0001.py` and I001 in three scripts.
 - Follow-up patch changes `datetime.now(timezone.utc)` to Python 3.11 `datetime.now(UTC)` and reduces import-block spacing. Await fresh CI to verify Ruff and Sphinx. This is a formatting-only change, not a new scientific result.
+
+## CI verification of formatting fixes (2026-10-16)
+
+- Commit `e7cc9bcf723e72ebec7ec0d133f03d117020b56d` passed GitHub Actions run 38997728144 on Python 3.11 and 3.12: installation, 16 tests, Ruff, `validate_research.py`, and warnings-as-errors Sphinx build.
+- This validates the pip-based CI environment only, **not** the root Conda environment solve. No new embedding algorithm or research comparison was validated by this run.

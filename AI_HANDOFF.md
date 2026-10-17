@@ -1,7 +1,7 @@
 # AI handoff — current research session
 
 **Last updated:** 2026-10-16  
-**Latest journal entry:** [2026-10-16 — Ruff CI compatibility fixes](journal/2026-10/2026-10-16-ci-lint-fix.md)  
+**Latest journal entry:** [2026-10-16 — GitHub CI verified](journal/2026-10/2026-10-16-ci-verified.md)  
 **Project stage:** exploratory research scaffold; not a validated novel method
 
 > This is the **current operational snapshot**, not a substitute for the chronological journal or primary evidence. Start with [`journal/README.md`](journal/README.md), [`journal/LATEST.md`](journal/LATEST.md), and its linked entry **before** reading this file.
@@ -46,7 +46,7 @@ Investigate whether radius and other proximity graphs can support manifold dimen
 ## CI status
 
 - GitHub Actions on the Conda-preparation commit installed the editable package and ran **16/16 passing tests**, but Ruff failed on four auto-fixable diagnostics: one UP017 datetime alias and three I001 import-block spacing issues.
-- A follow-up commit removes those diagnostics. **This correction remains unverified by the next CI run at handoff time.** A clean Sphinx build is not yet established. The Conda solve itself is not tested in the CI pip-based workflow.
+- Follow-up commit `e7cc9bcf723e72ebec7ec0d133f03d117020b56d` passed GitHub Actions run [38997728144](https://github.com/heri-espino/ProximityGraphs-Isomap/actions/runs/38997728144) on Python **3.11 and 3.12**, including tests (16), Ruff, research validation, and a warnings-as-errors Sphinx build. This is **pip-based CI**, not a tested Conda solve.
 
 ## Most recent checks
 
