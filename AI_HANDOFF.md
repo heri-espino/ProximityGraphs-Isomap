@@ -1,0 +1,51 @@
+# AI handoff — current research session
+
+**Last updated:** 2026-10-16  
+**Latest journal entry:** [2026-10-16 — AI workflow and literature architecture](journal/2026-10/2026-10-16-ai-handoff-and-literature.md)  
+**Project stage:** exploratory research scaffold; not a validated novel method
+
+> This is the **current operational snapshot**, not a substitute for the chronological journal or primary evidence. Start with [`journal/README.md`](journal/README.md), [`journal/LATEST.md`](journal/LATEST.md), and its linked entry **before** reading this file.
+
+## Scientific objective
+
+Investigate whether radius and other proximity graphs can support manifold dimensionality reduction with disconnected components. Two candidates are (1) normalized hybrid stress minimization and (2) independently embedded components with rigid alignment. The advantages, novelty and robustness remain to be established.
+
+## Verified / implemented
+
+- A pairwise-distance `r`-neighborhood builder and connected-component labels: `src/proximity_isomap/graphs/radius.py`.
+- Hybrid finite dissimilarity evaluation and normalized within/between stress **evaluation**, not minimization: `src/proximity_isomap/distances/hybrid.py`, `src/proximity_isomap/embedding/stress.py`.
+- A minimal synthetic Swiss-roll radius-sweep script: `experiments/EXP-0001.md`. It is exploratory, not evidence of superiority.
+- A package, Sphinx configuration, tests, Obsidian-compatible notes, journal, paper outline, and research-literature workflow.
+
+## Not verified / not implemented
+
+- Hybrid MDS optimizer, componentwise rigid alignment optimizer, tuned Isomap and Euclidean MDS benchmarks.
+- Any new theorem, convergence rate, original algorithm, or comparative performance claim.
+- The `literature/` pipeline has templates and a catalog but **no imported primary-source PDFs or reviewed paper summaries yet**. The pre-existing Isomap BibTeX metadata is not a review.
+
+## Decisions still active
+
+- Use `||x_i-x_j|| <= r` rather than overlap of two radius-`r` balls: `ADR-0002`.
+- Retain both candidate embedding objectives pending benchmarks: `ADR-0003`.
+- Read the chronological journal first, then update a session handoff and literature records: `ADR-0004`.
+
+## Immediate next actions
+
+1. Import a small set of baseline papers with PDFs, Docling Markdown, and annotated result records. Confirm any claimed theorems against the original PDF.
+2. Implement baseline embeddings before proposing a new optimizer; benchmark under identical datasets and frozen evaluation criteria.
+3. Update this handoff, `journal/LATEST.md`, the latest journal entry, and the context summaries after **each substantive repository-editing session**.
+
+## Most recent checks
+
+- `PYTHONPATH=src python -m pytest -q`: **16 passed**. `python scripts/validate_research.py`: **PASS**. `compileall` for src/tests/scripts: **PASS**.
+- **Ruff and Sphinx were not run locally:** missing dependencies; an attempted `pip install -e ".[dev,docs]"` was blocked by unavailable network/package-index access. CI remains configured to run them. See the dated journal for detail.
+
+## Handoff checklist
+
+- [ ] Read latest journal and relevant primary evidence first.
+- [ ] Document proofs versus conjectures and experiment evidence precisely.
+- [ ] Maintain NumPy-style Sphinx-compatible docstrings for public APIs.
+- [ ] Record new literature sources in the manifest and per-paper result notes.
+- [ ] Run relevant checks, noting failures and skipped checks.
+- [ ] Append the journal entry and update `journal/LATEST.md`.
+- [ ] Refresh this handoff and the `context/` snapshot.

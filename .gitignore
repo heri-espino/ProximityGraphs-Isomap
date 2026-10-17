@@ -1,0 +1,45 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+build/
+dist/
+
+# Sphinx
+docs/_build/
+
+# Obsidian local workspace state (Markdown notes remain tracked)
+notes/.obsidian/
+notes/.trash/
+
+# Data and generated caches
+data/raw/
+data/processed/
+data/cache/
+results/**/raw/
+results/**/cache/
+results/**/*.npy
+results/**/*.npz
+results/**/*.parquet
+figures/exploratory/
+
+# LaTeX intermediates; keep sources and referenced camera-ready figures
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.log
+*.out
+*.synctex.gz
+
+# Local OS files
+.DS_Store
+Thumbs.db
+
+# Docling-generated image asset caches, if saved separately
+literature/markdown/_cache/

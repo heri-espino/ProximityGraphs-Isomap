@@ -1,0 +1,26 @@
+{
+  "experiment_id": "EXP-0001",
+  "run_at_utc": "2026-10-17T01:26:19.222481+00:00",
+  "source_config": "experiments/configs/exp_0001.json",
+  "config": {
+    "experiment_id": "EXP-0001",
+    "seed": 20261016,
+    "n_points": 240,
+    "t_min": 4.71238898038469,
+    "t_max": 14.137166941154069,
+    "height_min": -5.0,
+    "height_max": 5.0,
+    "radii": [
+      1.5,
+      2.5,
+      3.5,
+      5.0,
+      7.0
+    ]
+  },
+  "python_version": "3.13.5",
+  "numpy_version": "2.3.5",
+  "scipy_version": "1.17.0",
+  "git_sha": null,
+  "disclaimer": "Exploratory descriptive sweep; varying evaluated pair sets."
+}
