@@ -26,17 +26,21 @@ Every substantive change requires a new dated journal entry, an updated `journal
 | `docs/` | Sphinx technical and research-workflow documentation |
 | `scripts/` | Literature registration and research-integrity checks |
 
-## Installation and checks (Python 3.11+)
+## Installation and checks (Conda recommended)
 
 ```bash
-python -m venv .venv
-# Activate the environment (PowerShell: .venv\Scripts\Activate.ps1)
-python -m pip install -e ".[dev,docs]"
+conda env create -f environment.yml
+conda activate proximity-isomap
 python -m pytest -q
 python -m ruff check src tests examples experiments scripts
 python scripts/validate_research.py
 python -m sphinx -b html -W docs docs/_build/html
 ```
+
+`environment.yml` uses conda-forge and installs the local package in editable
+mode. See [Getting started](docs/getting-started.md) for environment updates,
+plain-Python alternatives, and experimental run metadata requirements. Docling
+is optional and not part of the numerical research environment.
 
 Run a simple sample or a preregistered exploratory experiment:
 

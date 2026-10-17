@@ -46,3 +46,9 @@ Using Euclidean distances to arrange disconnected components can preserve ambien
 - Decisions: `context/DECISION_INDEX.md`.
 - Definitions: `notes/definitions.md`.
 - First protocol: `experiments/EXP-0001.md`.
+
+## Conda and first EXP-0001 smoke run (2026-10-16)
+
+- Added `environment.yml` (Conda Python 3.11, conda-forge scientific, documentation and benchmark tools, editable project install).
+- Locally ran 16 tests (passed) and the EXP-0001 script from an extracted starter ZIP using plain Python, **not Conda** and **not a Git checkout**. At radii [1.5, 2.5, 3.5, 5, 7], measured intracomponent geodesic RMSE [1.05246, 2.13986, 3.02933, 1.23956, 26.27899] on 240 synthetic points. The measured pair sets vary with radius, so this is exploratory only. Git SHA not recorded.
+- Must still solve/test the Conda environment, run Ruff/Sphinx, and rerun from the checked-out revision before considering a documented research result.

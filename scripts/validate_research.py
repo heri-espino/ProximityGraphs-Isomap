@@ -39,7 +39,7 @@ def validate(root: Path = ROOT) -> list[str]:
     """
     errors: list[str] = []
     required = (
-        "AGENTS.md", "AI_HANDOFF.md", "README.md", "journal/README.md",
+        "AGENTS.md", "AI_HANDOFF.md", "README.md", "environment.yml", "journal/README.md",
         "journal/LATEST.md", "context/STATE.md", "context/NEXT_STEPS.md",
         "context/DECISION_INDEX.md", "literature/README.md", "literature/MANIFEST.csv",
         "literature/pdf", "literature/markdown", "literature/references",

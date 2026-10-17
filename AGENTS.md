@@ -14,6 +14,8 @@ If `journal/LATEST.md`, `AI_HANDOFF.md`, and `context/STATE.md` disagree, inspec
 
 ## Working rules
 
+- Use the tracked `environment.yml` as the recommended Conda environment for numerical experiments. Record the solver versions and revision; do not report Conda validation unless the environment was actually created and tested.
+
 - Code lives in `src/proximity_isomap/`; tests in `tests/`; examples in `examples/`. Do not put research-only experiment logic inside the reusable library.
 - Write type hints and **NumPy-style docstrings** for every public module, function, class, and property; describe Parameters, Returns, Raises (when applicable), Notes/References for equations and nontrivial conventions. Make docstrings Sphinx-autodoc compatible. Explain units, array shapes, graph connectivity, normalization, and edge cases.
 - Document any significant design choice in a `journal/decisions/ADR-####.md`; update `context/DECISION_INDEX.md`.

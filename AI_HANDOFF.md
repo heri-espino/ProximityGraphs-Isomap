@@ -1,7 +1,7 @@
 # AI handoff — current research session
 
 **Last updated:** 2026-10-16  
-**Latest journal entry:** [2026-10-16 — AI workflow and literature architecture](journal/2026-10/2026-10-16-ai-handoff-and-literature.md)  
+**Latest journal entry:** [2026-10-16 — Conda environment and first Swiss-roll smoke run](journal/2026-10/2026-10-16-conda-and-first-swiss-roll-run.md)  
 **Project stage:** exploratory research scaffold; not a validated novel method
 
 > This is the **current operational snapshot**, not a substitute for the chronological journal or primary evidence. Start with [`journal/README.md`](journal/README.md), [`journal/LATEST.md`](journal/LATEST.md), and its linked entry **before** reading this file.
@@ -29,7 +29,15 @@ Investigate whether radius and other proximity graphs can support manifold dimen
 - Retain both candidate embedding objectives pending benchmarks: `ADR-0003`.
 - Read the chronological journal first, then update a session handoff and literature records: `ADR-0004`.
 
+## Conda environment and initial run
+
+- The root `environment.yml` now specifies Python 3.11, conda-forge packages (including testing, Sphinx and benchmarking), and an editable package install. See `docs/getting-started.md`.
+- EXP-0001 executed in a **plain Python sandbox from an extracted starter ZIP**, not from a Conda environment or a checked-out Git repository. All 16 tests passed and the script generated five rows. At r=7 its within-component RMSE was 26.2789938496, compared with 1.2395593716 at r=5. **This is not a controlled causal result.** The evaluated pairs differ at smaller disconnected radii; Git SHA was unavailable.
+- Conda solving, Ruff, Sphinx and checked-out-revision experiments remain **unverified** here.
+
 ## Immediate next actions
+
+0. Create the Conda environment, rerun tests/Ruff/Sphinx and EXP-0001 from a versioned Git checkout, and archive run/environment metadata.
 
 1. Import a small set of baseline papers with PDFs, Docling Markdown, and annotated result records. Confirm any claimed theorems against the original PDF.
 2. Implement baseline embeddings before proposing a new optimizer; benchmark under identical datasets and frozen evaluation criteria.

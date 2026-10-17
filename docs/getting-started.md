@@ -1,18 +1,51 @@
-# Getting started
+# Getting started: Conda-first
 
-Before contributing, follow the entrypoints in `AGENTS.md`: **read the latest journal first**, then `AI_HANDOFF.md`, then the current context summaries.
+Before contributing, follow `AGENTS.md`: read the journal and latest dated entry before `AI_HANDOFF.md`.
 
-From the repository root:
+## Install with Conda / Miniforge
+
+From the repository root (PowerShell, Bash, or another shell):
 
 ```bash
-python -m pip install -e ".[dev,docs]"
+conda env create -f environment.yml
+conda activate proximity-isomap
 python -m pytest -q
 python -m ruff check src tests examples experiments scripts
 python scripts/validate_research.py
-python examples/radius_graph_basics.py
 python -m sphinx -b html -W docs docs/_build/html
 ```
 
-The current package builds a radius graph, computes finite hybrid dissimilarities and evaluates normalized within-/between-component stress. It does not yet fit a hybrid embedding.
+Conda installs numerical packages from conda-forge; pip installs this project
+in editable mode. Updates to Python sources under `src/` take effect without
+reinstalling. When `environment.yml` changes:
 
-Use the literature workflow in `docs/literature.md` to register original PDFs, Docling-extracted Markdown, and page-verified paper results without inventing mathematical claims.
+```bash
+conda env update -f environment.yml --prune
+conda activate proximity-isomap
+```
+
+Check that `python -c "import sys; print(sys.executable)"` refers to the
+active environment.
+
+## EXP-0001: first exploratory experiment
+
+```bash
+python experiments/run_exp_0001.py --config experiments/configs/exp_0001.json --output results/exp_0001/conda_run_001
+conda list --explicit > results/exp_0001/conda_run_001/conda-spec.txt
+```
+
+Use a *fresh* output directory for each execution; the script refuses to
+overwrite runs. Preserve the produced `metrics.csv` and `metadata.json`.
+Record Git SHA and environment versions before promoting any result.
+
+**Interpretation:** within-component errors for different radii are computed
+on different pair populations when the graph is disconnected; they are not
+directly comparable as a paired test. No embedding optimizer is implemented yet.
+
+Docling is deliberately **not** part of the numerical Conda environment.
+Literature conversion can use a separate optional environment.
+
+## Plain Python alternative
+
+Python 3.11+ also works with `python -m pip install -e ".[dev,docs]"`,
+although the extra future benchmark dependencies are provided by Conda.

@@ -1,0 +1,21 @@
+# Conda-first research environment. Run from the repository root.
+name: proximity-isomap
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - "numpy>=1.26,<3"
+  - "scipy>=1.11,<2"
+  # Planned benchmarking and visualization tools.
+  - "scikit-learn>=1.4,<2"
+  - "matplotlib>=3.8,<4"
+  - "pandas>=2.2,<3"
+  - "pytest>=8,<10"
+  - "ruff>=0.8,<1"
+  - "sphinx>=8,<10"
+  - "myst-parser>=4,<5"
+  - "furo>=2024.8.6"
+  - "hatchling>=1.25"
+  - pip:
+      - -e .

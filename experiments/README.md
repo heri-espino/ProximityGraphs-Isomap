@@ -20,3 +20,17 @@ First smoke run:
 ```bash
 python experiments/run_exp_0001.py --config experiments/configs/exp_0001.json --output results/exp_0001/smoke
 ```
+
+## Conda replication of EXP-0001
+
+```bash
+conda env create -f environment.yml
+conda activate proximity-isomap
+python experiments/run_exp_0001.py --config experiments/configs/exp_0001.json --output results/exp_0001/conda_run_001
+conda list --explicit > results/exp_0001/conda_run_001/conda-spec.txt
+```
+
+Each run must use a fresh output path. Record Git SHA, package versions,
+seed and configuration. Initial exploratory numbers from the 2026-10-16
+journal were produced in an **unversioned plain Python snapshot**, not Conda;
+do not use them as independent confirmation or evidence of a new method.
