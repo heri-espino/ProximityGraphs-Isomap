@@ -7,7 +7,7 @@ This site documents a working Python baseline, research continuity rules and the
 
 getting-started
 research-workflow
-   experiment-archive
+experiment-archive
 literature
 api
 ```

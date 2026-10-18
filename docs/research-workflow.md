@@ -48,4 +48,4 @@ Run `python scripts/validate_research.py` to check the basic structure and `pyth
 
 ## Experiment-focused research record
 
-Use [the canonical numbered archive](../proximity_isomap/notes/README.md). Update an experiment's one narrative README and the corresponding code/results/figures; add a chronological journal entry only for the new research action or decision. Do not copy an entire journal entry into each experiment note. Run `python scripts/validate_experiment_archive.py` alongside the main validator. The historical EXP-002–008 assets are explicitly marked incomplete until the original ZIP is restored.
+Use [the canonical numbered archive](https://github.com/heri-espino/ProximityGraphs-Isomap/blob/main/proximity_isomap/notes/README.md). Update an experiment's one narrative README and the corresponding code/results/figures; add a chronological journal entry only for the new research action or decision. Do not copy an entire journal entry into each experiment note. Run `python scripts/validate_experiment_archive.py` alongside the main validator. The historical EXP-002–008 assets are explicitly marked incomplete until the original ZIP is restored.
