@@ -70,7 +70,7 @@ def render_summary(
         f'<line x1="{left}" y1="{top+ih}" x2="{width-right}" y2="{top+ih}" stroke="#444"/>',
         f'<polyline points="{path}" fill="none" stroke="#0072B2" stroke-width="3"/>',
     ]
-    for (px, py), label in zip(pts, labels):
+    for (px, py), label in zip(pts, labels, strict=True):
         parts += [
             f'<circle cx="{px:.1f}" cy="{py:.1f}" r="4" fill="#0072B2"/>',
             f'<text x="{px:.1f}" y="{top+ih+22}" text-anchor="middle" '
