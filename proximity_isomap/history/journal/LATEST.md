@@ -1,5 +1,5 @@
 # Latest research-history entry
 
-[2026-10-18 — Vietoris–Rips, random sampling, and pending reruns](2026-10/2026-10-18-tda-stochastic-direction.md).
+[2026-10-18 — Proposed H1 hole visualization](2026-10/2026-10-18-holes-proposal.md).
 
-[Canonical per-experiment notes](../../notes/README.md). Prior dated entries remain preserved.
+[Canonical experiment notes](../../notes/README.md); prior research history remains preserved.

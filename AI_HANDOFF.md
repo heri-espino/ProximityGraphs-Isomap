@@ -1,7 +1,7 @@
 # AI handoff — ProximityGraphs-Isomap
 
 **Updated:** 2026-10-18
-**Latest history:** [2026-10-18 — TDA and stochastic-geometry proposal](proximity_isomap/history/journal/2026-10/2026-10-18-tda-stochastic-direction.md).
+**Latest history:** [2026-10-18 — Proposed H1 hole visualization](proximity_isomap/history/journal/2026-10/2026-10-18-holes-proposal.md).
 
 ## Canonical structure
 
@@ -31,6 +31,10 @@ The Windows Conda/PowerShell entrypoint is `scripts/run_all.ps1`. The environmen
 - Run **EXP-009 only after a documented fair comparison protocol**. Full EXP-001–008 reruns remain on the explicit GitHub to-do issue: https://github.com/heri-espino/ProximityGraphs-Isomap/issues/6. Do not mark them complete because quick CI passed.
 
 **Latest dated history:** [2026-10-18 — stochastic geometry proposal](proximity_isomap/history/journal/2026-10/2026-10-18-tda-stochastic-direction.md).
+
+## Proposed H1 holes and visualization (2026-10-18)
+
+See [TDA stochastic geometry research brief](proximity_isomap/notes/mathematics/research_tda_stochastic_geometry.md). Unlike H0 graph components, H1 must be computed on VR **simplicial complexes**, including filled triangles. Two Swiss-roll strips have no true H1; two circles have two loops. Rigid placement preserves **all** VR persistence of already embedded individual components, but not necessarily the persistence of the original ambient cloud or of the union. Ripser/GUDHI can compute diagrams; representative cocycles and geometric cycles are not interchangeable. Proposed only, no EXP-009 benchmark performed. Future published figures must use ContrastColors.
 
 ## Scientific limitations and next work
 

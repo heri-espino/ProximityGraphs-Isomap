@@ -24,3 +24,5 @@
 - [ ] From a clean branch: `./scripts/run_all.ps1 -Push` for full 001–008 new runs, images, NPZ, CSV, JSON and Markdown updates; then verify GitHub CI and log the commit SHA.
 - [ ] Compare code-generated numbers to historical summaries as an **implementation difference study**, not equality.
 - [ ] Add unsupervised radius selection and run independently seeded margin–distortion frontiers with tuned prior-art methods.
+
+- [ ] Extend proposed EXP-009 topology diagnostics to H1 loops (and optionally H2 cavities): VR triangles, persistence barcodes, representatives, original-vs-projection metrics, with ContrastColors figures embedded in Markdown. This is not a completed run.
