@@ -49,21 +49,21 @@ function Invoke-ResearchPython {
 }
 
 # Fail explicitly if the pinned user-owned plotting library cannot load.
-Invoke-ResearchPython @("-c", "import contrastcolors as cc; print('contrastcolors', cc.__version__)")
-Invoke-ResearchPython @("-m", "pytest", "-q")
-Invoke-ResearchPython @("-m", "ruff", "check", "src", "tests", "examples", "scripts", "proximity_isomap/code")
-Invoke-ResearchPython @("scripts/validate_research.py")
-Invoke-ResearchPython @("scripts/validate_experiment_archive.py")
+Invoke-ResearchPython -ArgsList @("-c", "import contrastcolors as cc; print('contrastcolors', cc.__version__)")
+Invoke-ResearchPython -ArgsList @("-m", "pytest", "-q")
+Invoke-ResearchPython -ArgsList @("-m", "ruff", "check", "src", "tests", "examples", "scripts", "proximity_isomap/code")
+Invoke-ResearchPython -ArgsList @("scripts/validate_research.py")
+Invoke-ResearchPython -ArgsList @("scripts/validate_experiment_archive.py")
 
 $runLabel = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmssZ")
 if ($Quick) { $runLabel += "-smoke" } else { $runLabel += "-full" }
 Write-Host "[EXPERIMENTS] label=$runLabel seed=$Seed"
 $argsList = @("proximity_isomap/code/research_runner.py", "--seed", "$Seed", "--label", $runLabel)
 if ($Quick) { $argsList += "--quick" }
-Invoke-ResearchPython $argsList
+Invoke-ResearchPython -ArgsList $argsList
 
-Invoke-ResearchPython @("scripts/validate_experiment_archive.py")
-Invoke-ResearchPython @("-m", "sphinx", "-b", "html", "-W", "docs", "docs/_build/html")
+Invoke-ResearchPython -ArgsList @("scripts/validate_experiment_archive.py")
+Invoke-ResearchPython -ArgsList @("-m", "sphinx", "-b", "html", "-W", "docs", "docs/_build/html")
 
 Write-Host "[RESULTS] Generated figures, metrics, source provenance and updated Markdown notes."
 git status --short
@@ -71,8 +71,8 @@ if ($Push) {
     # Include newly generated binary figures and NPZ arrays, not merely CSVs.
     git add -A
     if ($LASTEXITCODE -ne 0) { throw "git add failed" }
-    git diff --cached --quiet
-    if ($LASTEXITCODE -eq 0) {
+    $staged = git diff --cached --name-only
+    if (-not $staged) {
         Write-Host "No new files to commit."
         return
     }
