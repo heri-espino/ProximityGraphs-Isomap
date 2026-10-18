@@ -1,0 +1,80 @@
+name: Publish EXP-009 topology pilot
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/publish-exp009.yml"
+      - "proximity_isomap/code/009-topological_manifolds/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pinned reproducibility dependencies
+        run: |
+          python -m pip install -e ".[experiments]"
+          python -m pip install "contrastcolors @ git+https://github.com/heri-espino/Colors.git@84e05b40b6ba6aa6864f5bc13ad43da3c4c1e93d"
+      - name: Generate exact pilot data and figures
+        shell: bash
+        run: |
+          RUN_ID="run_${GITHUB_SHA:0:10}"
+          OUT="proximity_isomap/results/009-topological_manifolds/runs/$RUN_ID"
+          FIG="proximity_isomap/figures/009-topological_manifolds/runs/$RUN_ID"
+          mkdir -p "$FIG"
+          python proximity_isomap/code/009-topological_manifolds/run.py --output "$OUT"
+          mv "$OUT"/*.png "$OUT"/*.svg "$FIG"/
+          echo "RUN_ID=$RUN_ID" >> "$GITHUB_ENV"
+      - name: Embed generated figures and metrics into experiment note
+        env:
+          EXP009_RUN_ID: ${{ env.RUN_ID }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+
+          run_id = os.environ["EXP009_RUN_ID"]
+          note = Path("proximity_isomap/notes/009-topological_manifolds/README.md")
+          text = note.read_text()
+          marker = "<!-- GITHUB-GENERATED-EXP009: latest original figures -->"
+          text = text.split(marker)[0].rstrip()
+          root = f"../../figures/009-topological_manifolds/runs/{run_id}"
+          results = f"../../results/009-topological_manifolds/runs/{run_id}"
+          section = f"""
+          {marker}
+
+          ## Generated EXP-009 figures and frozen results
+
+          This is a fresh versioned rerun using the pinned ContrastColors library,
+          not an image reconstructed from the rounded summary. Run: \`{run_id}\`.
+
+          ![Original 3D, PCA and componentwise Isomap projections]({root}/geometry.png)
+
+          ![Measured H1 persistence before/after Isomap]({root}/h1_barcodes.png)
+
+          Full [persistence pairs and metadata]({results}/metrics.json) and
+          [observation/embedding arrays]({results}/coordinates.npz). Both figure
+          panels are also saved as SVG in the matching numbered figures directory.
+          """
+          note.write_text(text + "\n" + section + "\n")
+          PY
+      - name: Commit and push immutable scientific assets
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add proximity_isomap/notes/009-topological_manifolds/README.md
+          git add proximity_isomap/results/009-topological_manifolds/runs/
+          git add proximity_isomap/figures/009-topological_manifolds/runs/
+          git commit -m "Generate EXP-009 pilot arrays, ContrastColors images and embedded notes"
+          git push origin HEAD:main
