@@ -11,8 +11,8 @@ import itertools
 import json
 import platform
 import subprocess
-from datetime import UTC, datetime
 from collections import defaultdict
+from datetime import UTC, datetime
 from pathlib import Path
 
 import matplotlib
