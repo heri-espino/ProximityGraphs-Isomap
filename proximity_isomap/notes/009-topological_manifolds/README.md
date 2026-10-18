@@ -48,12 +48,13 @@ The failure of topology preservation is a real research concern, but neither pro
 ## Generated EXP-009 figures and frozen results
 
 This is a fresh versioned rerun using the pinned ContrastColors library,
-not an image reconstructed from the rounded summary. Run: `run_efbeaad418`.
+not an image reconstructed from the rounded summary. Run: \`run_d8aff3bb97\`.
 
-![Original 3D, PCA and componentwise Isomap projections](../../figures/009-topological_manifolds/runs/run_efbeaad418/geometry.png)
+![Original 3D, PCA and componentwise Isomap projections](../../figures/009-topological_manifolds/runs/run_d8aff3bb97/geometry.png)
 
-![Measured H1 persistence before/after Isomap](../../figures/009-topological_manifolds/runs/run_efbeaad418/h1_barcodes.png)
+![Measured H1 persistence before/after Isomap](../../figures/009-topological_manifolds/runs/run_d8aff3bb97/h1_barcodes.png)
 
-Full [persistence pairs and metadata](../../results/009-topological_manifolds/runs/run_efbeaad418/metrics.json) and
-[observation/embedding arrays](../../results/009-topological_manifolds/runs/run_efbeaad418/coordinates.npz). Both figure
+Full [persistence pairs and metadata](../../results/009-topological_manifolds/runs/run_d8aff3bb97/metrics.json) and
+[observation/embedding arrays](../../results/009-topological_manifolds/runs/run_d8aff3bb97/coordinates.npz). Both figure
 panels are also saved as SVG in the matching numbered figures directory.
+
