@@ -1,5 +1,5 @@
 # Latest research-history entry
 
-[2026-10-18 — Clean repository and rebuild all experimental runners](2026-10/2026-10-18-clean-reproduction.md).
+[2026-10-18 — Rebuilt experiment smoke CI verified](2026-10/2026-10-18-smoke-ci-verified.md).
 
-Experiments have independent canonical notes in [proximity_isomap/notes](../../notes/README.md). The archived journal is preserved rather than deleted.
+Current scientific interpretations and embedded experiment figures live under [the eight canonical notes](../../notes/README.md). Older history is preserved under this folder.
