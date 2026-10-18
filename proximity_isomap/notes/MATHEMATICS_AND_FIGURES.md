@@ -13,7 +13,7 @@ Each experiment note should have:
 4. **Findings and negative results.** A result may be a failure; differentiate measured values from predictions or untested hypotheses.
 5. **Figures.** Display *existing* images using relative Markdown references and give each one an explanatory caption.
 
-Use GitHub/Obsidian-compatible inline math (\`$...\`) and display math (\`$$...$$\`), without screenshotting equations. For a new note:
+Use GitHub/Obsidian-compatible inline math (`$...`) and display math (`$$...$$`), without screenshotting equations. For a new note:
 
 ~~~markdown
 ## Mathematics: objective
@@ -28,7 +28,7 @@ Explain how $d_{ij}$ is constructed and whether it is a known analytic
 geodesic, an estimated graph distance, or an ambient Euclidean distance.
 ~~~
 
-In particular, **the graph radius is an edge threshold** \`||x_i-x_j|| <= r\`, not a ball-overlap threshold. Distinguish true geometric components (synthetic evaluation labels) from automatically detected graph components. A rigid pose preserves **computed** intracomponent distances, not necessarily the true geodesic distances. Infinite cross-manifold intrinsic paths are not the same thing as finite ambient cross distances.
+In particular, **the graph radius is an edge threshold** `||x_i-x_j|| <= r`, not a ball-overlap threshold. Distinguish true geometric components (synthetic evaluation labels) from automatically detected graph components. A rigid pose preserves **computed** intracomponent distances, not necessarily the true geodesic distances. Infinite cross-manifold intrinsic paths are not the same thing as finite ambient cross distances.
 
 ## Figure-link policy
 
@@ -42,16 +42,16 @@ The markdown relative path must exist **at commit time**. Link the corresponding
 
 **When a full experiment is executed:**
 
-- Use \`contrastcolors\` with the pinned \`heri\` style and Okabe–Ito palette from \`environment.yml\`.
-- Save real \`.png\` and \`.svg\` outputs under \`proximity_isomap/figures/NNN-short_title/runs/RUN_ID/\`.
-- Save CSV metrics, JSON metadata, NPZ coordinates and source SHA/checksums under the matching \`results/NNN-short_title/runs/RUN_ID/\`.
+- Use `contrastcolors` with the pinned `heri` style and Okabe–Ito palette from `environment.yml`.
+- Save real `.png` and `.svg` outputs under `proximity_isomap/figures/NNN-short_title/runs/RUN_ID/`.
+- Save CSV metrics, JSON metadata, NPZ coordinates and source SHA/checksums under the matching `results/NNN-short_title/runs/RUN_ID/`.
 - Append a **Computed run: RUN_ID** section with figure images, observed metrics and interpretations, keeping all earlier run reports in the note. A run should not silently erase a previous experiment record.
 - Include negative findings, uncertain interpretations, and caveats (oracle radius, fixed K, solver local minima).
-- Validate with \`python scripts/validate_experiment_archive.py\`, pytest, Ruff, Sphinx and inspect the actual images before pushing.
+- Validate with `python scripts/validate_experiment_archive.py`, pytest, Ruff, Sphinx and inspect the actual images before pushing.
 
 ## Figure provenance
 
-- **EXP-001–008 historical \`summary.svg\`**: reconstructed plots from rounded reported historical aggregates, *not* original 3D/2D panels.
-- **EXP-001–008 full new PNG/SVG**: pending user local \`./scripts/run_all.ps1 -Push\`.
+- **EXP-001–008 historical `summary.svg`**: reconstructed plots from rounded reported historical aggregates, *not* original 3D/2D panels.
+- **EXP-001–008 full new PNG/SVG**: pending user local `./scripts/run_all.ps1 -Push`.
 - **EXP-009**: genuine 3D/2D and \(H_1\) barcode PNG/SVG exist and are embedded in [its experiment note](009-topological_manifolds/README.md).
 - Do not mix newly reconstructed experiments with historical implementations when making scientific claims; the old integration ZIP is explicitly excluded.
