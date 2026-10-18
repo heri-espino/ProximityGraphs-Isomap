@@ -13,7 +13,6 @@ import hashlib
 import json
 import platform
 import subprocess
-import sys
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -65,7 +64,9 @@ def setup_colors() -> list[str]:
     return list(cc.color_palette("okabe-ito", as_hex=True))
 
 
-def sample_sheet(kind: str, n: int, seed: int, skew: bool = False) -> tuple[np.ndarray, np.ndarray]:
+def sample_sheet(
+    kind: str, n: int, seed: int, skew: bool = False
+) -> tuple[np.ndarray, np.ndarray]:
     """Sample an isometric 2D strip embedded as a Swiss roll or S-like curve.
 
     Parameters
@@ -163,7 +164,6 @@ def classical_mds(distance: np.ndarray) -> np.ndarray:
     np.ndarray
         Centered (n,2) classical-MDS coordinates.
     """
-    n = len(distance)
     d2 = distance**2
     gram = -0.5 * (d2 - d2.mean(axis=0)[None, :] -
                    d2.mean(axis=1)[:, None] + d2.mean())
@@ -559,7 +559,8 @@ def run_experiment(index: int, *, seed: int, quick: bool,
             ii, jj = np.triu_indices(len(x), 1)
             connected = graph.component_labels[ii] == graph.component_labels[jj]
             err = float(np.sqrt(np.mean((dist[ii[connected], jj[connected]] -
-                                         truth[ii[connected], jj[connected]])**2))) if connected.any() else None
+                                         truth[ii[connected], jj[connected]])**2))) \
+                if connected.any() else None
             rows.append({"radius": float(r), "n_components": graph.n_components,
                          "n_edges": graph.n_edges, "conditional_graph_rmse": err,
                          "n_finite_pairs": int(connected.sum())})
@@ -618,7 +619,8 @@ def run_experiment(index: int, *, seed: int, quick: bool,
                     marker="o", label=name)
             ax.set_xticks(range(len(vals)),
                           [f"{k[0]}-{k[1]}" for k,v in vals])
-        ax.set(ylabel="Mean within-sheet intrinsic stress", title="EXP-004: held-out density/geometry")
+        ax.set(ylabel="Mean within-sheet intrinsic stress",
+               title="EXP-004: held-out density/geometry")
         ax.legend()
         for ext in ("png","svg"):
             fig2.savefig((fig/"density_transfer").with_suffix("." + ext), dpi=180)
@@ -668,7 +670,9 @@ def run_experiment(index: int, *, seed: int, quick: bool,
         "contrastcolors": __import__("contrastcolors").__version__,
         "methods": "reconstructed_from_documented_questions_not_original_2026_code",
         "ground_truth_use": "analytic geodesic evaluation; label-informed connectivity for K>=2",
-        "selection_caveat": "EXP-004 development radius uses analytic ground truth; not unsupervised",
+        "selection_caveat": (
+            "EXP-004 development radius uses analytic ground truth; not unsupervised"
+        ),
         "solver_caveat": "single-start SMACOF; rigid alignment nonconvex local anchor fit",
         "rows": len(rows),
     }
@@ -694,7 +698,8 @@ def run_experiment(index: int, *, seed: int, quick: bool,
         for p in pngs
     )
     display = "\n".join(f"| {r.get('n_rolls','-')} | {r.get('method','graph')} | "
-                        f"{r.get('within_intrinsic_root_stress',r.get('conditional_graph_rmse','-'))} | "
+                        f"{r.get('within_intrinsic_root_stress',
+                                 r.get('conditional_graph_rmse','-'))} | "
                         f"{r.get('between_ambient_root_stress','-')} |"
                         for r in rows[:20])
     note.write_text(
@@ -724,7 +729,8 @@ def main(index: int | None = None) -> None:
         Writes immutable outputs and Markdown updates.
     """
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--quick", action="store_true", help="Small smoke dataset, not research evidence")
+    parser.add_argument("--quick", action="store_true",
+                        help="Small smoke dataset, not research evidence")
     parser.add_argument("--seed", type=int, default=20261018)
     parser.add_argument("--only", type=int, nargs="*", choices=tuple(SLUGS))
     parser.add_argument("--label", default=None)

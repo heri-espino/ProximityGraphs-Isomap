@@ -37,8 +37,11 @@ def test_pr_workflow_requires_new_journal_and_synced_handoff() -> None:
     errors = protocol_errors({"src/proximity_isomap/graphs/radius.py"}, set())
     assert len(errors) == 5
     changed = {
-        "src/proximity_isomap/graphs/radius.py", "AI_HANDOFF.md", "proximity_isomap/history/journal/LATEST.md",
-        "proximity_isomap/history/context/STATE.md", "proximity_isomap/history/context/NEXT_STEPS.md",
+        "src/proximity_isomap/graphs/radius.py", "AI_HANDOFF.md",
+        "proximity_isomap/history/journal/LATEST.md",
+        "proximity_isomap/history/context/STATE.md",
+        "proximity_isomap/history/context/NEXT_STEPS.md",
         "proximity_isomap/history/journal/2026-10/2026-10-16-scientific-change.md",
     }
-    assert protocol_errors(changed, {"proximity_isomap/history/journal/2026-10/2026-10-16-scientific-change.md"}) == []
+    added = {"proximity_isomap/history/journal/2026-10/2026-10-16-scientific-change.md"}
+    assert protocol_errors(changed, added) == []

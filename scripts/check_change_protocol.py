@@ -9,13 +9,19 @@ import re
 import subprocess
 from pathlib import Path
 
-JOURNAL_ENTRY_PATTERN = re.compile(r"proximity_isomap/history/journal/\d{4}-\d{2}/\d{4}-\d{2}-\d{2}-[\w-]+\.md$")
+JOURNAL_ENTRY_PATTERN = re.compile(
+    r"proximity_isomap/history/journal/\d{4}-\d{2}/"
+    r"\d{4}-\d{2}-\d{2}-[\w-]+\.md$"
+)
 RESEARCH_PREFIXES = (
     "src/", "tests/", "notes/", "literature/", "experiments/", "results/",
     "paper/", "figures/", "docs/", "scripts/", "proximity_isomap/",
 )
 REQUIRED_UPDATES = (
-    "AI_HANDOFF.md", "proximity_isomap/history/journal/LATEST.md", "proximity_isomap/history/context/STATE.md", "proximity_isomap/history/context/NEXT_STEPS.md",
+    "AI_HANDOFF.md",
+    "proximity_isomap/history/journal/LATEST.md",
+    "proximity_isomap/history/context/STATE.md",
+    "proximity_isomap/history/context/NEXT_STEPS.md",
 )
 
 
