@@ -100,7 +100,10 @@
       "status": "Historical local ZIP; one-seed summary transcribed"
     }
   ],
-  "original_archive_status": "EXP-002 through EXP-008 full historic ZIP assets absent from connected repository; restore from 260-file integration package; not included in this commit.",
+  "original_archive_status": "No Integration.zip imported; prior 002..008 exact original source unavailable, new runs will be recomputations from rebuilt code.",
   "summary_figures": "reconstructed from reported rounded historical aggregates; not original plots",
-  "warning": "Source and original numerical artifacts still require versioned restoration."
+  "warning": "Source and original numerical artifacts still require versioned restoration.",
+  "code_status": "Fresh rebuilt research_runner.py covers IDs 001..008 with per-experiment wrappers. Not identical to missing old code.",
+  "figure_library": "contrastcolors pinned to 84e05b40b6ba6aa6864f5bc13ad43da3c4c1e93d; heri style with Okabe–Ito",
+  "new_run_artifacts": "CSV + JSON + NPZ + sha256, PNG + SVG and inline Markdown figures per run. Runs require user's local PowerShell execution."
 }

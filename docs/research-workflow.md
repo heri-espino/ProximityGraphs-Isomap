@@ -2,9 +2,9 @@
 
 ## Ordered start-of-session reading
 
-1. `journal/README.md`, `journal/LATEST.md`, and its linked date-stamped entry.
+1. `proximity_isomap/history/journal/README.md`, `proximity_isomap/history/journal/LATEST.md`, and its linked date-stamped entry.
 2. `AI_HANDOFF.md`, the short, current summary.
-3. `context/STATE.md`, `context/NEXT_STEPS.md`, and relevant decisions.
+3. `proximity_isomap/history/context/STATE.md`, `proximity_isomap/history/context/NEXT_STEPS.md`, and relevant decisions.
 4. Only task-relevant mathematics, source code, experiments and primary literature.
 
 `AGENTS.md` is the entrypoint prescribing this procedure. If the summary conflicts with an original paper, tested implementation or dated decision, examine and document the conflict.

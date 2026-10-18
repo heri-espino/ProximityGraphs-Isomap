@@ -1,7 +1,3 @@
-# Numerical results and provenance
+# Recomputed numerical evidence
 
-Every numbered subfolder contains a status README and the available metrics. For EXP-001, original five-radius smoke CSV/JSON are copied byte-for-byte from the prior GitHub tree.
-
-For EXP-002–008, smaller CSVs are newly transcribed from historical discussions/repository aggregate summaries where available; **they are not original raw experiment CSV/NPZ files**, and should be tagged `historical_transcription`. Repeating a result after importing source requires a new immutable run folder with source SHA, seed, config, Python/dependency versions, data-generation parameters and manifest.
-
-The reported global separation method uses a diagnostic synthetic-label-informed radius in EXP-005–008. Thus those reported values are not unsupervised held-out performance.
+Each new immutable run is in `NNN-short_title/runs/RUN_ID/`, with metrics CSV, metadata JSON, coordinate NPZ (where applicable), and SHA-256 manifest. New run IDs must not overwrite earlier results. `summary.csv` in old folders is a historical **transcription**, not a new experiment. See each experiment's note for linked actual PNGs and interpretations.

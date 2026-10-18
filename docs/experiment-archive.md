@@ -1,7 +1,9 @@
-# Numbered research experiments
+# Recomputed numbered experiments
 
-The canonical per-experiment record is [proximity_isomap/notes/](https://github.com/heri-espino/ProximityGraphs-Isomap/blob/main/proximity_isomap/notes/README.md).
+Every experiment has linked notes, code, figures and results in [the canonical research archive](https://github.com/heri-espino/ProximityGraphs-Isomap/tree/main/proximity_isomap).
 
-Every ID, 001 through 008, has the same slug in [code](https://github.com/heri-espino/ProximityGraphs-Isomap/blob/main/proximity_isomap/code/README.md), [figures](https://github.com/heri-espino/ProximityGraphs-Isomap/blob/main/proximity_isomap/figures/README.md), and [results](https://github.com/heri-espino/ProximityGraphs-Isomap/blob/main/proximity_isomap/results/README.md). The [machine-readable availability manifest](../proximity_isomap/MANIFEST.json) distinguishes actual restored assets from historical transcriptions and reconstructed summary charts.
+Execute from a Windows PowerShell session using `./scripts/run_all.ps1 -Quick` (smoke) or `./scripts/run_all.ps1 -Push` (full recomputation plus Git push).
 
-**Original EXP-002–EXP-008 source and 3D/2D images are not yet in the connected GitHub repository.** Restore those archives with checksum verification and a versioned scientific rerun before publication; see the [latest journal entry](https://github.com/heri-espino/ProximityGraphs-Isomap/blob/main/journal/LATEST.md). The importable numerical package stays at `src/proximity_isomap/`.
+The environment pins the author's [ContrastColors](https://github.com/heri-espino/Colors) plotting library. Newly computed PNG and SVG figures are recorded beside reproducible metric CSV, metadata JSON and coordinate NPZ data, then linked and **embedded** into each experiment's Markdown note.
+
+Old root journaling/context is preserved under `proximity_isomap/history/` rather than scattered across top-level folders. The 002–008 experiments are newly reconstructed and are not exact old-source recovery.

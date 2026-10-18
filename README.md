@@ -1,91 +1,23 @@
 # ProximityGraphs-Isomap
 
-**Research status: exploratory.** An installable Python research baseline for proximity graphs, disconnected graph geodesics and manifold dimensionality reduction. No novel algorithm or superiority claim has been established.
+Research on separation-constrained Isomap for disconnected manifolds. **Novelty and comparative superiority have not been established.**
 
-## AI and research continuity — start here
+The canonical experiment records are [proximity_isomap/notes/](proximity_isomap/notes/README.md), with matching numbered folders under [code](proximity_isomap/code/README.md), [figures](proximity_isomap/figures/README.md), and [results](proximity_isomap/results/README.md). Old journals, original experiments and context are preserved under [history](proximity_isomap/history/README.md), not deleted. [Mathematical results](proximity_isomap/notes/mathematics/index.md) and [the short working paper](paper/RESEARCH_DIRECTION.md) are separate.
 
-1. **[`AGENTS.md`](AGENTS.md)** — required reading and end-of-session documentation rules.
-2. **[`journal/README.md`](journal/README.md)**, **[`journal/LATEST.md`](journal/LATEST.md)** and the linked dated entry — read **first**, before summaries.
-3. **[`AI_HANDOFF.md`](AI_HANDOFF.md)** — compact current handoff, work completed and unresolved issues.
-4. **[`context/STATE.md`](context/STATE.md)**, **[`context/NEXT_STEPS.md`](context/NEXT_STEPS.md)** — authoritative state and prioritized follow-ups.
+## Windows PowerShell
 
-Every substantive change requires a new dated journal entry, an updated `journal/LATEST.md` pointer and an updated AI handoff. Test/code updates require Sphinx-compatible NumPy-style docstrings. CI checks structural consistency (not mathematical truth).
+Install Git and [Miniforge](https://github.com/conda-forge/miniforge), open a Conda-ready PowerShell window, then:
 
-## Canonical experiment records
+~~~powershell
+git clone https://github.com/heri-espino/ProximityGraphs-Isomap.git
+cd ProximityGraphs-Isomap
+Set-ExecutionPolicy -Scope Process Bypass
+.\scripts\run_all.ps1 -Quick
+.\scripts\run_all.ps1 -Push
+~~~
 
-**[Browse all eight experiment notes](proximity_isomap/notes/README.md)** · [Archive structure](proximity_isomap/README.md) · [Asset/provenance manifest](proximity_isomap/MANIFEST.json)
+The script creates/updates the environment from `environment.yml`, including [contrastcolors](https://github.com/heri-espino/Colors) pinned to commit `84e05b4`, runs tests and all **newly reconstructed** EXP-001..008 experiments, saves CSV/JSON/NPZ and genuine PNG/SVG figures, and embeds the PNGs into each note. `-Quick` is a local smoke test; `-Push` runs the full suite, commits and pushes. Without `-Push`, no changes are uploaded.
 
-Experiments are organized under one stable numbered research namespace:
+**Methodological qualification:** this rebuild does NOT import the unavailable historical Integration.zip. Algorithms and numeric results may differ from those older runs. Synthetic generating labels are still used for some diagnostic radii. The reusable library stays in `src/proximity_isomap/`, literature in `literature/`, tests in `tests/`, manuscript in `paper/`.
 
-```text
-proximity_isomap/
-  notes/    001-radius_filtration/ ... 008-multiple_swiss_rolls/
-  code/     001-radius_filtration/ ... 008-multiple_swiss_rolls/
-  figures/  001-radius_filtration/ ... 008-multiple_swiss_rolls/
-  results/  001-radius_filtration/ ... 008-multiple_swiss_rolls/
-```
-
-Within each experiment's note are the question, actions, findings, failure modes, interpretation and valid figure links. The chronological `journal/` remains separate. **EXP-002–EXP-008 original runnable scripts, raw arrays and 3D/2D plots are still pending import from a historical ZIP.** The included SVG diagrams are reconstructed from reported summary metrics, not a substitute for original figures.
-
-## Research directories
-
-| Location | Role |
-| --- | --- |
-| `src/proximity_isomap/` | Reusable Python library, with API docstrings |
-| `tests/` | Unit tests and numerical behavior checks |
-| `notes/` | General mathematical notebook (experiment narratives now in `proximity_isomap/notes/`): definitions, propositions, proofs and conjectures (Obsidian-compatible) |
-| `journal/` | Append-only reasoning chronology and architectural decisions |
-| [`literature/`](literature/README.md) | **`pdf/` original papers, `markdown/` Docling extractions, `references/` source-checked results and BibTeX** |
-| `proximity_isomap/code/`, `proximity_isomap/results/` | Per-experiment source inventories and provenance; historical root paths remain as compatibility references |
-| `proximity_isomap/figures/` | Per-experiment summary SVGs; original historical 3D/2D images still require restoration |
-| `paper/` | LaTeX manuscript skeleton using `literature/references/library.bib` |
-| `docs/` | Sphinx technical and research-workflow documentation |
-| `scripts/` | Literature registration and research-integrity checks |
-
-## Installation and checks (Conda recommended)
-
-```bash
-conda env create -f environment.yml
-conda activate proximity-isomap
-python -m pytest -q
-python -m ruff check src tests examples experiments scripts proximity_isomap/code
-python scripts/validate_research.py
-python scripts/validate_experiment_archive.py
-python -m sphinx -b html -W docs docs/_build/html
-```
-
-`environment.yml` uses conda-forge and installs the local package in editable
-mode. See [Getting started](docs/getting-started.md) for environment updates,
-plain-Python alternatives, and experimental run metadata requirements. Docling
-is optional and not part of the numerical research environment.
-
-Run a simple sample or a preregistered exploratory experiment:
-
-```bash
-python examples/radius_graph_basics.py
-python experiments/run_exp_0001.py --config experiments/configs/exp_0001.json
-```
-
-Results are exploratory, not independent evidence of an improved algorithm.
-
-## Literature ingestion example
-
-```bash
-python scripts/new_literature_entry.py --key author2024topic --title "Article title" --year 2024
-# Add the source PDF under literature/pdf/author2024topic.pdf
-# Then use Docling to write literature/markdown/author2024topic.md
-# Verify results against the original PDF; annotate literature/references/author2024topic.md
-python scripts/validate_research.py
-```
-
-See [`literature/README.md`](literature/README.md) for the complete procedure and `KEY_RESULTS.md` for the verified cross-paper result index. Nothing should be marked `reviewed` solely from an automated extraction.
-
-## Current scientific idea
-
-For samples `X = {x_1, ..., x_n}`, build an undirected radius graph with `(i,j)` iff `||x_i-x_j|| <= r`, with Euclidean edge weights. Within connected components, estimate graph geodesics; across different components, consider ambient Euclidean dissimilarities or rigid alignment. Compare full weighted-stress optimization, rigidly aligned component embeddings, classical MDS/PCA and standard Isomap under identical test sets.
-
-These are existing building blocks. The contribution, if any, requires verified new theory, a method with a clear distinction from prior work, or robust experimental findings. In folded manifolds Euclidean cross-component distances can be misleading.
-
-## License
-
-**Not selected yet.** Do not assume this repository grants permission to redistribute code or third-party literature PDFs. Only import papers when storage and sharing are permitted.
+Read [AGENTS.md](AGENTS.md) and [AI_HANDOFF.md](AI_HANDOFF.md) before extending the experiments.

@@ -73,7 +73,7 @@ with E_within defined against componentwise graph-geodesic targets. This is **no
 - **Separation by ordered strips:** if max_{i in C_k}(y_i)_1 + mu*s <= min_{j in C_{k+1}}(y_j)_1 for each adjacent ordered pair, then all component convex hulls are disjoint with positive pairwise clearance.
 - **Ideal frontier monotonicity:** if mu_2 >= mu_1, the feasible set for mu_2 is a subset of that for mu_1. Thus V(mu_2) >= V(mu_1) when inf(empty set) = +infinity. Numerical *local* optimizers are not guaranteed to produce monotone measured curves.
 
-Full elementary arguments and assumptions are in [PROP-0002](../notes/results/PROP-0002-rigid-separation-frontier.md). These statements help make the method auditable; they are not yet a nontrivial theoretical contribution.
+Full elementary arguments and assumptions are in [PROP-0002](../proximity_isomap/notes/mathematics/results/PROP-0002-rigid-separation-frontier.md). These statements help make the method auditable; they are not yet a nontrivial theoretical contribution.
 
 ## Evaluation: three separate axes
 

@@ -43,3 +43,7 @@ Thumbs.db
 
 # Docling-generated image asset caches, if saved separately
 literature/markdown/_cache/
+
+# Disposable smoke experiment artifacts, never tracked or included in paper notes.
+proximity_isomap/results/**/runs/*-smoke/
+proximity_isomap/figures/**/runs/*-smoke/

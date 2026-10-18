@@ -30,7 +30,7 @@ active environment.
 ## EXP-0001: first exploratory experiment
 
 ```bash
-python experiments/run_exp_0001.py --config experiments/configs/exp_0001.json --output results/exp_0001/conda_run_001
+python proximity_isomap/code/001-radius_filtration/run.py --config proximity_isomap/code/001-radius_filtration/config.json --output proximity_isomap/results/001-radius_filtration/conda_run_001
 conda list --explicit > results/exp_0001/conda_run_001/conda-spec.txt
 ```
 

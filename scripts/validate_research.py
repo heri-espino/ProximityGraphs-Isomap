@@ -38,9 +38,9 @@ def validate(root: Path = ROOT) -> list[str]:
     """
     errors: list[str] = []
     required = (
-        "AGENTS.md", "AI_HANDOFF.md", "README.md", "environment.yml", "journal/README.md",
-        "journal/LATEST.md", "context/STATE.md", "context/NEXT_STEPS.md",
-        "context/DECISION_INDEX.md", "literature/README.md", "literature/MANIFEST.csv",
+        "AGENTS.md", "AI_HANDOFF.md", "README.md", "environment.yml", "proximity_isomap/history/journal/README.md",
+        "proximity_isomap/history/journal/LATEST.md", "proximity_isomap/history/context/STATE.md", "proximity_isomap/history/context/NEXT_STEPS.md",
+        "proximity_isomap/history/context/DECISION_INDEX.md", "literature/README.md", "literature/MANIFEST.csv",
         "literature/pdf", "literature/markdown", "literature/references",
         "literature/references/PAPER_TEMPLATE.md", "literature/references/KEY_RESULTS.md",
         "literature/references/library.bib", "docs/api.rst",
@@ -51,13 +51,13 @@ def validate(root: Path = ROOT) -> list[str]:
     if errors:
         return errors
 
-    latest = (root / "journal/LATEST.md").read_text(encoding="utf-8")
+    latest = (root / "proximity_isomap/history/journal/LATEST.md").read_text(encoding="utf-8")
     handoff = (root / "AI_HANDOFF.md").read_text(encoding="utf-8")
     match = re.search(r"\]\((\d{4}-\d\d/\d{4}-\d\d-\d\d-[^)]+\.md)\)", latest)
     if not match:
         errors.append("journal/LATEST.md must link a YYYY-MM/YYYY-MM-DD-topic.md entry")
     else:
-        target = Path("journal") / match.group(1)
+        target = Path("proximity_isomap/history/journal") / match.group(1)
         if not (root / target).is_file():
             errors.append(f"latest journal target absent: {target}")
         if target.as_posix() not in handoff:

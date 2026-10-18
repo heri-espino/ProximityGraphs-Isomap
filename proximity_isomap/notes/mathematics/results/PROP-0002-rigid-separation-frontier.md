@@ -2,7 +2,7 @@
 
 **Status:** Proven elementary properties under the assumptions below. They are not claims of mathematical novelty.
 **Date:** 2026-10-17
-**Context:** [Working paper thesis](../../paper/RESEARCH_DIRECTION.md)
+**Context:** [Working paper thesis](../../../../paper/RESEARCH_DIRECTION.md)
 
 Let Z_1,...,Z_K be finite point sets in R^d, each with rows z_i. For Q_k in O(d) and translations t_k, define Y_k = {z_i Q_k + t_k : z_i in Z_k}. Let s > 0 and mu > 0.
 

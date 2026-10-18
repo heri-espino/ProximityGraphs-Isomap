@@ -1,4 +1,3 @@
-# Conda-first research environment. Run from the repository root.
 name: proximity-isomap
 channels:
   - conda-forge
@@ -7,7 +6,6 @@ dependencies:
   - pip
   - "numpy>=1.26,<3"
   - "scipy>=1.11,<2"
-  # Planned benchmarking and visualization tools.
   - "scikit-learn>=1.4,<2"
   - "matplotlib>=3.8,<4"
   - "pandas>=2.2,<3"
@@ -18,4 +16,5 @@ dependencies:
   - "furo>=2024.8.6"
   - "hatchling>=1.25"
   - pip:
-      - -e .
+      - -e .[experiments]
+      - contrastcolors @ git+https://github.com/heri-espino/Colors.git@84e05b40b6ba6aa6864f5bc13ad43da3c4c1e93d

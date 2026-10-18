@@ -29,3 +29,10 @@ A larger five-seed run was interrupted before writing aggregate outputs. EXP-004
 - [Figure directory and original-plot status](../../figures/003-wide_radius_grid/README.md)
 
 **Research status:** Exploratory and historical. Full EXP-002–EXP-008 source, 3D projections, raw arrays and original figure artifacts remain outside GitHub until the cumulative ZIP is imported. Do not claim reproduced results from current main.
+
+## Historical summary figure (not a new run)
+
+![Historical experiment 003-wide_radius_grid summary — source-transcribed diagnostic values](../../figures/003-wide_radius_grid/summary.svg)
+
+> This SVG is a reconstructed visualization of historical rounded summaries, not a recovered 3D/2D projection. Actual figures will be embedded automatically under the latest computed run after executing the Conda pipeline.
+

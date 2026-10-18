@@ -23,7 +23,7 @@ jobs:
       - name: Run tests
         run: python -m pytest -q
       - name: Lint
-        run: python -m ruff check src tests examples experiments scripts proximity_isomap/code
+        run: python -m ruff check src tests examples scripts proximity_isomap/code
       - name: Validate research and literature integrity
         run: |
           python scripts/validate_research.py

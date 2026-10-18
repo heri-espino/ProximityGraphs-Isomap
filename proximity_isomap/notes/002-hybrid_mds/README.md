@@ -31,3 +31,10 @@ Repeat over the complete scale range—including no-edge and complete graphs—w
 - [Figure directory and original-plot status](../../figures/002-hybrid_mds/README.md)
 
 **Research status:** Exploratory and historical. Full EXP-002–EXP-008 source, 3D projections, raw arrays and original figure artifacts remain outside GitHub until the cumulative ZIP is imported. Do not claim reproduced results from current main.
+
+## Historical summary figure (not a new run)
+
+![Historical experiment 002-hybrid_mds summary — source-transcribed diagnostic values](../../figures/002-hybrid_mds/summary.svg)
+
+> This SVG is a reconstructed visualization of historical rounded summaries, not a recovered 3D/2D projection. Actual figures will be embedded automatically under the latest computed run after executing the Conda pipeline.
+
