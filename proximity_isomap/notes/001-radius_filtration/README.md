@@ -29,6 +29,44 @@ Connectivity improves with radius, but the shortest paths can become **shortcuts
 Evaluate all original pairs against the same intrinsic reference by constructing complete 2D embeddings (EXP-002), then vary r across much wider regimes (EXP-003). A usable radius must be selected without looking at test-set ground truth.
 
 
+
+## Mathematics: radius filtration and intrinsic geodesics
+
+The radius graph has a vertex for each observation \(x_i\in\mathbb R^3\), and weighted edges
+
+$$
+(i,j)\in E_r \iff i\ne j\ \text{and}\ \|x_i-x_j\|_2\le r,
+\qquad w_{ij}=\|x_i-x_j\|_2.
+$$
+
+Its shortest-path distance \(g_{ij}(r)\) is finite only when the points lie in the same graph component. For the unscaled Swiss roll \(x(t,h)=(t\cos t,h,t\sin t)\), an intrinsic flattening is
+
+$$
+z(t,h)=\left(F(t),h\right),\qquad
+F(t)=\frac{t\sqrt{1+t^2}+\operatorname{arsinh}(t)}{2},
+\quad F'(t)=\sqrt{1+t^2}.
+$$
+
+Indeed, \(\|\partial_t x\|=\sqrt{1+t^2}\), \(\|\partial_h x\|=1\), and their tangent vectors are orthogonal. The analytic target is \(d^{\mathrm{true}}_{ij}=\|z_i-z_j\|_2\). On the *radius-dependent* set \(P_r=\{(i,j):i<j,\ g_{ij}(r)<\infty\}\), the diagnostic is
+
+$$
+\mathrm{RMSE}_{P_r}(r)=
+\sqrt{\frac{1}{|P_r|}\sum_{(i,j)\in P_r}
+\left(g_{ij}(r)-d^{\mathrm{true}}_{ij}\right)^2}.
+$$
+
+**Interpretation:** increasing \(r\) merges components but can create shortcuts across nearby folds. Also, \(P_r\) changes with \(r\): lower RMSE at small \(r\) can simply mean that difficult pairs were excluded. Compare fixed evaluation pairs before claiming improved fidelity.
+
+## Figure plan and reproduction status
+
+**Full rebuilt run pending:** the runner will save PNG and SVG files and embed valid PNG links after a successful full run; do not create links to absent files. Existing historical `summary.svg` above is already visible and clearly identified as a reconstruction.
+
+| Planned output filename | Mathematical point to illustrate | Current status |
+|---|---|---|
+| `radius_sweep.png` | Radius versus conditional graph-geodesic RMSE and component count; make pair-set changes explicit | Pending full rerun |
+
+**After a new run:** confirm that image filenames and actual metric fields match the notes before interpreting the figures. [Plot directory](../../figures/001-radius_filtration/README.md) · [Result directory](../../results/001-radius_filtration/README.md).
+
 ## Linked artifacts
 
 - [Code and source status](../../code/001-radius_filtration/README.md)
@@ -36,11 +74,10 @@ Evaluate all original pairs against the same intrinsic reference by constructing
 - [Summary diagram](../../figures/001-radius_filtration/summary.svg) — redrawn from reported values, not an original experimental screenshot
 - [Figure directory and original-plot status](../../figures/001-radius_filtration/README.md)
 
-**Research status:** Exploratory and historical. Full EXP-002–EXP-008 source, 3D projections, raw arrays and original figure artifacts remain outside GitHub until the cumulative ZIP is imported. Do not claim reproduced results from current main.
+**Research status:** Historical exploratory measurements remain below, and the rebuilt EXP-001 code is available. The full new run remains pending; the previously discussed integration ZIP will not be imported.
 
 ## Historical summary figure (not a new run)
 
 ![Historical experiment 001-radius_filtration summary — source-transcribed diagnostic values](../../figures/001-radius_filtration/summary.svg)
 
 > This SVG is a reconstructed visualization of historical rounded summaries, not a recovered 3D/2D projection. Actual figures will be embedded automatically under the latest computed run after executing the Conda pipeline.
-

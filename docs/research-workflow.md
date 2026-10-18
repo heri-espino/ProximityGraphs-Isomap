@@ -49,3 +49,8 @@ Run `python scripts/validate_research.py` to check the basic structure and `pyth
 ## Experiment-focused research record
 
 Use [the canonical numbered archive](https://github.com/heri-espino/ProximityGraphs-Isomap/blob/main/proximity_isomap/notes/README.md). Update an experiment's one narrative README and the corresponding code/results/figures; add a chronological journal entry only for the new research action or decision. Do not copy an entire journal entry into each experiment note. Run `python scripts/validate_experiment_archive.py` alongside the main validator. The historical EXP-002–008 assets are explicitly marked incomplete until the original ZIP is restored.
+
+
+## Mathematical experiment notes and future plots
+
+Read the [math-and-figure template](https://github.com/heri-espino/ProximityGraphs-Isomap/blob/main/proximity_isomap/notes/MATHEMATICS_AND_FIGURES.md). Each of nine numbered experiments includes explicit GitHub-compatible LaTeX equations, interpretation and a plan for future figures. **Use figure-plan tables for ungenerated images, not broken Markdown links.** Actual PNG/SVG links are added only after the files exist. Full runs append their evidence to the note; preserve earlier descriptions. The original old Integration.zip is not used.

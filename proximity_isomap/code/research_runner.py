@@ -684,13 +684,13 @@ def run_experiment(index: int, *, seed: int, quick: bool,
     (dest/"sha256.json").write_text(json.dumps(checks,indent=2)+"\n",encoding="utf-8")
     if quick:
         return metadata
-    # Update a single canonical experiment note, preserving its historical
-    # narrative but adding new figures from the actual current numerical run.
+    # Preserve existing mathematics, historical analysis AND earlier computed
+    # runs. Append an immutable-run note instead of replacing old evidence.
     note = RESEARCH/"notes"/slug/"README.md"
     old = note.read_text(encoding="utf-8")
-    marker = "<!-- CURRENT-REPRODUCTION: replace this section on each new run -->"
+    marker = f"<!-- COMPUTED-RUN: {label} -->"
     if marker in old:
-        old = old.split(marker)[0].rstrip() + "\n"
+        raise FileExistsError(f"Experiment note already has run {label}")
     pngs = sorted(fig.glob("*.png"))
     visuals = "\n".join(
         f"![New {index:03d} plot: {p.stem.replace('_',' ')}]"
@@ -707,7 +707,7 @@ def run_experiment(index: int, *, seed: int, quick: bool,
         )
     display = "\n".join(display_lines)
     note.write_text(
-        old + f"\n\n{marker}\n\n## Latest *newly computed* experiment\n\n"
+        old.rstrip() + f"\n\n{marker}\n\n## Computed run: {label}\n\n"
         f"Run: **{label}**; mode: **{'smoke' if quick else 'full'}**; seed: **{seed}**. "
         "This run REBUILDS the research question using the current implementation; "
         "it is **not the recovered historical algorithm or an independent novelty claim**. "

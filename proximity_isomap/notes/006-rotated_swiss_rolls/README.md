@@ -23,6 +23,46 @@ Rotating a roll makes the shared PCA plane less suited to both nonlinear surface
 One kNN neighborhood value was not fairly tuned; the diagnostic radius was obtained from known generating sheet identities; and four seeds with a single optimizer start are exploratory only. Pose and horizontal shift changed together to preserve the separation regime.
 
 
+
+## Mathematics: rotating one component is a controlled intervention
+
+Let the second sheet be rigidly transformed in the original 3D space,
+
+$$
+x_i'=R x_i+t,\qquad R^\top R=I_3,\quad i\in C_2.
+$$
+
+For every pair on that sheet,
+
+$$
+\|x_i'-x_j'\|_2^2
+=(x_i-x_j)^\top R^\top R(x_i-x_j)
+=\|x_i-x_j\|_2^2.
+$$
+
+Thus its intrinsic geometry and pairwise ambient distances *within that sheet* are unchanged. **Cross-sheet distances generally change**, as does the global PCA covariance matrix, because only one sheet moved.
+
+A useful paired-seed contrast is
+
+$$
+\Delta E_{\mathrm{within}}
+=E_{\mathrm{within}}^{\mathrm{rotated}}
+-E_{\mathrm{within}}^{\mathrm{parallel}}.
+$$
+
+**Interpretation:** if global PCA degrades when one component rotates while independent embeddings remain stable, that supports a componentwise modeling motivation. It does *not* mean rotated PCA is theoretically always worse. Maintain the same random sample/seed in each parallel–rotated pair.
+
+## Figure plan and reproduction status
+
+**Full rebuilt run pending:** the runner will save PNG and SVG files and embed valid PNG links after a successful full run; do not create links to absent files. Existing historical `summary.svg` above is already visible and clearly identified as a reconstruction.
+
+| Planned output filename | Mathematical point to illustrate | Current status |
+|---|---|---|
+| `parallel.png` | Parallel control projections | Pending full rerun |
+| `rotated.png` | Same sampled rolls after one rigid 3D rotation | Pending full rerun |
+
+**After a new run:** confirm that image filenames and actual metric fields match the notes before interpreting the figures. [Plot directory](../../figures/006-rotated_swiss_rolls/README.md) · [Result directory](../../results/006-rotated_swiss_rolls/README.md).
+
 ## Linked artifacts
 
 - [Code and source status](../../code/006-rotated_swiss_rolls/README.md)
@@ -30,11 +70,10 @@ One kNN neighborhood value was not fairly tuned; the diagnostic radius was obtai
 - [Summary diagram](../../figures/006-rotated_swiss_rolls/summary.svg) — redrawn from reported values, not an original experimental screenshot
 - [Figure directory and original-plot status](../../figures/006-rotated_swiss_rolls/README.md)
 
-**Research status:** Exploratory and historical. Full EXP-002–EXP-008 source, 3D projections, raw arrays and original figure artifacts remain outside GitHub until the cumulative ZIP is imported. Do not claim reproduced results from current main.
+**Research status:** Historical figures/numbers are transcriptions, not outputs of the new reconstructed source. A fresh full run is pending; no integration ZIP will be imported.
 
 ## Historical summary figure (not a new run)
 
 ![Historical experiment 006-rotated_swiss_rolls summary — source-transcribed diagnostic values](../../figures/006-rotated_swiss_rolls/summary.svg)
 
 > This SVG is a reconstructed visualization of historical rounded summaries, not a recovered 3D/2D projection. Actual figures will be embedded automatically under the latest computed run after executing the Conda pipeline.
-

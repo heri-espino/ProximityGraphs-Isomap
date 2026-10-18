@@ -1,13 +1,19 @@
 # AI handoff — ProximityGraphs-Isomap
 
 **Updated:** 2026-10-18
-**Latest history:** [2026-10-18 — EXP-009 official figures verified](proximity_isomap/history/journal/2026-10/2026-10-18-exp009-published.md).
+**Latest history:** [2026-10-18 — Mathematical experiment notes and figure plans](proximity_isomap/history/journal/2026-10/2026-10-18-math-and-figure-notes.md).
 
 ## Canonical structure
 
-- **[Experiment notes](proximity_isomap/notes/README.md)** are the primary scientific record for EXP-001..008, with matching numbered folders in code, figures and results.
+- **[Experiment notes](proximity_isomap/notes/README.md)** are the primary scientific record for EXP-001..009, with matching numbered folders in code, figures and results.
 - Original historical journal and decisions preserved at [history](proximity_isomap/history/README.md), and mathematics at [notes/mathematics](proximity_isomap/notes/mathematics/index.md). Root legacy journal/context/experiments/figures/results/notes have been consolidated rather than erased.
 - Shared scientific Python library remains in `src/proximity_isomap/`. Working paper direction: [separation–distortion frontier](paper/RESEARCH_DIRECTION.md). Originality is **not established**.
+
+## Prepared mathematical exposition and pending figures (2026-10-18)
+
+All **nine** experiment notes now include short mathematical derivations/objectives and a **Figure plan and reproduction status** table. The [math-and-figure writing guide](proximity_isomap/notes/MATHEMATICS_AND_FIGURES.md) explains the LaTeX, generated image paths, evidence provenance and how to add interpretation. Existing historical `summary.svg` appears inline for 001–008; EXP-009 already embeds real ContrastColors geometry and H1 barcodes. Do not claim a new 001–008 PNG exists before the local full Conda rerun, tracked in [issue #6](https://github.com/heri-espino/ProximityGraphs-Isomap/issues/6).
+
+The `research_runner.py` note writer now **appends computed-run sections** instead of overwriting earlier records. Both the full-run metrics and PNG/SVG must be saved; do not merge the old Integration.zip.
 
 ## New reconstructed experiments
 

@@ -39,6 +39,57 @@ python proximity_isomap/code/009-topological_manifolds/run.py --output proximity
 
 The output directory is immutable and refuses overwrite. The [versioned GitHub workflow](https://github.com/heri-espino/ProximityGraphs-Isomap/actions/workflows/publish-exp009.yml) has already generated and committed the official ContrastColors PNG/SVG images and NPZ/JSON results below. The original local pilot package is also available as a downloadable research ZIP.
 
+
+## Mathematics: persistent holes and topology across embeddings
+
+The Vietoris–Rips complex at distance threshold \(r\) consists of simplices whose **every pair** of vertices lies at distance at most \(r\):
+
+$$
+\operatorname{VR}_r(X)=
+\bigl\{\sigma\subseteq X:
+\max_{x_i,x_j\in\sigma}\|x_i-x_j\|_2\le r\bigr\}.
+$$
+
+Its connected-component count is \(\beta_0(r)=\dim H_0(\operatorname{VR}_r)\); \(\beta_1(r)=\dim H_1(\operatorname{VR}_r)\) counts independent unfilled 1-cycles. Graph triangles are filled by 2-simplices and therefore do not necessarily create \(H_1\) holes.
+
+For the ideal supports used here,
+
+$$
+\begin{array}{c|ccc}
+\text{Support}&\beta_0&\beta_1&\beta_2\\ \hline
+\text{Swiss-roll strip}&1&0&0\\
+\text{Cylinder (open)}&1&1&0\\
+\text{Torus surface}&1&2&1
+\end{array}
+$$
+
+These are *support* Betti numbers, **not** guaranteed VR counts for finite samples or every radius. An \(H_1\) persistence class is recorded by its birth and death scales \((b,d)\); its lifetime is \(d-b\), subject to truncation at the maximum filtration radius. Our lifetime threshold \(d-b\ge 1\) is descriptive, not a formal significance test.
+
+Crucially, for each independent Isomap embedding \(Z_k\) and its rigidly aligned version \(Y_k=Z_kQ_k+t_k\),
+
+$$
+\|z_i-z_j\|_2=\|y_i-y_j\|_2
+\quad\Longrightarrow\quad
+\operatorname{Dgm}_p(\operatorname{VR}(Z_k))
+=\operatorname{Dgm}_p(\operatorname{VR}(Y_k)).
+$$
+
+But in general \(\operatorname{Dgm}_p(\operatorname{VR}(X_k))\ne
+\operatorname{Dgm}_p(\operatorname{VR}(Z_k))\): graph-geodesic Isomap does **not** preserve original ambient Euclidean VR persistence automatically.
+
+**Interpretation:** the cylinder's loss of a prominent \(H_1\) bar is a failure of this *independent embedding stage*, not of its later rigid placement. Different filtrations or sample densities may yield different results; plot barcodes and projection geometry side by side.
+
+## Figure plan and reproduction status
+
+**Already generated:** the final section of this note embeds the actual `geometry.png` and `h1_barcodes.png` files from the versioned EXP-009 pilot. Subsequent independent-seed experiments remain pending.
+
+| Planned output filename | Mathematical point to illustrate | Current status |
+|---|---|---|
+| `geometry.png` | 3D original, global PCA, and separated Isomap | Generated in versioned EXP-009 run |
+| `h1_barcodes.png` | H1 persistence for original ambient and independent 2D embeddings | Generated in versioned EXP-009 run |
+
+**After a new run:** confirm that image filenames and actual metric fields match the notes before interpreting the figures. [Plot directory](../../figures/009-topological_manifolds/README.md) · [Result directory](../../results/009-topological_manifolds/README.md).
+
 ## Interpretation
 
 The failure of topology preservation is a real research concern, but neither proof of a universally defective embedding nor a novel observation by itself. Equalities concern VR diagrams on independent Z_k vs rigidly transformed Y_k; they do **not** establish preservation of the original X_k diagrams. Compare with TopoMap/TopoMap++ and DIPOLE, tune sampling and radius, use several independent binomial/Poisson realizations, and establish a non-oracle unsupervised K/r selector before seeking publication.
@@ -57,4 +108,3 @@ not an image reconstructed from the rounded summary. Run: \`run_d8aff3bb97\`.
 Full [persistence pairs and metadata](../../results/009-topological_manifolds/runs/run_d8aff3bb97/metrics.json) and
 [observation/embedding arrays](../../results/009-topological_manifolds/runs/run_d8aff3bb97/coordinates.npz). Both figure
 panels are also saved as SVG in the matching numbered figures directory.
-

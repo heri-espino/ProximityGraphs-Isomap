@@ -1,5 +1,11 @@
 # Next steps (2026-10-18)
 
+## Prepared explanatory notes — DONE, new figure generation still pending
+
+- [x] Add dedicated mathematical definitions/objectives to the nine numbered experiment notes.
+- [x] Add labeled figure plans rather than broken future-image links; preserve existing historical SVG and the actual EXP-009 PNG/SVG.
+- [x] Update runner and validation rules to preserve **all** future documented runs rather than overwrite previous run descriptions.
+
 ## Pending full EXP-001–008 reruns — NOT DONE
 
 **GitHub tracking issue:** https://github.com/heri-espino/ProximityGraphs-Isomap/issues/6

@@ -19,3 +19,12 @@ def test_reports_missing_summary_figure(tmp_path: Path) -> None:
     errors = validate(tmp_path)
     assert errors
     assert any("missing experiment artifact" in error for error in errors)
+
+
+def test_all_experiment_notes_include_mathematics_and_figure_plans() -> None:
+    """Require math and a non-broken figure plan before running full experiments."""
+    for slug in SLUGS:
+        content = (ARCHIVE / "notes" / slug / "README.md").read_text(encoding="utf-8")
+        assert "## Mathematics:" in content
+        assert "$$" in content
+        assert "## Figure plan and reproduction status" in content

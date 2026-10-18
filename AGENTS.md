@@ -4,14 +4,14 @@ Read in order: [AI_HANDOFF.md](AI_HANDOFF.md), [experiment notes](proximity_isom
 
 ## Every experiment must be fully documented
 
-An experiment is not finished until its four **matching numbered folders** are updated together:
+An experiment is not finished until its four **matching numbered folders** are updated together. **Every experiment note MUST also contain a mathematical section (rendered LaTeX, with symbols/assumptions/objective) and a figure-plan table even before any figures have been generated:**
 
 - `proximity_isomap/code/NNN-short_title/`: executable script, parameters and experiment-specific logic.
 - `proximity_isomap/results/NNN-short_title/runs/RUN_ID/`: all CSV, JSON metadata, seed, Git SHA, versions, data arrays and SHA-256 manifests. Never overwrite a run.
 - `proximity_isomap/figures/NNN-short_title/runs/RUN_ID/`: both PNG and SVG figures made with the pinned ContrastColors Matplotlib library.
 - `proximity_isomap/notes/NNN-short_title/README.md`: hypothesis, design, what ran, observed results, negative findings, limitations, and **actual embedded figures** using `![caption](../../figures/NNN-short_title/runs/RUN_ID/figure.png)`.
 
-The shared runner does this automatically. Verify that new figures correspond to the saved numeric run. Do not replace negative findings with favorable examples. Clearly distinguish exploratory, oracle-tuned, held-out, and independent confirmatory evaluations. Do not equate graph connectivity with nonintersecting convex hulls. Cross-manifold intrinsic distances are not finite; ambient placement stress is separate.
+Read [the math-and-figure guide](proximity_isomap/notes/MATHEMATICS_AND_FIGURES.md). Never add a broken image link as a placeholder: use a planned filename/caption in the note's figure table. The shared runner appends future full-run evidence without discarding earlier experiments. Verify that new figures correspond to the saved numeric run. Do not replace negative findings with favorable examples. Clearly distinguish exploratory, oracle-tuned, held-out, and independent confirmatory evaluations. Do not equate graph connectivity with nonintersecting convex hulls. Cross-manifold intrinsic distances are not finite; ambient placement stress is separate.
 
 ## Clean structure and preservation
 

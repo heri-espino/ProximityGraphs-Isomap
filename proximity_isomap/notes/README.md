@@ -17,3 +17,10 @@ Read the detailed notes (question, design, results, failed attempts, interpretat
 [Mathematical proofs](mathematics/index.md) · [Historical journal](../history/README.md)
 
 Each note MUST embed its generated figures using Markdown. Historical summaries and original runnable reconstructions are separate evidence classes.
+## Mathematical explanations and figures
+
+Every note has a **Mathematics** section written in GitHub/Obsidian-compatible `$$...$$` LaTeX, a **Figure plan and reproduction status**, and an already embedded historical summary SVG (EXP-001–008) or actual completed pilot figures (EXP-009). Future full runs of 001–008 use **pinned ContrastColors** PNG/SVG and append *new* run sections, rather than replacing previous ones.
+
+[Mathematical notation and figure convention](MATHEMATICS_AND_FIGURES.md) · [Full rerun task](https://github.com/heri-espino/ProximityGraphs-Isomap/issues/6)
+
+**Do not** insert Markdown image links before the corresponding file exists. A planned image belongs in the figure-plan table until it is generated. Full EXP-001–008 reruns have not been performed; EXP-009 already has versioned figures and numerical outputs.

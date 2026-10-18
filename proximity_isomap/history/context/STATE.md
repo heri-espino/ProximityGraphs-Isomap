@@ -19,3 +19,7 @@ The mathematical extension is [the TDA/stochastic-geometry research brief](../..
 ## EXP-009 published pilot, 2026-10-18
 
 The topologically heterogeneous Swiss-roll/cylinder/torus pilot was computed from 172 deterministic grid points. Three components were correctly recovered **with K=3 provided**, then embedded separately in 2D. The separation gap was positive and within-independent-embedding distances were preserved. Original-vs-2D VR H1 bars differ. The [dedicated publish workflow](https://github.com/heri-espino/ProximityGraphs-Isomap/actions/runs/39163692726) succeeded and committed full PNG/SVG from pinned ContrastColors, NPZ and persistence JSON; linked in [EXP-009 notes](../../notes/009-topological_manifolds/README.md). Full EXP-001–008 reruns remain pending.
+
+## Mathematical Markdown notes and figure plans (2026-10-18)
+
+All experiment notes EXP-001..009 now include LaTeX mathematical models, assumption/metric distinctions and a table of expected figure filenames. Historical summary SVGs are already embedded for 001..008; EXP-009 embeds existing genuine pinned-ContrastColors images. The full new EXP-001..008 figures are **not generated yet**. Rebuilt shared runner now appends versioned Markdown run records instead of discarding earlier runs. The [math and figure guide](../../notes/MATHEMATICS_AND_FIGURES.md) and updated experiment validator enforce the workflow. No scientific experiment was performed by this documentation-only task.

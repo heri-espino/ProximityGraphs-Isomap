@@ -21,6 +21,45 @@ A wide grid matters: tiny radii give few/no intracomponent edges and large radii
 A larger five-seed run was interrupted before writing aggregate outputs. EXP-004 therefore tests radius transfer with separate development and evaluation datasets, and later runners should checkpoint per sample.
 
 
+
+## Mathematics: connectivity thresholds and a nonmonotone error
+
+Use a dimensionless radius \(\rho=r/\ell\), where \(\ell>0\) is a characteristic sample distance (the *historical* experiment used the median tenth-nearest-neighbor distance). The Euclidean MST bottleneck and the complete-graph threshold are
+
+$$
+r_{\mathrm{conn}}=
+\max_{e\in\operatorname{MST}(X)}|e|,
+\qquad
+r_{\mathrm{full}}=\max_{i<j}\|x_i-x_j\|_2.
+$$
+
+With edges included at equality, the graph is connected for \(r\ge r_{\mathrm{conn}}\) and complete for \(r\ge r_{\mathrm{full}}\). Also,
+
+$$
+r_1\le r_2\implies E_{r_1}\subseteq E_{r_2},
+\qquad \beta_0(r_2)\le\beta_0(r_1).
+$$
+
+But **embedding distortion is not monotone** in \(r\): an extra edge can introduce a geometrically wrong shortest-path shortcut without changing the component count. One can use
+
+$$
+r_{\mathrm{oracle}}=
+\underset{r\in\mathcal R}{\operatorname{argmin}}\;
+E_{\mathrm{intrinsic}}(Y(r))
+$$
+
+only as a synthetic *diagnostic* when true intrinsic targets are available. This is **not an unsupervised radius selector**. The current reconstructed runner's radius normalization/grid differs from the historical scan; compare them as separate protocols.
+
+## Figure plan and reproduction status
+
+**Full rebuilt run pending:** the runner will save PNG and SVG files and embed valid PNG links after a successful full run; do not create links to absent files. Existing historical `summary.svg` above is already visible and clearly identified as a reconstruction.
+
+| Planned output filename | Mathematical point to illustrate | Current status |
+|---|---|---|
+| `radius_stress.png` | Intrinsic stress across radius, with connectivity transitions or MST threshold | Pending full rerun |
+
+**After a new run:** confirm that image filenames and actual metric fields match the notes before interpreting the figures. [Plot directory](../../figures/003-wide_radius_grid/README.md) · [Result directory](../../results/003-wide_radius_grid/README.md).
+
 ## Linked artifacts
 
 - [Code and source status](../../code/003-wide_radius_grid/README.md)
@@ -28,11 +67,10 @@ A larger five-seed run was interrupted before writing aggregate outputs. EXP-004
 - [Summary diagram](../../figures/003-wide_radius_grid/summary.svg) — redrawn from reported values, not an original experimental screenshot
 - [Figure directory and original-plot status](../../figures/003-wide_radius_grid/README.md)
 
-**Research status:** Exploratory and historical. Full EXP-002–EXP-008 source, 3D projections, raw arrays and original figure artifacts remain outside GitHub until the cumulative ZIP is imported. Do not claim reproduced results from current main.
+**Research status:** Historical figures/numbers are transcriptions, not outputs of the new reconstructed source. A fresh full run is pending; no integration ZIP will be imported.
 
 ## Historical summary figure (not a new run)
 
 ![Historical experiment 003-wide_radius_grid summary — source-transcribed diagnostic values](../../figures/003-wide_radius_grid/summary.svg)
 
 > This SVG is a reconstructed visualization of historical rounded summaries, not a recovered 3D/2D projection. Actual figures will be embedded automatically under the latest computed run after executing the Conda pipeline.
-

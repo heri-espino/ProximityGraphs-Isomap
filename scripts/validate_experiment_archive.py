@@ -60,6 +60,10 @@ def validate(root: Path = ROOT) -> list[str]:
         if not note.exists():
             continue
         content = note.read_text(encoding="utf-8")
+        if "## Mathematics:" not in content:
+            errors.append(f"experiment mathematics missing: {note.relative_to(root)}")
+        if "## Figure plan and reproduction status" not in content:
+            errors.append(f"experiment figure plan missing: {note.relative_to(root)}")
         for href in LINK_PATTERN.findall(content):
             if "://" in href or href.startswith("#"):
                 continue
