@@ -1,4 +1,32 @@
-\section{Experimental protocol (planned)}
-Compare matched, independently tuned baselines, report component structure and
-separate distance distortions, and use synthetic manifolds with known intrinsic distances.
-No comparative experimental results are available yet.
+\section{Required evaluation and limitations}
+Before any performance claim, implement an unsupervised selection of
+neighborhood radius and verify how often graph components correspond to
+true generating manifolds. Vary the required normalized clearance
+$\mu$ and report (i) within-manifold intrinsic-distance stress where
+ground truth is known, (ii) the achieved hull clearance and overlap
+rate, and (iii) cross-component ambient-distance stress.
+Graph-target stress should be distinguished from true geodesic error.
+
+Use identical sampled data, independent random seeds, tuned PCA/Isomap
+and relevant multi-manifold/rigid-alignment methods, fixed evaluation
+pairs, and explicit policies for disconnected baseline graphs.
+Compare up to six rotated manifolds, and vary sampling density,
+orientation, noise, and original separation. Record convergence,
+computational cost, and the effect of replacing full cross-pair
+objectives by representative anchor approximations.
+
+\paragraph{Two main figures (proposed).}
+First, a controlled 3D example and 2D projections comparing component
+overlap and intrinsic fidelity. Second, a separation--distortion
+frontier at varying clearance, with independent-sample variation
+and competitive baselines. The existing EXP-0002--EXP-0008 experiments
+are local archive work and are \emph{not yet merged or reproduced} on
+the repository's current main branch. No numerical claims are made
+in this outline.
+
+\paragraph{Novelty boundary.}
+Proximity graphs, multi-manifold embedding, rigid alignment, and
+separation metrics are existing ideas. A publication requires either
+a demonstrably different and useful constrained method, a nontrivial
+new analysis, or strong reproducible improvements over the relevant
+prior art. Visual non-overlap alone is insufficient.

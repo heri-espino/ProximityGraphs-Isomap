@@ -1,5 +1,23 @@
-\section{Research question}
-Let $X=\{x_1,\ldots,x_n\}\subset\mathbb R^D$.
-We study how radius-neighborhood graph connectivity affects graph-geodesic approximation
-and low-dimensional representations. The radius-neighborhood rule itself is classical
-and is not a proposed novelty; see \cite{tenenbaum2000}.
+\section{Problem and motivation}
+Isomap replaces ambient Euclidean distance by graph shortest-path distance
+before multidimensional scaling \cite{tenenbaum2000}. A disconnected graph
+does not provide finite path distances between every pair of observations.
+Moreover, embedding connected components independently leaves their relative
+translations and orientations undetermined.
+
+Let $X=\{x_1,\ldots,x_n\}\subset\mathbb{R}^{D}$. Construct the radius
+graph $G_r$ using Euclidean edge weights and
+\[
+  (i,j)\in E_r \quad\Longleftrightarrow\quad
+  i\ne j,\ \|x_i-x_j\|_2\le r .
+\]
+Its connected components are $C_1,\ldots,C_K$. Graph components are
+\emph{candidates} for separate manifolds; sampling and inappropriate
+neighborhood radii can incorrectly split or merge a true manifold.
+
+The research question is: \emph{how much intercomponent placement accuracy
+must be sacrificed to retain the geometry of independently embedded
+components while guaranteeing that their projections remain separate?}
+In particular, no finite intrinsic geodesic exists between distinct
+disconnected generating manifolds; such cross-component targets must
+instead be explicitly defined, for example as original ambient distances.

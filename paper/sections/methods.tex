@@ -1,5 +1,60 @@
-\section{Candidate methods (not yet validated)}
-For radius $r>0$ construct edges when $\|x_i-x_j\|_2\leq r$.
-When the graph is disconnected, consider graph shortest paths within components
-and Euclidean distances between components, with explicitly separated stress terms.
-An alternative is independently embedding each component and optimizing their rigid alignment.
+\section{Proposed componentwise alignment}
+For each graph component $C_k$, compute graph shortest-path dissimilarities
+and an Isomap representation $Z_k\subset\mathbb{R}^{d}$. Denote its row
+coordinates by $z_i$. Seek a common representation
+\begin{equation}
+  y_i=z_i Q_k+t_k,\qquad i\in C_k,\quad
+  Q_k^\top Q_k=I_d .
+  \label{eq:rigid}
+\end{equation}
+Thus, for $i,j\in C_k$, the distance $\|y_i-y_j\|_2$ equals
+$\|z_i-z_j\|_2$. This is exact preservation of the \emph{computed component
+embedding}, not a guarantee that the graph accurately recovers unknown
+manifold geodesics.
+
+For $K\ge 2$, measure the fidelity of \emph{ambient} cross-component
+placement through
+\begin{equation}
+ E_{\mathrm{cross}}(Y)=
+ \left(
+ \frac{
+ \displaystyle\sum_{k<\ell}
+ \sum_{\substack{i\in C_k\\j\in C_\ell}}
+ \big(\|y_i-y_j\|_2-\|x_i-x_j\|_2\big)^2
+ }{
+ \displaystyle\sum_{k<\ell}
+ \sum_{\substack{i\in C_k\\j\in C_\ell}}
+ \|x_i-x_j\|_2^2
+ }\right)^{1/2}.
+ \label{eq:cross}
+\end{equation}
+Assume a positive denominator. Define the hull-clearance margin
+$M(Y)=\min_{k<\ell}\operatorname{dist}(
+\operatorname{conv}(Y_k),\operatorname{conv}(Y_\ell))$, and choose a
+fixed positive reference distance $s$ so that $\mu>0$ is dimensionless.
+
+Our proposed \emph{separation--distortion problem} is
+\begin{equation}
+ \begin{aligned}
+ V(\mu)=\inf_{\{Q_k,t_k\}}\quad &E_{\mathrm{cross}}(Y)\\
+ \text{subject to}\quad
+ & y_i=z_iQ_k+t_k,\quad i\in C_k,\\
+ & Q_k^\top Q_k=I_d,\quad k=1,\ldots,K,\\
+ & M(Y)\ge\mu s .
+ \end{aligned}
+ \label{eq:frontier}
+\end{equation}
+For $K=1$, cross-component stress and clearance are not applicable.
+Ordered projections onto a common axis with positive gaps yield a simple
+\emph{sufficient} constraint for hull separation, but impose a stricter
+feasible region than unrestricted Euclidean hull clearance.
+
+\paragraph{Elementary mathematical properties.}
+Rigid transformations preserve all intracomponent distances.
+Increasing $\mu$ shrinks the feasible set in \eqref{eq:frontier},
+so the \emph{global} optimal value $V(\mu)$ is nondecreasing (with
+$+\infty$ allowed for infeasibility). This does not guarantee global
+convergence or monotonicity of values returned by a local optimizer.
+These simple properties are proved in the repository note
+\texttt{PROP-0002-rigid-separation-frontier.md}; they are not claimed
+as new mathematical results.

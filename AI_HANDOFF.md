@@ -1,10 +1,18 @@
 # AI handoff — current research session
 
-**Last updated:** 2026-10-16  
-**Latest journal entry:** [2026-10-16 — GitHub CI verified](journal/2026-10/2026-10-16-ci-verified.md)  
-**Project stage:** exploratory research scaffold; not a validated novel method
+**Last updated:** 2026-10-17  
+**Latest journal entry:** [2026-10-17 — Define separation–distortion paper thesis](journal/2026-10/2026-10-17-paper-thesis.md)  
+**Project stage:** exploratory scaffold with an agreed working paper thesis; novelty not established
 
 > This is the **current operational snapshot**, not a substitute for the chronological journal or primary evidence. Start with [`journal/README.md`](journal/README.md), [`journal/LATEST.md`](journal/LATEST.md), and its linked entry **before** reading this file.
+
+## 2026-10-17 — Current working paper direction
+
+Read [paper/RESEARCH_DIRECTION.md](paper/RESEARCH_DIRECTION.md) **before drafting the manuscript**. The central question is how much cross-component placement fidelity must be sacrificed to preserve the geometry of independently embedded components and guarantee non-overlap. Four linked aims: (1) unsupervised proximity-graph components; (2) independent Isomap/geodesic preservation; (3) rigid alignment with positive hull clearance; (4) a normalized separation–distortion frontier. The paper outline is revised in paper/main.tex. ADR-0005 documents the choice; elementary proofs are in notes/results/PROP-0002-rigid-separation-frontier.md.
+
+**Crucial evidence boundary:** EXP-0002–EXP-0008 were run in local ZIP research archives and discussed in chat, **not yet merged into or reproduced from GitHub main**. The main branch still lacks their optimized alignment implementation. Do not quote their statistics as versioned publication results. The current branch's last verified CI relates to the earlier 16-test scaffold. New 2026-10-17 edits are documentation/LaTeX only; checks were not run in this session.
+
+**Immediate scientific priority:** verified multi-manifold novelty review, then integrate exploratory code with the remote CI state; establish an unsupervised radius and compare frontiers to strong baselines. Do not claim separation alone is new.
 
 ## Scientific objective
 

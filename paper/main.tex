@@ -3,13 +3,21 @@
 \usepackage{amsmath,amssymb,amsthm,graphicx,hyperref}
 \usepackage[margin=1in]{geometry}
 \hypersetup{hidelinks}
-\title{Proximity Graphs, Disconnected Geodesics, and Dimensionality Reduction\\\large Research outline (not a manuscript)}
+\title{Separation-Constrained Isomap for Disconnected Manifolds\\\large Working research outline --- not a submitted manuscript}
 \author{}
 \date{October 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-Research outline only. No mathematical novelty, empirical advantage, or convergence theorem is claimed.
+Neighborhood graphs used in manifold learning can have multiple connected
+components. Although componentwise Isomap provides a separate representation
+for each component, it does not determine how these representations should
+be arranged in a common space. We investigate rigid alignment subject to a
+controllable geometric separation requirement, explicitly measuring the
+tradeoff between preserving intracomponent geometry and preserving
+intercomponent ambient distances. This document states a \emph{proposed}
+framework and evaluation plan. No new theorem of substance, novelty, or
+comparative empirical advantage is claimed at this stage.
 \end{abstract}
 \input{sections/problem}
 \input{sections/methods}

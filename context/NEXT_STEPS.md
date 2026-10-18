@@ -1,6 +1,6 @@
 # Next steps (ordered)
 
-**Updated:** 2026-10-16 (Conda setup and exploratory smoke)
+**Updated:** 2026-10-17 (working paper thesis adopted)
 
 - [ ] Create the Conda environment with `conda env create -f environment.yml`, activate it, test installation, and rerun EXP-0001 from a Git checkout with SHA and `conda list --explicit` archived.
 - [x] Confirmed GitHub Actions run 38997728144 on Python 3.11/3.12: 16 tests, Ruff, integrity validation, Sphinx all passed for commit `e7cc9bc`.
@@ -13,6 +13,15 @@
 - [ ] Decide how to select `r`, output dimension `d`, and mixing parameter `alpha` **without looking at evaluation targets**.
 - [ ] Create EXP-0002 for held-out comparisons and ensure all methods use the same samples/seeds.
 - [ ] Select project license only after explicit author decision.
+
+## 2026-10-17 — Paper-specific priorities
+
+- [x] Record the separation–distortion research thesis, proposed optimization and candidate paper structure in [paper/RESEARCH_DIRECTION.md](../paper/RESEARCH_DIRECTION.md); record the decision in ADR-0005.
+- [ ] Verify overlap with multi-manifold Isomap, manifold stitching, weighted/joint MDS, discriminant approaches and geometric separation constraints, with primary PDFs and theorem-level annotations.
+- [ ] Reconcile EXP-0002–EXP-0008 local ZIP experiments/code/plots with remote main without losing CI/Conda changes; record a Git SHA and test the integrated implementation.
+- [ ] Replace label-informed graph construction/radius selection with a real unsupervised approach; quantify incorrect connected-component merges/splits.
+- [ ] Compare normalized hull-separation versus cross-ambient-distortion frontiers across independent seeds with a competitive tuned baseline; preserve computed intracomponent embedding distances.
+- [ ] Establish a substantive theoretical or methodological advantage before claiming novelty in paper text.
 
 ## Definition of done for the first scientific milestone
 

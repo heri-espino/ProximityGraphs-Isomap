@@ -1,8 +1,12 @@
 # Current research state
 
-**Updated:** 2026-10-16  
-**Stage:** repository scaffold, no validated results  
+**Updated:** 2026-10-17  
+**Stage:** scaffold + working manuscript thesis; no validated novel result  
 **Status:** exploratory; contribution not established
+
+## Working paper thesis (2026-10-17)
+
+[paper/RESEARCH_DIRECTION.md](../paper/RESEARCH_DIRECTION.md) defines the agreed central research direction: independently embed graph components, align rigidly under guaranteed positive separation, and quantify the resulting tradeoff in cross-component ambient-distance fidelity. The method is a **proposal** and must be checked against prior multi-manifold Isomap, stitching and constrained alignment literature. The exact elementary geometric properties are documented in notes/results/PROP-0002-rigid-separation-frontier.md and ADR-0005 records the decision. The prior EXP-0002–EXP-0008 source/plots reside in separate local archives, not in this GitHub branch; main still only has the baseline code and EXP-0001. Do not cite those local experiment values as committed reproducible evidence. This revision changes manuscript/notes/journal only; it does not change runtime algorithms.
 
 ## Goal
 
