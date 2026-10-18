@@ -21,6 +21,7 @@ SLUGS = (
     "006-rotated_swiss_rolls",
     "007-component_alignment",
     "008-multiple_swiss_rolls",
+    "009-topological_manifolds",
 )
 LINK_PATTERN = re.compile(r"\]\(([^)#]+)(?:#[^)]*)?\)")
 

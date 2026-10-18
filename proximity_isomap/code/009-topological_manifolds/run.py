@@ -9,6 +9,9 @@ from __future__ import annotations
 import argparse
 import itertools
 import json
+import platform
+import subprocess
+from datetime import UTC, datetime
 from collections import defaultdict
 from pathlib import Path
 
@@ -225,11 +228,30 @@ def main() -> None:
         })
     np.savez_compressed(folder/"coordinates.npz", x=x, truth=truth, labels=labels,
                         independent=independent, separated=separated)
+    pairs = {
+        name: {key: [
+            {"birth": float(b), "death": float(d) if np.isfinite(d) else None}
+            for b, d in data[key]
+        ] for key in ("original", "isomap")}
+        for name, data in hist.items()
+    }
+    try:
+        sha = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], stderr=subprocess.DEVNULL, text=True
+        ).strip()
+    except (OSError, subprocess.CalledProcessError):
+        sha = None
     (folder/"metrics.json").write_text(
-        json.dumps({"K_supplied": 3, "partition_accuracy": 1.0,
-                    "sampled_internal_mst_bottleneck": bottleneck,
-                    "sampled_bridge_min": bridge, "rips_truncation": 7,
-                    "summary": summary, "h1_bars": hist}, indent=2)
+        json.dumps({
+            "experiment_id": "EXP-009", "generated_utc": datetime.now(UTC).isoformat(),
+            "K_supplied": 3, "partition_accuracy": 1.0,
+            "sampling": "deterministic regular grids, NOT Poisson/binomial",
+            "git_revision": sha, "python": platform.python_version(),
+            "contrastcolors_version": cc.__version__,
+            "sampled_internal_mst_bottleneck": bottleneck,
+            "sampled_bridge_min": bridge, "rips_truncation": 7,
+            "summary": summary, "h1_bars": pairs,
+        }, indent=2, allow_nan=False)
     )
     fig = plt.figure(figsize=(15, 5), layout="constrained")
     axes = [fig.add_subplot(1, 3, 1, projection="3d"),

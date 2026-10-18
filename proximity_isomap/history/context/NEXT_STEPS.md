@@ -14,7 +14,7 @@
 - [ ] Prepare source-verified novelty matrix against M-Isomap, S-Isomap++, supervised MMD-Isomap, TopoMap/TopoMap++, DIPOLE, Joint MDS, and tuned standard Isomap.
 - [ ] Design unsupervised 0D persistence/MST-based radius calibration **without true generating labels**; distinguish full H0 persistence from fixed-radius separation.
 - [ ] Derive/test binomial- and Poisson-sampling recovery probabilities, including unequal densities, sparse folds, perturbations and intersecting supports.
-- [ ] Reserve **EXP-009** for matched baselines and stochastic VR-filtration experiments; do not create numerical claims before executing it.
+- [ ] Expand the executed EXP-009 pilot into matched baselines and stochastic VR-filtration experiments; do not create numerical claims before executing it.
 
 
 - [x] Consolidate legacy folders into `proximity_isomap/history` and move math notes to experiment research area without deleting archived text.
