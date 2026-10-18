@@ -22,6 +22,7 @@ classifiers = [
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.8,<1"]
 docs = ["sphinx>=8,<10", "myst-parser>=4,<5", "furo>=2024.8.6"]
+experiments = ["scikit-learn>=1.4,<2", "matplotlib>=3.8,<4"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/proximity_isomap"]

@@ -1,5 +1,5 @@
 # Latest journal entry
 
-**Latest:** [2026-10-17 — Prepared experiment history integration](2026-10/2026-10-17-archive-integration-prepared.md)
+**Latest:** [2026-10-17 — Prepare experiment dependencies](2026-10/2026-10-17-exp-dependencies.md)
 
-For chronology and conventions read [the journal guide](README.md). A later import commit must replace this pointer with its own dated entry.
+For chronology and conventions read [the journal guide](README.md). Importing EXP-0002–0008 must append a new journal entry and replace this pointer.

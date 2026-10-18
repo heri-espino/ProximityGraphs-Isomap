@@ -4,6 +4,8 @@
 
 ## Immediate integration task (2026-10-17)
 
+- [x] Define the `experiments` dependency extra and install it in CI for future imported code.
+
 - [x] Consolidated the seven cumulative EXP-0002–0008 archives into a conflict-aware local package; recovered one missing EXP-0002 NPZ; verified 260 SHA-256 hashes and 57 tests.
 - [ ] **Import and push** the package's code, data, plots, original journal entries and tests to current GitHub main using `README_IMPORT.md`.
 - [ ] Record CI success and scientific reruns under new Git commit SHA; do not conflate archive integrity with reproduction.

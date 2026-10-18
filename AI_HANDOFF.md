@@ -6,6 +6,10 @@
 
 > This is the **current operational snapshot**, not a substitute for the chronological journal or primary evidence. Start with [`journal/README.md`](journal/README.md), [`journal/LATEST.md`](journal/LATEST.md), and its linked entry **before** reading this file.
 
+## Dependency preparation for pending archive import (2026-10-17)
+
+**Latest journal:** [2026-10-17 — Prepare experiment dependencies](journal/2026-10/2026-10-17-exp-dependencies.md). The repo now defines the optional `experiments` dependency group for scikit-learn and Matplotlib, and CI installs this group. This prepares for the EXP-0002–0008 archive but **does not mean the binary results are on GitHub**.
+
 ## 2026-10-17 — Pending full results import (current operational status)
 
 **Latest journal:** [2026-10-17 — Prepared experiment history integration](journal/2026-10/2026-10-17-archive-integration-prepared.md).
