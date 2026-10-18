@@ -697,11 +697,15 @@ def run_experiment(index: int, *, seed: int, quick: bool,
         f"(../../figures/{slug}/runs/{label}/{p.name})"
         for p in pngs
     )
-    display = "\n".join(f"| {r.get('n_rolls','-')} | {r.get('method','graph')} | "
-                        f"{r.get('within_intrinsic_root_stress',
-                                 r.get('conditional_graph_rmse','-'))} | "
-                        f"{r.get('between_ambient_root_stress','-')} |"
-                        for r in rows[:20])
+    display_lines = []
+    for row in rows[:20]:
+        value = row.get("within_intrinsic_root_stress",
+                        row.get("conditional_graph_rmse", "-"))
+        display_lines.append(
+            f"| {row.get('n_rolls', '-')} | {row.get('method', 'graph')} | "
+            f"{value} | {row.get('between_ambient_root_stress', '-')} |"
+        )
+    display = "\n".join(display_lines)
     note.write_text(
         old + f"\n\n{marker}\n\n## Latest *newly computed* experiment\n\n"
         f"Run: **{label}**; mode: **{'smoke' if quick else 'full'}**; seed: **{seed}**. "
