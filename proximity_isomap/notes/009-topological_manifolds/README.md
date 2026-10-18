@@ -42,3 +42,19 @@ The output directory is immutable and refuses overwrite. For publication-ready f
 ## Interpretation
 
 The failure of topology preservation is a real research concern, but neither proof of a universally defective embedding nor a novel observation by itself. Equalities concern VR diagrams on independent Z_k vs rigidly transformed Y_k; they do **not** establish preservation of the original X_k diagrams. Compare with TopoMap/TopoMap++ and DIPOLE, tune sampling and radius, use several independent binomial/Poisson realizations, and establish a non-oracle unsupervised K/r selector before seeking publication.
+
+<!-- GITHUB-GENERATED-EXP009: latest original figures -->
+
+## Generated EXP-009 figures and frozen results
+
+This is a fresh versioned rerun using the pinned ContrastColors library,
+not an image reconstructed from the rounded summary. Run: \`run_efbeaad418\`.
+
+![Original 3D, PCA and componentwise Isomap projections](../../figures/009-topological_manifolds/runs/run_efbeaad418/geometry.png)
+
+![Measured H1 persistence before/after Isomap](../../figures/009-topological_manifolds/runs/run_efbeaad418/h1_barcodes.png)
+
+Full [persistence pairs and metadata](../../results/009-topological_manifolds/runs/run_efbeaad418/metrics.json) and
+[observation/embedding arrays](../../results/009-topological_manifolds/runs/run_efbeaad418/coordinates.npz). Both figure
+panels are also saved as SVG in the matching numbered figures directory.
+
