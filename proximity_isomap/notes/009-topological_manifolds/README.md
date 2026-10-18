@@ -37,7 +37,7 @@ conda activate proximity-isomap
 python proximity_isomap/code/009-topological_manifolds/run.py --output proximity_isomap/results/009-topological_manifolds/runs/pilot
 ~~~
 
-The output directory is immutable and refuses overwrite. For publication-ready figure organization, move the regenerated images into the matching figures/009 folder, embed them here, and commit with the numerical data. The original local pilot package includes its full PNG/SVG images, NPZ and persistence-pair JSON.
+The output directory is immutable and refuses overwrite. The [versioned GitHub workflow](https://github.com/heri-espino/ProximityGraphs-Isomap/actions/workflows/publish-exp009.yml) has already generated and committed the official ContrastColors PNG/SVG images and NPZ/JSON results below. The original local pilot package is also available as a downloadable research ZIP.
 
 ## Interpretation
 
@@ -48,7 +48,7 @@ The failure of topology preservation is a real research concern, but neither pro
 ## Generated EXP-009 figures and frozen results
 
 This is a fresh versioned rerun using the pinned ContrastColors library,
-not an image reconstructed from the rounded summary. Run: \`run_efbeaad418\`.
+not an image reconstructed from the rounded summary. Run: `run_efbeaad418`.
 
 ![Original 3D, PCA and componentwise Isomap projections](../../figures/009-topological_manifolds/runs/run_efbeaad418/geometry.png)
 
@@ -57,4 +57,3 @@ not an image reconstructed from the rounded summary. Run: \`run_efbeaad418\`.
 Full [persistence pairs and metadata](../../results/009-topological_manifolds/runs/run_efbeaad418/metrics.json) and
 [observation/embedding arrays](../../results/009-topological_manifolds/runs/run_efbeaad418/coordinates.npz). Both figure
 panels are also saved as SVG in the matching numbered figures directory.
-

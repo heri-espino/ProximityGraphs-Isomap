@@ -1,5 +1,5 @@
 # Latest research-history entry
 
-[2026-10-18 — EXP-009 topological manifolds pilot](2026-10/2026-10-18-exp009-pilot.md).
+[2026-10-18 — EXP-009 generated ContrastColors figures](2026-10/2026-10-18-exp009-published.md).
 
-[Experiment notes](../../notes/README.md); older decisions remain preserved.
+[Current experiment notes](../../notes/README.md); earlier history preserved.

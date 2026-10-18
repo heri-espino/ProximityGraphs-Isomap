@@ -1,4 +1,4 @@
-"""Structural safeguards for all eight canonical research records."""
+"""Structural safeguards for all nine canonical research records."""
 
 from pathlib import Path
 
@@ -7,7 +7,7 @@ from scripts.validate_experiment_archive import ARCHIVE, SLUGS, validate
 
 def test_every_experiment_has_matching_folders() -> None:
     """Require a synchronized four-folder home for every registered experiment."""
-    assert len(SLUGS) == 8
+    assert len(SLUGS) == 9
     assert validate() == []
     for slug in SLUGS:
         for part in ("notes", "code", "figures", "results"):
