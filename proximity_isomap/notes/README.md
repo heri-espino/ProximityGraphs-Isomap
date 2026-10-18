@@ -16,3 +16,4 @@ Read the detailed notes (question, design, results, failed attempts, interpretat
 [Mathematical proofs](mathematics/index.md) · [Historical journal](../history/README.md)
 
 Each note MUST embed its generated figures using Markdown. Historical summaries and original runnable reconstructions are separate evidence classes.
+| 009 | H1 holes: Swiss roll, cylinder, torus | [Notes](009-topological_manifolds/README.md) |

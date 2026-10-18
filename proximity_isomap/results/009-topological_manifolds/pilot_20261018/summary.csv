@@ -1,0 +1,4 @@
+manifold,n,true_beta1,original_h1_lifetime_ge_1,isomap_h1_lifetime_ge_1
+Swiss roll,54,0,1,0
+Cylinder,54,1,1,0
+Torus,64,2,9,1
