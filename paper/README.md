@@ -21,3 +21,7 @@
     pdflatex -interaction=nonstopmode -halt-on-error main.tex
 
 No publication venue, title, main contribution or theorem priority is finalized. Aim for a short (~5–7 page) main text only if the results support a defensible method claim.
+
+## Experiment evidence map
+
+The manuscript's experimental explanations and provenance are maintained in [proximity_isomap/notes/](../proximity_isomap/notes/README.md), with matching code/results/figure slugs. The SVGs are reconstructed historical summaries, not the original projection panels. Raw plots and source from EXP-002–008 still require import before citing them as fully reproducible evidence.

@@ -1,0 +1,7 @@
+k_rolls,n_points,pca_within,hybrid_within,component_isomap_within,free_between_ambient,separated_between_ambient,provenance
+1,180,0.720,0.142,0.137,,,historical_one_seed_rounded
+2,360,0.751,0.205,0.029,0.478,0.574,historical_one_seed_rounded
+3,540,0.753,0.139,0.028,0.390,0.390,historical_one_seed_rounded
+4,720,0.750,0.096,0.035,0.315,0.303,historical_one_seed_rounded
+5,900,0.761,0.073,0.037,0.265,0.252,historical_one_seed_rounded
+6,1080,0.760,0.057,0.041,0.205,0.208,historical_one_seed_rounded

@@ -1,0 +1,5 @@
+method,rotated_within_intrinsic_stress_mean,rotated_between_ambient_stress_mean,n_seeds,provenance
+PCA,0.7646,0.0420,4,historical_rounded_means
+Hybrid_MDS,0.2455,0.2338,4,historical_rounded_means
+Componentwise_free,0.0891,0.5584,4,historical_rounded_means
+Componentwise_separated,0.0891,0.7120,4,historical_rounded_means

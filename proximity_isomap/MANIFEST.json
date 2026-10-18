@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "updated": "2026-10-18",
+  "notes_canonical": true,
+  "experiment_ids": [
+    {
+      "id": "EXP-001",
+      "slug": "001-radius_filtration",
+      "note": "proximity_isomap/notes/001-radius_filtration/README.md",
+      "code": "proximity_isomap/code/001-radius_filtration",
+      "figures": "proximity_isomap/figures/001-radius_filtration",
+      "results": "proximity_isomap/results/001-radius_filtration",
+      "historical_source_available": true,
+      "original_projection_figures_present": false,
+      "raw_results_present": true,
+      "status": "Implemented on GitHub (EXP-0001); smoke metrics present"
+    },
+    {
+      "id": "EXP-002",
+      "slug": "002-hybrid_mds",
+      "note": "proximity_isomap/notes/002-hybrid_mds/README.md",
+      "code": "proximity_isomap/code/002-hybrid_mds",
+      "figures": "proximity_isomap/figures/002-hybrid_mds",
+      "results": "proximity_isomap/results/002-hybrid_mds",
+      "historical_source_available": false,
+      "original_projection_figures_present": false,
+      "raw_results_present": false,
+      "status": "Historical local ZIP; source/figures/raw outputs not present on main"
+    },
+    {
+      "id": "EXP-003",
+      "slug": "003-wide_radius_grid",
+      "note": "proximity_isomap/notes/003-wide_radius_grid/README.md",
+      "code": "proximity_isomap/code/003-wide_radius_grid",
+      "figures": "proximity_isomap/figures/003-wide_radius_grid",
+      "results": "proximity_isomap/results/003-wide_radius_grid",
+      "historical_source_available": false,
+      "original_projection_figures_present": false,
+      "raw_results_present": false,
+      "status": "Historical local ZIP; original raw output not present on main"
+    },
+    {
+      "id": "EXP-004",
+      "slug": "004-radius_transfer",
+      "note": "proximity_isomap/notes/004-radius_transfer/README.md",
+      "code": "proximity_isomap/code/004-radius_transfer",
+      "figures": "proximity_isomap/figures/004-radius_transfer",
+      "results": "proximity_isomap/results/004-radius_transfer",
+      "historical_source_available": false,
+      "original_projection_figures_present": false,
+      "raw_results_present": false,
+      "status": "Historical local ZIP; aggregate numbers transcribed"
+    },
+    {
+      "id": "EXP-005",
+      "slug": "005-paired_manifolds",
+      "note": "proximity_isomap/notes/005-paired_manifolds/README.md",
+      "code": "proximity_isomap/code/005-paired_manifolds",
+      "figures": "proximity_isomap/figures/005-paired_manifolds",
+      "results": "proximity_isomap/results/005-paired_manifolds",
+      "historical_source_available": false,
+      "original_projection_figures_present": false,
+      "raw_results_present": false,
+      "status": "Historical local ZIP; aggregate numbers transcribed"
+    },
+    {
+      "id": "EXP-006",
+      "slug": "006-rotated_swiss_rolls",
+      "note": "proximity_isomap/notes/006-rotated_swiss_rolls/README.md",
+      "code": "proximity_isomap/code/006-rotated_swiss_rolls",
+      "figures": "proximity_isomap/figures/006-rotated_swiss_rolls",
+      "results": "proximity_isomap/results/006-rotated_swiss_rolls",
+      "historical_source_available": false,
+      "original_projection_figures_present": false,
+      "raw_results_present": false,
+      "status": "Historical local ZIP; four-seed aggregate numbers transcribed"
+    },
+    {
+      "id": "EXP-007",
+      "slug": "007-component_alignment",
+      "note": "proximity_isomap/notes/007-component_alignment/README.md",
+      "code": "proximity_isomap/code/007-component_alignment",
+      "figures": "proximity_isomap/figures/007-component_alignment",
+      "results": "proximity_isomap/results/007-component_alignment",
+      "historical_source_available": false,
+      "original_projection_figures_present": false,
+      "raw_results_present": false,
+      "status": "Historical local ZIP; four-seed aggregate numbers transcribed"
+    },
+    {
+      "id": "EXP-008",
+      "slug": "008-multiple_swiss_rolls",
+      "note": "proximity_isomap/notes/008-multiple_swiss_rolls/README.md",
+      "code": "proximity_isomap/code/008-multiple_swiss_rolls",
+      "figures": "proximity_isomap/figures/008-multiple_swiss_rolls",
+      "results": "proximity_isomap/results/008-multiple_swiss_rolls",
+      "historical_source_available": false,
+      "original_projection_figures_present": false,
+      "raw_results_present": false,
+      "status": "Historical local ZIP; one-seed summary transcribed"
+    }
+  ],
+  "original_archive_status": "EXP-002 through EXP-008 full historic ZIP assets absent from connected repository; restore from 260-file integration package; not included in this commit.",
+  "summary_figures": "reconstructed from reported rounded historical aggregates; not original plots",
+  "warning": "Source and original numerical artifacts still require versioned restoration."
+}

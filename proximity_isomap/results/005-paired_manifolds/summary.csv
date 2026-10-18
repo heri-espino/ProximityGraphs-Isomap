@@ -1,0 +1,7 @@
+family,method,within_intrinsic_stress,between_ambient_stress,provenance
+swiss,PCA,0.7355,0.0106,historical_single_seed_rounded
+swiss,hybrid_two_components,0.7026,0.0799,historical_single_seed_rounded
+swiss,hybrid_connected,0.7173,0.2603,historical_single_seed_rounded
+s_curve,PCA,0.4192,0.0562,historical_single_seed_rounded
+s_curve,hybrid_two_components,0.3696,0.1856,historical_single_seed_rounded
+s_curve,hybrid_connected,0.3197,0.7299,historical_single_seed_rounded

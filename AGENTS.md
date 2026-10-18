@@ -21,6 +21,7 @@ If `journal/LATEST.md`, `AI_HANDOFF.md`, and `context/STATE.md` disagree, inspec
 - Document any significant design choice in a `journal/decisions/ADR-####.md`; update `context/DECISION_INDEX.md`.
 - For mathematical work, create/update `notes/` with stable IDs (`DEF-####`, `PROP-####`, `CONJ-####`) and explicit assumptions, proof status, derivations, and counterexamples. **Never label an argument proved without a complete proof.**
 - For literature, read `literature/README.md`. PDFs in `literature/pdf/` are primary source documents; `literature/markdown/` are Docling-derived reading aids, not independently verified sources. Maintain one annotated record in `literature/references/<citation_key>.md` for each reviewed paper. Track exact result locators and uncertainty in `literature/references/KEY_RESULTS.md`; do not manufacture page, theorem, or citation details.
+- The **canonical per-experiment synthesis** now lives in `proximity_isomap/notes/NNN-short_title/README.md`; save corresponding code, figures and numerical evidence under the same exact slug in `proximity_isomap/code/`, `proximity_isomap/figures/`, `proximity_isomap/results/`. Source library `src/proximity_isomap/` is not relocated. Read `proximity_isomap/README.md` and `MANIFEST.json` before changing experiment assets. The root `journal/` stays chronological and append-only, not copied into the notes.
 - For each experiment, register `EXP-####`, pin its configuration and seed, record environment and revision, save both successful and failed runs, and distinguish exploratory from confirmatory testing. Never tune on a reported test set.
 - Mathematical claims in `paper/` must be linked to proofs or the original literature; empirical claims must be traceable to exact experiment IDs and frozen results.
 
@@ -28,7 +29,7 @@ If `journal/LATEST.md`, `AI_HANDOFF.md`, and `context/STATE.md` disagree, inspec
 
 Before announcing that any substantive repository change is finished:
 
-1. Run relevant tests, formatting/lint, Sphinx and `python scripts/validate_research.py`. Report exactly what ran and what did not.
+1. Run relevant tests, formatting/lint, Sphinx and `python scripts/validate_research.py` and `python scripts/validate_experiment_archive.py`. Report exactly what ran and what did not.
 2. Create a new dated entry `journal/YYYY-MM/YYYY-MM-DD-topic.md` (do not retroactively change old entries); include objective, files changed, rationale, alternatives, results, failed approaches, uncertainties, commands/checks, and next actions.
 3. Update `journal/LATEST.md` to point to the new entry.
 4. Update `AI_HANDOFF.md` with new state, validated/unvalidated results, known caveats, next action, and a pointer to the dated journal entry.
@@ -51,3 +52,7 @@ Before announcing that any substantive repository change is finished:
 ## Archival requirement for every substantive experiment (adopted 2026-10-17)
 
 An experiment is **not complete** if the code or figures exist only in a ChatGPT conversation, scratch workspace, or ZIP. For each run, maintain reproducible configuration, seed, source Git SHA, dependency/environment versions, data-provenance and result manifest, numerical CSV/JSON/NPZ, plot-generating scripts and relevant PNG/SVG figures. Commit the code, frozen results, tests, dated journal, `journal/LATEST.md`, `AI_HANDOFF.md`, and experiment index together; report failures and negative outcomes, too. Confirm GitHub push and CI before claiming the work is synchronized. If any step is blocked, distinguish **prepared locally** from **present on GitHub**, and include exact instructions to complete the import. For pre-commit historical experiment archives see `experiments/ARCHIVE_INTEGRATION_STATUS.md`.
+
+## Original-archive recovery caveat (2026-10-18)
+
+The GitHub branch still lacks full historical EXP-002–EXP-008 source and original 3D/2D plots. The numbered archive includes truthful recovery inventories and labeled summary SVG reconstructions. Never claim that a directory's existence means its original source/results were recovered. The importer is `scripts/restore_experiment_archive.py`, dry-run by default; verify original hashes, migrate without overwriting and rerun CI before marking an experiment complete.

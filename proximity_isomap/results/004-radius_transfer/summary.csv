@@ -1,0 +1,5 @@
+family,sampling,n,hybrid_stress_mean,pca_stress_mean,knn10_stress_mean,provenance
+swiss,uniform,8,0.560,0.731,0.690,historical_rounded_means
+swiss,skewed,8,0.405,0.483,0.355,historical_rounded_means
+s_curve,uniform,8,0.203,0.285,0.221,historical_rounded_means
+s_curve,skewed,8,0.140,0.164,0.102,historical_rounded_means

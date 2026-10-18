@@ -1,6 +1,14 @@
 # Next steps (ordered)
 
-**Updated:** 2026-10-17 (research history import prepared)
+**Updated:** 2026-10-18 (experiment archive consolidation)
+
+## Current archival priority (2026-10-18)
+
+- [x] Create consistent `proximity_isomap/notes|code|figures|results/001–008` folders with complete narrative notes, valid summary SVGs, and honest source/provenance status.
+- [x] Copy EXP-001 runnable script/config and original smoke metrics to its canonical numbered home.
+- [ ] **Restore missing original EXP-002–008 code, complete CSV/NPZ, and 3D/2D PNG/SVG from the earlier 260-file research ZIP.** Run the dry-run helper `python scripts/restore_experiment_archive.py --archive <research-zip> --repo .` and inspect mapping; after checksum verification, add `--apply`. Do not overwrite newer root code/docs/CI.
+- [ ] Move/retire legacy duplicate experiment artifacts only after parity and link validation; preserve historical evidence and rerun CI.
+- [ ] Reproduce the important EXP-003/004/007/008 experiments with pinned seeds and Git SHA; then conduct the radius/separation Pareto experiments for the paper.
 
 ## Immediate integration task (2026-10-17)
 

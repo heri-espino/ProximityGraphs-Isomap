@@ -23,9 +23,11 @@ jobs:
       - name: Run tests
         run: python -m pytest -q
       - name: Lint
-        run: python -m ruff check src tests examples experiments scripts
+        run: python -m ruff check src tests examples experiments scripts proximity_isomap/code
       - name: Validate research and literature integrity
-        run: python scripts/validate_research.py
+        run: |
+          python scripts/validate_research.py
+          python scripts/validate_experiment_archive.py
       - name: Enforce journal and handoff updates on PRs
         if: github.event_name == 'pull_request'
         env:

@@ -2,6 +2,7 @@
 
 This folder can be opened directly as an Obsidian vault. For portability to GitHub and other AIs, prefer **standard Markdown links** over Obsidian-specific features for essential navigation.
 
+- [Numbered experimental research notes (EXP-001–008)](../proximity_isomap/notes/README.md)
 - [Definitions and notation](definitions.md)
 - [Initial graph results](results/PROP-0001-radius-monotonicity.md)
 - [Open conjectures and research questions](conjectures.md)

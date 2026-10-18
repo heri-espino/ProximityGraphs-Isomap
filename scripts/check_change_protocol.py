@@ -12,7 +12,7 @@ from pathlib import Path
 JOURNAL_ENTRY_PATTERN = re.compile(r"journal/\d{4}-\d{2}/\d{4}-\d{2}-\d{2}-[\w-]+\.md$")
 RESEARCH_PREFIXES = (
     "src/", "tests/", "notes/", "literature/", "experiments/", "results/",
-    "paper/", "figures/", "docs/", "scripts/",
+    "paper/", "figures/", "docs/", "scripts/", "proximity_isomap/",
 )
 REQUIRED_UPDATES = (
     "AI_HANDOFF.md", "journal/LATEST.md", "context/STATE.md", "context/NEXT_STEPS.md",

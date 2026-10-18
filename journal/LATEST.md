@@ -1,5 +1,5 @@
 # Latest journal entry
 
-**Latest:** [2026-10-17 — Index archived numerical summaries](2026-10/2026-10-17-archived-numerical-summaries.md)
+**Latest:** [2026-10-18 — Numbered experiment archive consolidation](2026-10/2026-10-18-experiment-archive-consolidation.md)
 
-For chronology and conventions read [the journal guide](README.md). The full experiment import must create a newer journal entry when it is pushed.
+Read [the journal guide](README.md) first. The entry records why the repository was reorganized; each experiment's current scientific synthesis lives in [proximity_isomap/notes/](../proximity_isomap/notes/README.md).

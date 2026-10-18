@@ -1,4 +1,9 @@
-# Experiment registry and reproducibility contract
+# Legacy experiment registry — see the canonical numbered archive
+
+New per-experiment code and documentation belongs under [proximity_isomap/code](../proximity_isomap/code/README.md), with the research explanations under [proximity_isomap/notes](../proximity_isomap/notes/README.md).
+
+The original `experiments/run_exp_0001.py`, `experiments/configs/exp_0001.json`, and EXP-0001 protocol remain **unchanged as backward-compatible historical paths**. Their exact copies are also in the new numbered folder. EXP-002–008 source is still pending the historical ZIP recovery. Do not treat this old directory as the canonical place for new experiments.
+
 
 Each experiment has a **stable ID** `EXP-####`, a human-readable protocol, a version-controlled JSON configuration, and a runnable script.
 

@@ -1,0 +1,7 @@
+# EXP-008 — One through six independently embedded Swiss rolls: figures
+
+[Summary diagram](summary.svg) is a **reconstruction from archived rounded numeric results** or a clearly labeled conceptual diagram (EXP-002). It is *not* the saved original 3D rendering or projected 2D points.
+
+Original 3D/2D outputs: **not yet available in the GitHub repository**. After restoring the original archive, keep original `.png` and `.svg` files here with their original seed/config and code references.
+
+[Research note](../../notes/008-multiple_swiss_rolls/README.md) · [Provenance](../../results/008-multiple_swiss_rolls/README.md).

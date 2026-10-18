@@ -11,17 +11,33 @@
 
 Every substantive change requires a new dated journal entry, an updated `journal/LATEST.md` pointer and an updated AI handoff. Test/code updates require Sphinx-compatible NumPy-style docstrings. CI checks structural consistency (not mathematical truth).
 
+## Canonical experiment records
+
+**[Browse all eight experiment notes](proximity_isomap/notes/README.md)** · [Archive structure](proximity_isomap/README.md) · [Asset/provenance manifest](proximity_isomap/MANIFEST.json)
+
+Experiments are organized under one stable numbered research namespace:
+
+```text
+proximity_isomap/
+  notes/    001-radius_filtration/ ... 008-multiple_swiss_rolls/
+  code/     001-radius_filtration/ ... 008-multiple_swiss_rolls/
+  figures/  001-radius_filtration/ ... 008-multiple_swiss_rolls/
+  results/  001-radius_filtration/ ... 008-multiple_swiss_rolls/
+```
+
+Within each experiment's note are the question, actions, findings, failure modes, interpretation and valid figure links. The chronological `journal/` remains separate. **EXP-002–EXP-008 original runnable scripts, raw arrays and 3D/2D plots are still pending import from a historical ZIP.** The included SVG diagrams are reconstructed from reported summary metrics, not a substitute for original figures.
+
 ## Research directories
 
 | Location | Role |
 | --- | --- |
 | `src/proximity_isomap/` | Reusable Python library, with API docstrings |
 | `tests/` | Unit tests and numerical behavior checks |
-| `notes/` | Mathematical notebook: definitions, propositions, proofs and conjectures (Obsidian-compatible) |
+| `notes/` | General mathematical notebook (experiment narratives now in `proximity_isomap/notes/`): definitions, propositions, proofs and conjectures (Obsidian-compatible) |
 | `journal/` | Append-only reasoning chronology and architectural decisions |
 | [`literature/`](literature/README.md) | **`pdf/` original papers, `markdown/` Docling extractions, `references/` source-checked results and BibTeX** |
-| `experiments/`, `results/` | Registered configurations and reproducible scientific evidence |
-| `figures/` | Plot source and selected manuscript images |
+| `proximity_isomap/code/`, `proximity_isomap/results/` | Per-experiment source inventories and provenance; historical root paths remain as compatibility references |
+| `proximity_isomap/figures/` | Per-experiment summary SVGs; original historical 3D/2D images still require restoration |
 | `paper/` | LaTeX manuscript skeleton using `literature/references/library.bib` |
 | `docs/` | Sphinx technical and research-workflow documentation |
 | `scripts/` | Literature registration and research-integrity checks |
@@ -32,8 +48,9 @@ Every substantive change requires a new dated journal entry, an updated `journal
 conda env create -f environment.yml
 conda activate proximity-isomap
 python -m pytest -q
-python -m ruff check src tests examples experiments scripts
+python -m ruff check src tests examples experiments scripts proximity_isomap/code
 python scripts/validate_research.py
+python scripts/validate_experiment_archive.py
 python -m sphinx -b html -W docs docs/_build/html
 ```
 
