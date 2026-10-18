@@ -102,3 +102,9 @@ Study the original Isomap paper, multi-manifold Isomap and stitching methods, di
 ## Scope and manuscript layout
 
 A short paper: problem and distinction from prior methods; concise objective and algorithm; meaningful mathematical statement(s); two figures plus a reproducible statistical comparison; limitations. Keep exhaustive synthetic galleries and derivations in supplementary material. This file is the **working research thesis**, not a finished paper.
+
+## Candidate theoretical extension (2026-10-18): TDA and stochastic geometry
+
+[New research brief](../proximity_isomap/notes/mathematics/research_tda_stochastic_geometry.md) investigates whether Vietoris–Rips (H_0) persistence and binomial/Poisson sampling bounds can make the graph-radius selection stage genuinely unsupervised. In particular, for synthetic known groups, the bottleneck (b) of within-group MSTs and the minimum observed intergroup gap (\delta) yield the elementary condition (b<\delta) for a global correct-partition radius. This is an **evaluation theorem, not a new unsupervised estimator or a novelty claim**.
+
+Prior-art caution: TopoMap already preserves the **entire (H_0) Rips persistence diagram**, DIPOLE already combines metric geometry and persistent homology, and multi-manifold Isomap variants already exist. The current manuscript retains **separation–distortion** as its principal question; a probability-calibrated persistence radius selector is a candidate improvement *only if* reproducibly advantageous relative to these baselines. Full 001–008 reruns remain a pending [task](https://github.com/heri-espino/ProximityGraphs-Isomap/issues/6); proposed new comparison is EXP-009.

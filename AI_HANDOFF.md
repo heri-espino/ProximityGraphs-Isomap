@@ -1,7 +1,7 @@
 # AI handoff — ProximityGraphs-Isomap
 
 **Updated:** 2026-10-18
-**Latest history:** [2026-10-18 — Verified reconstructed experiment smoke tests](proximity_isomap/history/journal/2026-10/2026-10-18-smoke-ci-verified.md).
+**Latest history:** [2026-10-18 — TDA and stochastic-geometry proposal](proximity_isomap/history/journal/2026-10/2026-10-18-tda-stochastic-direction.md).
 
 ## Canonical structure
 
@@ -20,6 +20,17 @@ The Windows Conda/PowerShell entrypoint is `scripts/run_all.ps1`. The environmen
 ## Verified GitHub CI
 
 [Run 39139028489](https://github.com/heri-espino/ProximityGraphs-Isomap/actions/runs/39139028489) passed on Python 3.11 and 3.12, including tests, Ruff, structure validators, Sphinx and actual **quick-mode runs for all eight rebuilt experiments using the pinned ContrastColors library**. This is evidence the smoke pipeline executes, **not** evidence of full numerical reproduction on the user's Windows environment or parity with the old original algorithms.
+
+## Upcoming research: TDA filtration + stochastic geometry (proposed 2026-10-18)
+
+**Read:** [VR–random-geometry research brief](proximity_isomap/notes/mathematics/research_tda_stochastic_geometry.md) and [PROP-0003, finite-sample recovery window](proximity_isomap/notes/mathematics/results/PROP-0003-component-recovery-window.md).
+
+- Existing results: β0(VR_r) equals graph component count; MST edge lengths are H0 death events; for known true groups, b=max within-MST bottleneck and δ=min cross-group point distance, and an exact partition radius exists iff b<δ. These statements are elementary, **not new theory**.
+- Candidate probabilistic bound: under separated compact connected supports and positive-mass radius-r/4 covering balls, binomial and support-wise Poisson void probabilities yield a union bound on connected-component recovery. Requires strong sampling assumptions; no Isomap geodesic-consistency guarantee follows automatically.
+- **Prior art to confront:** M-Isomap, S-Isomap++, supervised MMD-Isomap, TopoMap/TopoMap++ (full 0D VR persistence), DIPOLE (metric + persistent homology), Joint MDS and tuned Isomap. Novelty/predicted superiority not demonstrated.
+- Run **EXP-009 only after a documented fair comparison protocol**. Full EXP-001–008 reruns remain on the explicit GitHub to-do issue: https://github.com/heri-espino/ProximityGraphs-Isomap/issues/6. Do not mark them complete because quick CI passed.
+
+**Latest dated history:** [2026-10-18 — stochastic geometry proposal](proximity_isomap/history/journal/2026-10/2026-10-18-tda-stochastic-direction.md).
 
 ## Scientific limitations and next work
 

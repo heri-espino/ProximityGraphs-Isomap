@@ -11,3 +11,7 @@ All figures will use `contrastcolors` pinned from `heri-espino/Colors`, white pu
 ## Verification (2026-10-18)
 
 [GitHub Actions run 39139028489](https://github.com/heri-espino/ProximityGraphs-Isomap/actions/runs/39139028489) succeeded for Python 3.11/3.12: tests, lint, research validators, Sphinx and Quick-mode runs of all eight newly reconstructed experiments with the pinned ContrastColors library. Full Conda runs are still pending user execution; source and historical numeric parity cannot be inferred from smoke results.
+
+## Proposed VR-filtration and sampling-theory workstream (2026-10-18)
+
+The mathematical extension is [the TDA/stochastic-geometry research brief](../../notes/mathematics/research_tda_stochastic_geometry.md), not an implemented algorithm. [PROP-0003](../../notes/mathematics/results/PROP-0003-component-recovery-window.md) records the elementary exact component-recovery window and a 4ε perturbation sufficient condition. Existing TopoMap/TopoMap++ and DIPOLE challenge any broad novelty claim for topological persistence plus manifold learning. Full local reruns are **pending** at https://github.com/heri-espino/ProximityGraphs-Isomap/issues/6; CI only verified small smoke runs. EXP-009 is a proposed future benchmark, not executed.
