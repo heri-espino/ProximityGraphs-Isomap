@@ -10,7 +10,7 @@ EXP-0002–0008 have been reconciled in a local archive containing 260 experimen
 
 ## Canonical research archive (2026-10-18)
 
-Eight coordinated experiment folders are now located under `proximity_isomap/{notes,code,figures,results}/NNN-short_title/`. EXP-001 has original GitHub-runner and smoke CSV/JSON copied by blob SHA. For EXP-002–008 only aggregate historical transcriptions and honestly labeled summary SVGs can be committed, because the full prior ZIP bundle is absent from the GitHub branch/current file workspace. These experiments **are not reproducible from this branch yet**. See `proximity_isomap/MANIFEST.json` and the latest journal for details; original `journal/` remains chronological. No new experiment was executed as part of reorganizing the record.
+Eight coordinated experiment folders are now located under `proximity_isomap/{notes,code,figures,results}/NNN-short_title/`. EXP-001 has original GitHub-runner and smoke CSV/JSON copied by blob SHA. For EXP-002–008 only aggregate historical transcriptions and honestly labeled summary SVGs can be committed, because the full prior ZIP bundle is absent from the GitHub branch/current file workspace. These experiments **are not reproducible from this branch yet**. See `proximity_isomap/MANIFEST.json` and the latest journal for details; original `journal/` remains chronological. No new experiment was executed as part of reorganizing the record. Numbered notes/figures/results structure passed [GitHub CI](https://github.com/heri-espino/ProximityGraphs-Isomap/actions/runs/39134370194) (tests, Ruff, two validators and Sphinx). This does not restore missing scientific assets.
 
 ## Working paper thesis (2026-10-17)
 

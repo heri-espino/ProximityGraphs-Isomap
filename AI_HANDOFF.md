@@ -1,7 +1,7 @@
 # AI handoff — current research session
 
 **Last updated:** 2026-10-18
-**Latest journal entry:** [2026-10-18 — Numbered experiment archive consolidation](journal/2026-10/2026-10-18-experiment-archive-consolidation.md)
+**Latest journal entry:** [2026-10-18 — Verified numbered experiment archive in GitHub CI](journal/2026-10/2026-10-18-numbered-archive-ci-verified.md)
 **Project stage:** exploratory scaffold with an agreed working paper thesis; novelty not established
 
 > This is the **current operational snapshot**, not a substitute for the chronological journal or primary evidence. Start with [`journal/README.md`](journal/README.md), [`journal/LATEST.md`](journal/LATEST.md), and its linked entry **before** reading this file.
@@ -10,7 +10,7 @@
 
 **Start at [proximity_isomap/notes/README.md](proximity_isomap/notes/README.md) for EXP-001 through EXP-008**, with synchronized slug folders for `code/`, `figures/`, and `results/`. Each experiment note explains the attempted method, metrics, observations, negative results and actual figure links. Journal entries are chronology; experiment notes are the maintained synthesis.
 
-[Availability manifest](proximity_isomap/MANIFEST.json) is explicit: exact original source and original smoke measurements are present for 001 only. EXP-002–008 rounded historical metrics have been archived as *transcriptions* and their SVG charts are redraws—not original 3D/2D projections. **The missing 260-file historical archive still needs import** (see `scripts/restore_experiment_archive.py`). No new geometric experiment was executed in this reorganization. Do not report missing numerical outputs as recovered.
+[Availability manifest](proximity_isomap/MANIFEST.json) is explicit: exact original source and original smoke measurements are present for 001 only. EXP-002–008 rounded historical metrics have been archived as *transcriptions* and their SVG charts are redraws—not original 3D/2D projections. **The missing 260-file historical archive still needs import** (see `scripts/restore_experiment_archive.py`). No new geometric experiment was executed in this reorganization. **CI verified:** https://github.com/heri-espino/ProximityGraphs-Isomap/actions/runs/39134370194 (tests, Ruff, both validators, Sphinx). The prior interim runs failed on formatting and documentation links, then were corrected. Do not report missing numerical outputs as recovered.
 
 **Immediate next:** obtain/verify the historical ZIP, restore exact experiment source and original figures without overwriting CI/environment/paper content, update manifest to reflect recovered assets, then rerun from a versioned Git SHA. The requested scientific direction remains the separation–distortion frontier in `paper/RESEARCH_DIRECTION.md`.
 

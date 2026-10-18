@@ -1,5 +1,5 @@
 # Latest journal entry
 
-**Latest:** [2026-10-18 — Numbered experiment archive consolidation](2026-10/2026-10-18-experiment-archive-consolidation.md)
+**Latest:** [2026-10-18 — Verified numbered experiment archive in GitHub CI](2026-10/2026-10-18-numbered-archive-ci-verified.md)
 
-Read [the journal guide](README.md) first. The entry records why the repository was reorganized; each experiment's current scientific synthesis lives in [proximity_isomap/notes/](../proximity_isomap/notes/README.md).
+Read [the journal guide](README.md) before consulting [current experiment notes](../proximity_isomap/notes/README.md).
