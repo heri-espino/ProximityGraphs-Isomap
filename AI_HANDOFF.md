@@ -6,6 +6,10 @@
 
 > This is the **current operational snapshot**, not a substitute for the chronological journal or primary evidence. Start with [`journal/README.md`](journal/README.md), [`journal/LATEST.md`](journal/LATEST.md), and its linked entry **before** reading this file.
 
+## Archived numerical evidence (2026-10-17)
+
+Representative numeric results from EXP-0004/7/8 and the progression across EXP-0002–0008 are now accessible in [results/EXPLORATORY_OVERVIEW.md](results/EXPLORATORY_OVERVIEW.md). They are source-transcribed exploratory summaries, **not yet regenerated from GitHub main**. Latest journal: [2026-10-17 — Archived numerical summaries](journal/2026-10/2026-10-17-archived-numerical-summaries.md). Full binary figures, CSV/NPZ, code and test imports still require the local bundle and Git push.
+
 ## Dependency preparation for pending archive import (2026-10-17)
 
 **Latest journal:** [2026-10-17 — Prepare experiment dependencies](journal/2026-10/2026-10-17-exp-dependencies.md). The repo now defines the optional `experiments` dependency group for scikit-learn and Matplotlib, and CI installs this group. This prepares for the EXP-0002–0008 archive but **does not mean the binary results are on GitHub**.
