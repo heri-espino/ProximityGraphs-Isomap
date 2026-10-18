@@ -4,6 +4,10 @@
 **Stage:** scaffold + working manuscript thesis; no validated novel result  
 **Status:** exploratory; contribution not established
 
+## 2026-10-17 — Experiment archival preparation (pending Git push)
+
+EXP-0002–0008 have been reconciled in a local archive containing 260 experimental source/result/figure files. The importer passed 57 tests and provenance integrity checks in a simulated checkout. **These files are not yet committed to GitHub main**; see `experiments/ARCHIVE_INTEGRATION_STATUS.md`. The existing separation–distortion manuscript thesis and remote CI/Conda setup remain unchanged. Historical numerical outputs have no original source SHA and require independent reproduction after import.
+
 ## Working paper thesis (2026-10-17)
 
 [paper/RESEARCH_DIRECTION.md](../paper/RESEARCH_DIRECTION.md) defines the agreed central research direction: independently embed graph components, align rigidly under guaranteed positive separation, and quantify the resulting tradeoff in cross-component ambient-distance fidelity. The method is a **proposal** and must be checked against prior multi-manifold Isomap, stitching and constrained alignment literature. The exact elementary geometric properties are documented in notes/results/PROP-0002-rigid-separation-frontier.md and ADR-0005 records the decision. The prior EXP-0002–EXP-0008 source/plots reside in separate local archives, not in this GitHub branch; main still only has the baseline code and EXP-0001. Do not cite those local experiment values as committed reproducible evidence. This revision changes manuscript/notes/journal only; it does not change runtime algorithms. The paper-thesis commit cc0f9dcd passed GitHub Actions run 39086961855 (pytest, Ruff, validator and Sphinx on Python 3.11/3.12); LaTeX compilation and scientific performance remain unverified.

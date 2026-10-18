@@ -47,3 +47,7 @@ Before announcing that any substantive repository change is finished:
 ## Shortcut for new sessions
 
 > Read `AGENTS.md`, then `journal/README.md` and `journal/LATEST.md` (including the linked dated entry), then `AI_HANDOFF.md`, `context/STATE.md`, and `context/NEXT_STEPS.md`. Use the primary evidence for my task. Before finishing, update the journal, `journal/LATEST.md`, handoff and state, plus tests/docstrings as appropriate.
+
+## Archival requirement for every substantive experiment (adopted 2026-10-17)
+
+An experiment is **not complete** if the code or figures exist only in a ChatGPT conversation, scratch workspace, or ZIP. For each run, maintain reproducible configuration, seed, source Git SHA, dependency/environment versions, data-provenance and result manifest, numerical CSV/JSON/NPZ, plot-generating scripts and relevant PNG/SVG figures. Commit the code, frozen results, tests, dated journal, `journal/LATEST.md`, `AI_HANDOFF.md`, and experiment index together; report failures and negative outcomes, too. Confirm GitHub push and CI before claiming the work is synchronized. If any step is blocked, distinguish **prepared locally** from **present on GitHub**, and include exact instructions to complete the import. For pre-commit historical experiment archives see `experiments/ARCHIVE_INTEGRATION_STATUS.md`.

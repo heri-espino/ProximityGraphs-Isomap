@@ -1,5 +1,5 @@
 # Latest journal entry
 
-**Latest:** [2026-10-17 — Paper-thesis commit passed GitHub CI](2026-10/2026-10-17-paper-thesis-ci-verified.md)
+**Latest:** [2026-10-17 — Prepared experiment history integration](2026-10/2026-10-17-archive-integration-prepared.md)
 
-For chronology and conventions read [the journal guide](README.md). This pointer must be updated whenever a new dated journal entry is created. It is an index, not an additional diary.
+For chronology and conventions read [the journal guide](README.md). A later import commit must replace this pointer with its own dated entry.

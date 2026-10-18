@@ -6,6 +6,12 @@
 
 > This is the **current operational snapshot**, not a substitute for the chronological journal or primary evidence. Start with [`journal/README.md`](journal/README.md), [`journal/LATEST.md`](journal/LATEST.md), and its linked entry **before** reading this file.
 
+## 2026-10-17 — Pending full results import (current operational status)
+
+**Latest journal:** [2026-10-17 — Prepared experiment history integration](journal/2026-10/2026-10-17-archive-integration-prepared.md).
+
+The EXP-0002–0008 archives have been reconciled into a tested *local* import bundle (260 source/data/figure files, 57 tests passing, all file hashes verified). This bundle is **not yet on GitHub main** because this connection cannot upload binary PNG/NPZ archive files directly. The complete ZIP and importer were delivered in this chat. Do not claim their GitHub integration is complete. Run the importer against a clean clone, confirm the push and the CI job, then run representative scientific experiments again under a recorded Git SHA. The working manuscript thesis in `paper/RESEARCH_DIRECTION.md` remains authoritative. See [status index](experiments/ARCHIVE_INTEGRATION_STATUS.md).
+
 ## 2026-10-17 — Current working paper direction
 
 Read [paper/RESEARCH_DIRECTION.md](paper/RESEARCH_DIRECTION.md) **before drafting the manuscript**. The central question is how much cross-component placement fidelity must be sacrificed to preserve the geometry of independently embedded components and guarantee non-overlap. Four linked aims: (1) unsupervised proximity-graph components; (2) independent Isomap/geodesic preservation; (3) rigid alignment with positive hull clearance; (4) a normalized separation–distortion frontier. The paper outline is revised in paper/main.tex. ADR-0005 documents the choice; elementary proofs are in notes/results/PROP-0002-rigid-separation-frontier.md.

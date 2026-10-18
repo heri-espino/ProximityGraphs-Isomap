@@ -1,6 +1,15 @@
 # Next steps (ordered)
 
-**Updated:** 2026-10-17 (working paper thesis adopted)
+**Updated:** 2026-10-17 (research history import prepared)
+
+## Immediate integration task (2026-10-17)
+
+- [x] Consolidated the seven cumulative EXP-0002–0008 archives into a conflict-aware local package; recovered one missing EXP-0002 NPZ; verified 260 SHA-256 hashes and 57 tests.
+- [ ] **Import and push** the package's code, data, plots, original journal entries and tests to current GitHub main using `README_IMPORT.md`.
+- [ ] Record CI success and scientific reruns under new Git commit SHA; do not conflate archive integrity with reproduction.
+- [ ] Compare against well-tuned baseline manifold methods and select radii without synthetic generating labels.
+
+
 
 - [ ] Create the Conda environment with `conda env create -f environment.yml`, activate it, test installation, and rerun EXP-0001 from a Git checkout with SHA and `conda list --explicit` archived.
 - [x] Confirmed GitHub Actions run 38997728144 on Python 3.11/3.12: 16 tests, Ruff, integrity validation, Sphinx all passed for commit `e7cc9bc`.
