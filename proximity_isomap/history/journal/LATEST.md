@@ -1,5 +1,5 @@
 # Latest research-history entry
 
-[2026-10-18 — Mathematical experiment notes and figure plans](2026-10/2026-10-18-math-and-figure-notes.md).
+[2026-10-18 — Marp presentation checkpoint](2026-10/2026-10-18-marp-presentation-checkpoint.md).
 
-[Current EXP-001–009 notes](../../notes/README.md). Earlier dated history remains preserved.
+[Current notes index](../../notes/README.md). Earlier dated entries remain preserved.

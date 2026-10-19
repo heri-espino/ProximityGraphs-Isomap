@@ -1,3 +1,5 @@
+**Presentation checkpoint (2026-10-18):** New professor-facing Marp deck: [notes/010_presentation_checkpoint](proximity_isomap/notes/010_presentation_checkpoint/README.md), containing 63 slides and a checked, repository-relative figure atlas of 30 published/historical figures. Local EXP-010/011 plots are not yet part of the GitHub tree; the deck does not fabricate or link missing images. This is documentation only, not new numerical evidence. See [session journal](proximity_isomap/history/journal/2026-10/2026-10-18-marp-presentation-checkpoint.md).
+
 # AI handoff — ProximityGraphs-Isomap
 
 **Updated:** 2026-10-18

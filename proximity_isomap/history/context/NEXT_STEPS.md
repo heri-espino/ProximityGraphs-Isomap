@@ -32,3 +32,10 @@
 - [ ] Add unsupervised radius selection and run independently seeded margin–distortion frontiers with tuned prior-art methods.
 
 - [ ] Extend proposed EXP-009 topology diagnostics to H1 loops (and optionally H2 cavities): VR triangles, persistence barcodes, representatives, original-vs-projection metrics, with ContrastColors figures embedded in Markdown. This is not a completed run.
+
+
+## Professor presentation
+
+- [x] Author professor-facing Marp presentation with mathematics, metric definitions, measured tradeoffs and all current GitHub versioned experimental figures.
+- [ ] Inspect the Marp PDF/PPTX export visually on the user's machine; this connector session did not run the browser renderer.
+- [ ] Integrate and rerun EXP-010/011 locally generated figures in GitHub, then extend the slide atlas.

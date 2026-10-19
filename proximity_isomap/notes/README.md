@@ -1,5 +1,7 @@
 # Experiment notes — the canonical scientific record
 
+**[Marp presentation checkpoint](010_presentation_checkpoint/README.md)** — professor-facing research narrative, formulas and all currently versioned experiment figures. Presentation, not a new EXP-010 numerical run.
+
 Read the detailed notes (question, design, results, failed attempts, interpretation, limitations and actual figures). Newly computed figures are automatically embedded when the full Conda pipeline is run.
 
 | ID | Subject | Research note |

@@ -23,3 +23,8 @@ The topologically heterogeneous Swiss-roll/cylinder/torus pilot was computed fro
 ## Mathematical Markdown notes and figure plans (2026-10-18)
 
 All experiment notes EXP-001..009 now include LaTeX mathematical models, assumption/metric distinctions and a table of expected figure filenames. Historical summary SVGs are already embedded for 001..008; EXP-009 embeds existing genuine pinned-ContrastColors images. The full new EXP-001..008 figures are **not generated yet**. Rebuilt shared runner now appends versioned Markdown run records instead of discarding earlier runs. The [math and figure guide](../../notes/MATHEMATICS_AND_FIGURES.md) and updated experiment validator enforce the workflow. No scientific experiment was performed by this documentation-only task.
+
+
+## Marp presentation checkpoint (2026-10-18)
+
+A professor-facing presentation at proximity_isomap/notes/010_presentation_checkpoint/ includes the mathematics, versioned EXP-001–009 figures, and text-only provisional EXP-010/011 findings. Generating this presentation did not execute any numerical experiment, and it does not establish novelty.
