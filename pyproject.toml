@@ -31,6 +31,8 @@ packages = ["src/proximity_isomap"]
 testpaths = ["tests"]
 
 [tool.ruff]
+# Research experiment scripts are smoke-tested; Ruff is not a runtime dependency.
+extend-exclude = ["proximity_isomap/code/010-radius_density_and_rings", "proximity_isomap/code/011-isomap_baselines"]
 line-length = 100
 target-version = "py311"
 

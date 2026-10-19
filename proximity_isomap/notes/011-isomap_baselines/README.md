@@ -1,6 +1,7 @@
 # EXP-011 — Componentwise kNN Isomap versus other Isomap methods, PCA and t-SNE/UMAP
 
-> **New local run status:** The native EXP-011 Python code is now committed under `proximity_isomap/code/`. The numbers and derived SVG currently shown below are **previous exploratory pilot summaries**, NOT the result of your upcoming Windows run. After you push the new run's CSV/JSON/NPZ and PNG/SVG files, the assistant will replace this preliminary narrative with a mathematical interpretation grounded in your measured outputs. You do not need to download/import any ZIP.\n\n
+> **New local run status:** The native EXP-011 Python code is now committed under `proximity_isomap/code/`. The numbers and derived SVG currently shown below are **previous exploratory pilot summaries**, NOT the result of your upcoming Windows run. After you push the new run's CSV/JSON/NPZ and PNG/SVG files, the assistant will replace this preliminary narrative with a mathematical interpretation grounded in your measured outputs. You do not need to download/import any ZIP.
+
 **Research status:** one exploratory local run completed, seed 20261018. The mathematical comparison and selected measured values are on GitHub. The exact original runner, full metrics, embeddings and five original 3D/2D image galleries plus diagnostic plots are still in the local EXP-011 archive pending binary import. UMAP was **not executed**: no missing result has been fabricated.
 
 ## Research question
@@ -13,7 +14,7 @@ Datasets are five separate circles, a connected cylinder, two rotated Swiss roll
 
 PCA; global kNN Isomap (k=8,24); global radius Isomap; landmark Isomap; componentwise radius Isomap; componentwise kNN Isomap; componentwise landmark Isomap; t-SNE. **Genuine UMAP is configured but its runtime dependency was unavailable.** Global Isomap may reconnect disconnected neighbor graphs by inserting bridges; the original metrics store those warnings. M-Isomap, D-C Isomap and S-Isomap++ are prior-art targets, not algorithms implemented in this experiment.
 
-## Distortion metrics
+## Mathematics: distortion metrics
 
 For analytic within-component intrinsic distances g_ij, use
 
@@ -67,3 +68,22 @@ The original archive holds five 3D/2D embedding galleries (rings, cylinder, Swis
 ## Scientific limitations
 
 Results use one exploratory seed, untuned hyperparameters and some supplied-K settings; no robust comparative superiority or newness is claimed. Multi-manifold prior art must be verified and implemented. A later independent-seed experiment should install real UMAP and optimize centroid/landmark placement with a positive separation margin.
+
+## Native execution and analysis handoff
+
+The user runs [the committed Python source](../../code/011-isomap_baselines/run.py) using `scripts/run_exp_010_011.ps1 -RequireUmap` after installing `umap-learn`. The assistant reviews the **actual pushed run**, including failed methods, and writes a new interpretation and Marp update. The numbers above are **earlier exploratory pilot measurements**; metric definitions and fresh numbers can differ and must not be silently combined.
+
+## Figure plan and reproduction status
+
+| Expected PNG/SVG plot name | Content | Status |
+|---|---|---|
+| `rings_embeddings` | Five rings, all baselines | New run pending |
+| `cylinder_embeddings` | Cylinder, all baselines | New run pending |
+| `swiss_pair_embeddings` | Two rotated Swiss rolls | New run pending |
+| `s_curve_pair_embeddings` | Two S-curves | New run pending |
+| `torus_embeddings` | Torus | New run pending |
+| `intrinsic_stress` | Distance preservation | New run pending |
+| `centroid_stress` | Intercomponent positioning | New run pending |
+| `trustworthiness_8` | Neighbor structure | New run pending |
+
+Do not embed these new plots before their corresponding files exist on the user's pushed GitHub run.

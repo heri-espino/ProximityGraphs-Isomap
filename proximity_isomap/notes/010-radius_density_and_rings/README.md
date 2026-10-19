@@ -1,6 +1,7 @@
 # EXP-010 — Cylinder sampling versus five disconnected circular rings
 
-> **New local run status:** The native EXP-010 Python code is now committed under `proximity_isomap/code/`. The numbers and derived SVG currently shown below are **previous exploratory pilot summaries**, NOT the result of your upcoming Windows run. After you push the new run's CSV/JSON/NPZ and PNG/SVG files, the assistant will replace this preliminary narrative with a mathematical interpretation grounded in your measured outputs. You do not need to download/import any ZIP.\n\n
+> **New local run status:** The native EXP-010 Python code is now committed under `proximity_isomap/code/`. The numbers and derived SVG currently shown below are **previous exploratory pilot summaries**, NOT the result of your upcoming Windows run. After you push the new run's CSV/JSON/NPZ and PNG/SVG files, the assistant will replace this preliminary narrative with a mathematical interpretation grounded in your measured outputs. You do not need to download/import any ZIP.
+
 **Research status:** completed locally, deterministic exploratory run (2026-10-18). This GitHub note records the mathematics and numerical findings. The full original Python runner, saved point arrays, detailed CSV/JSON, and four PNG/SVG figure pairs remain in the downloadable EXP-010 local ZIP, awaiting a fresh Windows/Conda run. The SVG summary below is derived directly from the locally recorded counts; it is not a substitute for the original projection figures.
 
 ## Research question
@@ -9,7 +10,7 @@ Does a sampled cylinder contain several connected circles, or is it one connecte
 
 The cylinder is C = { (3.1 cos θ, 3.1 sin θ, z) : 0 ≤ θ < 2π, −4 ≤ z ≤ 4 }. We used four deterministic grids with 54, 144, 360 and 720 points. A second sample contains five genuinely disjoint circles at heights −4, −2, 0, 2 and 4, with 90 points on each ring (450 total). The grids are not nested random samples.
 
-## Mathematics
+## Mathematics:
 
 The Euclidean proximity graph has an edge iff ||x_i − x_j||₂ ≤ r. Using the Euclidean minimum spanning tree,
 
@@ -52,3 +53,18 @@ Corresponding results include fixed_scale_betti.csv, beta0_curve.csv, summary.cs
 ## Limitations
 
 Deterministic regular grids can generate spurious VR cycles and do not establish probabilistic manifold recovery. Lowering radius too far fragments the finite sample; it does not turn a continuous cylinder into several genuinely disconnected rings. Independent Isomap projections do not automatically preserve original Euclidean VR persistence.
+
+## Native execution and analysis handoff
+
+The user runs [the committed Python source](../../code/010-radius_density_and_rings/run.py) on their Windows machine using `scripts/run_exp_010_011.ps1`. New results appear in numbered immutable `results/` and `figures/` runs. The assistant inspects the actual remote data and **writes the final interpretation only after the user pushes**. Numbers above are from an earlier local pilot and must not be attributed to this new run.
+
+## Figure plan and reproduction status
+
+| Expected PNG and SVG output | Geometric question | Status |
+|---|---|---|
+| `geometry` | 3D cylinder versus five rings | New user run pending |
+| `radius_topology` | Fixed-scale VR H0 versus H1 | New user run pending |
+| `radius_snapshots` | Radius and graph components | New user run pending |
+| `projections` | Original, PCA and componentwise Isomap | New user run pending |
+
+The currently embedded `summary.svg` is from the older exploratory pilot, not the new run.

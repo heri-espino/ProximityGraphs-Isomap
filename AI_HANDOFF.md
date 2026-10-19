@@ -1,3 +1,5 @@
+**Current dated checkpoint:** [user-run experiment ownership](proximity_isomap/history/journal/2026-10/2026-10-18-user-runs-assistant-interprets.md).
+
 ## Three-stage local-run experiment policy — 2026-10-18
 
 The user explicitly wants: **assistant writes and pushes experiment code** -> **user executes locally on Windows and pushes generated numerical results + actual PNG/SVG** -> **assistant reads those files and writes the detailed mathematical Markdown interpretation and updates the Marp presentation**. No ZIP-based workflow. This policy is binding in AGENTS.md. Code for EXP-010 and EXP-011 is available at `proximity_isomap/code/010-radius_density_and_rings/run.py` and `proximity_isomap/code/011-isomap_baselines/run.py`, with `scripts/run_exp_010_011.ps1` as a shared launcher. The user's fresh reruns and final interpretation are **pending**. EXP-010/011 current numerical summaries derive from an earlier local exploratory pilot, not the upcoming user's new runs. The previous `scripts/import_exp010_exp011.ps1` is removed, not needed. Checkpoint 012 is the Marp presentation. Install umap-learn and require it for complete EXP-011 UMAP comparison.
