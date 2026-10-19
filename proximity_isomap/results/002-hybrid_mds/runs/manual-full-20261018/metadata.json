@@ -1,0 +1,19 @@
+{
+  "experiment_id": "EXP-002",
+  "slug": "002-hybrid_mds",
+  "run_label": "manual-full-20261018",
+  "generated_utc": "2026-10-19T01:36:49.287761+00:00",
+  "seed": 20261018,
+  "quick": false,
+  "git_sha": "e1a7e8dca5779bcd75d7b14d40fa771ac050adc7",
+  "python": "3.11.17",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "sklearn": "1.9.1",
+  "contrastcolors": "0.1.0",
+  "methods": "reconstructed_from_documented_questions_not_original_2026_code",
+  "ground_truth_use": "analytic geodesic evaluation; label-informed connectivity for K>=2",
+  "selection_caveat": "EXP-004 development radius uses analytic ground truth; not unsupervised",
+  "solver_caveat": "single-start SMACOF; rigid alignment nonconvex local anchor fit",
+  "rows": 8
+}

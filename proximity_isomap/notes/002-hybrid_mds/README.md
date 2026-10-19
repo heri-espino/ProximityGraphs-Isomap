@@ -73,3 +73,23 @@ This defines the **current reconstructed SMACOF baseline**, which is not identic
 ![Historical experiment 002-hybrid_mds summary — source-transcribed diagnostic values](../../figures/002-hybrid_mds/summary.svg)
 
 > This SVG is a reconstructed visualization of historical rounded summaries, not a recovered 3D/2D projection. Actual figures will be embedded automatically under the latest computed run after executing the Conda pipeline.
+
+<!-- COMPUTED-RUN: manual-full-20261018 -->
+
+## Computed run: manual-full-20261018
+
+Run: **manual-full-20261018**; mode: **full**; seed: **20261018**. This run REBUILDS the research question using the current implementation; it is **not the recovered historical algorithm or an independent novelty claim**. Original arrays and metrics: [results](../../results/002-hybrid_mds/runs/manual-full-20261018/metrics.csv); [metadata](../../results/002-hybrid_mds/runs/manual-full-20261018/metadata.json).
+
+| K | Method | Within intrinsic stress / diagnostic RMSE | Between ambient stress |
+|---:|---|---:|---:|
+| 1 | PCA | 0.7522263174507533 | None |
+| 1 | Hybrid_MDS | 0.5973505652263034 | None |
+| 1 | Component_Isomap_free | 0.5508490989671648 | None |
+| 1 | Component_Isomap_separated | 0.5508490989671648 | None |
+| 2 | PCA | 0.7571423575319229 | 0.034956686234189085 |
+| 2 | Hybrid_MDS | 0.6295947372371044 | 0.1265500325200276 |
+| 2 | Component_Isomap_free | 0.511078098804458 | 0.33272022966545217 |
+| 2 | Component_Isomap_separated | 0.511078098804458 | 0.7621924913618394 |
+
+![New 002 plot: pair](../../figures/002-hybrid_mds/runs/manual-full-20261018/pair.png)
+![New 002 plot: single](../../figures/002-hybrid_mds/runs/manual-full-20261018/single.png)

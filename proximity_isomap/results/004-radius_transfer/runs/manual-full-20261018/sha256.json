@@ -1,0 +1,8 @@
+{
+  "proximity_isomap\\results\\004-radius_transfer\\runs\\manual-full-20261018\\aggregates.csv": "8fe78da298881f1fd66ac9740496e8ba9f629f6d307d1b23153a86708c8f627c",
+  "proximity_isomap\\results\\004-radius_transfer\\runs\\manual-full-20261018\\coordinates.npz": "cb8b05f0041b075c6261acc61510586a2668cf5fa02802014f58913f7a469513",
+  "proximity_isomap\\results\\004-radius_transfer\\runs\\manual-full-20261018\\metadata.json": "5f1ec9af2b3e1c30073c7af324bcf57b9efad04c4bec93548bf326043473645f",
+  "proximity_isomap\\results\\004-radius_transfer\\runs\\manual-full-20261018\\metrics.csv": "81fe6498e5620e8ce24056ccc9e1a203325db44318e293392399bcf6dfc87673",
+  "proximity_isomap\\figures\\004-radius_transfer\\runs\\manual-full-20261018\\density_transfer.png": "3e9e6e40166399714220efcd006224fe7737c9ff3399240bf112a8b2ccc2cc46",
+  "proximity_isomap\\figures\\004-radius_transfer\\runs\\manual-full-20261018\\density_transfer.svg": "f111c50109fb590c43cc71fe596e90857b6351a6674f1fb44efbdb67d1d7aacf"
+}

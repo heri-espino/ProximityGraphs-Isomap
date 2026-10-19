@@ -1,0 +1,7 @@
+{
+  "proximity_isomap\\results\\001-radius_filtration\\runs\\manual-full-20261018\\coordinates.npz": "1cf33bfef9e04a1cb4e9afdecc1a10b42840906d3b3a85ab5403ffb9b539decd",
+  "proximity_isomap\\results\\001-radius_filtration\\runs\\manual-full-20261018\\metadata.json": "e942ea4aa267f166a7c3aba1eabed45e8f8ef638bf6ad18632f2f7f8b01637eb",
+  "proximity_isomap\\results\\001-radius_filtration\\runs\\manual-full-20261018\\metrics.csv": "4b45d6fa4da1d7d5a12d1aed77e77cd56418c9ecdf2eb38f5da1c564f718461f",
+  "proximity_isomap\\figures\\001-radius_filtration\\runs\\manual-full-20261018\\radius_sweep.png": "c09f19a73cd4b9d59439439a4ad14f98362ec75963b1b49cea4002690d4baedd",
+  "proximity_isomap\\figures\\001-radius_filtration\\runs\\manual-full-20261018\\radius_sweep.svg": "e702d9a542e0b1051d70ebd724cf9c855e502539af222ab83142276dfb097e9b"
+}

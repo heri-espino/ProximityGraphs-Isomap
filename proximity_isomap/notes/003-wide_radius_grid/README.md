@@ -74,3 +74,34 @@ only as a synthetic *diagnostic* when true intrinsic targets are available. This
 ![Historical experiment 003-wide_radius_grid summary — source-transcribed diagnostic values](../../figures/003-wide_radius_grid/summary.svg)
 
 > This SVG is a reconstructed visualization of historical rounded summaries, not a recovered 3D/2D projection. Actual figures will be embedded automatically under the latest computed run after executing the Conda pipeline.
+
+<!-- COMPUTED-RUN: manual-full-20261018 -->
+
+## Computed run: manual-full-20261018
+
+Run: **manual-full-20261018**; mode: **full**; seed: **20261018**. This run REBUILDS the research question using the current implementation; it is **not the recovered historical algorithm or an independent novelty claim**. Original arrays and metrics: [results](../../results/003-wide_radius_grid/runs/manual-full-20261018/metrics.csv); [metadata](../../results/003-wide_radius_grid/runs/manual-full-20261018/metadata.json).
+
+| K | Method | Within intrinsic stress / diagnostic RMSE | Between ambient stress |
+|---:|---|---:|---:|
+| - | Hybrid_MDS | 0.737881505802001 | - |
+| - | Hybrid_MDS | 0.737881505802001 | - |
+| - | Hybrid_MDS | 0.7378814835873055 | - |
+| - | Hybrid_MDS | 0.7378814253736177 | - |
+| - | Hybrid_MDS | 0.7378813938536901 | - |
+| - | Hybrid_MDS | 0.7378803543274959 | - |
+| - | Hybrid_MDS | 0.7378801563930821 | - |
+| - | Hybrid_MDS | 0.7378760346200468 | - |
+| - | Hybrid_MDS | 0.7378786934254171 | - |
+| - | Hybrid_MDS | 0.7376373968380714 | - |
+| - | Hybrid_MDS | 0.7376841317799424 | - |
+| - | Hybrid_MDS | 0.7388443982388806 | - |
+| - | Hybrid_MDS | 0.7357573404889938 | - |
+| - | Hybrid_MDS | 0.7364474871846458 | - |
+| - | Hybrid_MDS | 0.4683600589743809 | - |
+| - | Hybrid_MDS | 0.7069058282526648 | - |
+| - | Hybrid_MDS | 0.7244185641202806 | - |
+| - | Hybrid_MDS | 0.7286819962803666 | - |
+| - | Hybrid_MDS | 0.7320143142752212 | - |
+| - | Hybrid_MDS | 0.7342205268266175 | - |
+
+![New 003 plot: radius stress](../../figures/003-wide_radius_grid/runs/manual-full-20261018/radius_stress.png)

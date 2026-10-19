@@ -1,0 +1,5 @@
+n_rolls,n_points,scenario,radius,method,within_intrinsic_root_stress,between_ambient_root_stress,n_graph_components,horizontal_gap
+2,360,rotated_pair,4.798120546761362,PCA,0.7587877602659892,0.0422869210188667,2,
+2,360,rotated_pair,4.798120546761362,Hybrid_MDS,0.5017440841388575,0.26399453512209825,2,
+2,360,rotated_pair,4.798120546761362,Component_Isomap_free,0.05883023567530342,0.5342529319237902,2,nan
+2,360,rotated_pair,4.798120546761362,Component_Isomap_separated,0.05883023567530342,1.5528517263476929,2,2.2264517780532502

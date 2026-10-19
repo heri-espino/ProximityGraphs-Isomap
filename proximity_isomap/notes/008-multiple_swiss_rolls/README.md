@@ -87,3 +87,40 @@ holds for the **global** optimum, with \(V=+\infty\) if infeasible. A heuristic 
 ![Historical experiment 008-multiple_swiss_rolls summary — source-transcribed diagnostic values](../../figures/008-multiple_swiss_rolls/summary.svg)
 
 > This SVG is a reconstructed visualization of historical rounded summaries, not a recovered 3D/2D projection. Actual figures will be embedded automatically under the latest computed run after executing the Conda pipeline.
+
+<!-- COMPUTED-RUN: manual-full-20261018 -->
+
+## Computed run: manual-full-20261018
+
+Run: **manual-full-20261018**; mode: **full**; seed: **20261018**. This run REBUILDS the research question using the current implementation; it is **not the recovered historical algorithm or an independent novelty claim**. Original arrays and metrics: [results](../../results/008-multiple_swiss_rolls/runs/manual-full-20261018/metrics.csv); [metadata](../../results/008-multiple_swiss_rolls/runs/manual-full-20261018/metadata.json).
+
+| K | Method | Within intrinsic stress / diagnostic RMSE | Between ambient stress |
+|---:|---|---:|---:|
+| 1 | PCA | 0.7530695151723853 | None |
+| 1 | Hybrid_MDS | 0.2654398868561248 | None |
+| 1 | Component_Isomap_free | 0.23895398758818873 | None |
+| 1 | Component_Isomap_separated | 0.23895398758818873 | None |
+| 2 | PCA | 0.7587877602659892 | 0.0422869210188667 |
+| 2 | Hybrid_MDS | 0.5017440841388575 | 0.26399453512209825 |
+| 2 | Component_Isomap_free | 0.05883023567530342 | 0.5342529319237902 |
+| 2 | Component_Isomap_separated | 0.05883023567530342 | 1.5528517263476929 |
+| 3 | PCA | 0.7683233588906302 | 0.026874306058052157 |
+| 3 | Hybrid_MDS | 0.5099314626463868 | 0.09982646187054386 |
+| 3 | Component_Isomap_free | 0.0584818168649984 | 0.448861858670646 |
+| 3 | Component_Isomap_separated | 0.058481816864998384 | 1.1019613503835797 |
+| 4 | PCA | 0.7623485550569195 | 0.01614383470420659 |
+| 4 | Hybrid_MDS | 0.5339536311097947 | 0.06547565840047533 |
+| 4 | Component_Isomap_free | 0.05522906376102234 | 0.3244675873295216 |
+| 4 | Component_Isomap_separated | 0.05522906376102234 | 0.36922643955681944 |
+| 5 | PCA | 0.760304616697974 | 0.011974786671062106 |
+| 5 | Hybrid_MDS | 0.5634317847160282 | 0.04808497545867566 |
+| 5 | Component_Isomap_free | 0.07592547919974596 | 0.27280099965463267 |
+| 5 | Component_Isomap_separated | 0.07592547919974596 | 0.279428533329141 |
+
+![New 008 plot: rolls 01](../../figures/008-multiple_swiss_rolls/runs/manual-full-20261018/rolls_01.png)
+![New 008 plot: rolls 02](../../figures/008-multiple_swiss_rolls/runs/manual-full-20261018/rolls_02.png)
+![New 008 plot: rolls 03](../../figures/008-multiple_swiss_rolls/runs/manual-full-20261018/rolls_03.png)
+![New 008 plot: rolls 04](../../figures/008-multiple_swiss_rolls/runs/manual-full-20261018/rolls_04.png)
+![New 008 plot: rolls 05](../../figures/008-multiple_swiss_rolls/runs/manual-full-20261018/rolls_05.png)
+![New 008 plot: rolls 06](../../figures/008-multiple_swiss_rolls/runs/manual-full-20261018/rolls_06.png)
+![New 008 plot: within stress vs count](../../figures/008-multiple_swiss_rolls/runs/manual-full-20261018/within_stress_vs_count.png)

@@ -1,0 +1,9 @@
+{
+  "proximity_isomap\\results\\005-paired_manifolds\\runs\\manual-full-20261018\\coordinates.npz": "320dff1141094cd48a8e393e444964136db074d73ee374d3ef005da53640798f",
+  "proximity_isomap\\results\\005-paired_manifolds\\runs\\manual-full-20261018\\metadata.json": "96fb8647f5f144378fa19c51517ac651b02876102919e15debeffc34d6fe041b",
+  "proximity_isomap\\results\\005-paired_manifolds\\runs\\manual-full-20261018\\metrics.csv": "c6dc4bccc978167c1ef5c5d31b0a40b94c1a9ba1894e9ee95c476d8dfbe463a2",
+  "proximity_isomap\\figures\\005-paired_manifolds\\runs\\manual-full-20261018\\swiss_pair.png": "5c270f1321c3be39f0b654685ff75b2adf16ca2c702d4d3f601fc2f507575328",
+  "proximity_isomap\\figures\\005-paired_manifolds\\runs\\manual-full-20261018\\swiss_pair.svg": "871c93bb394708f273b2bac80d53ae273fb9eba1168809e6727606240da586e8",
+  "proximity_isomap\\figures\\005-paired_manifolds\\runs\\manual-full-20261018\\s_curve_pair.png": "981cd36914feb98c5b7956cbb6d9f339b4087b29cd00ed1a892af07cea933e71",
+  "proximity_isomap\\figures\\005-paired_manifolds\\runs\\manual-full-20261018\\s_curve_pair.svg": "4ad15caa4eadb15d97f1617be5a274043cbff997f358558a76d6bd6dfeaa837b"
+}

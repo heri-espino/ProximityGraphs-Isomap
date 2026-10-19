@@ -81,3 +81,23 @@ Both denominators must be positive. In the disconnected *intrinsic* manifold spa
 ![Historical experiment 005-paired_manifolds summary — source-transcribed diagnostic values](../../figures/005-paired_manifolds/summary.svg)
 
 > This SVG is a reconstructed visualization of historical rounded summaries, not a recovered 3D/2D projection. Actual figures will be embedded automatically under the latest computed run after executing the Conda pipeline.
+
+<!-- COMPUTED-RUN: manual-full-20261018 -->
+
+## Computed run: manual-full-20261018
+
+Run: **manual-full-20261018**; mode: **full**; seed: **20261018**. This run REBUILDS the research question using the current implementation; it is **not the recovered historical algorithm or an independent novelty claim**. Original arrays and metrics: [results](../../results/005-paired_manifolds/runs/manual-full-20261018/metrics.csv); [metadata](../../results/005-paired_manifolds/runs/manual-full-20261018/metadata.json).
+
+| K | Method | Within intrinsic stress / diagnostic RMSE | Between ambient stress |
+|---:|---|---:|---:|
+| 2 | PCA | 0.7372677031750692 | 0.0162717633746389 |
+| 2 | Hybrid_MDS | 0.4277398349648867 | 0.19647359867476133 |
+| 2 | Component_Isomap_free | 0.058830235675303454 | 0.5501818787686987 |
+| 2 | Component_Isomap_separated | 0.058830235675303454 | 1.6226864931437803 |
+| 2 | PCA | 0.39611007622323235 | 0.10605307153473541 |
+| 2 | Hybrid_MDS | 0.25147836084125275 | 0.20102899964777834 |
+| 2 | Component_Isomap_free | 0.25864907218121136 | 0.4042569498367744 |
+| 2 | Component_Isomap_separated | 0.2586490721812113 | 1.7425889673253574 |
+
+![New 005 plot: s curve pair](../../figures/005-paired_manifolds/runs/manual-full-20261018/s_curve_pair.png)
+![New 005 plot: swiss pair](../../figures/005-paired_manifolds/runs/manual-full-20261018/swiss_pair.png)

@@ -79,3 +79,34 @@ where \(c\) indexes manifold family and density condition.
 ![Historical experiment 004-radius_transfer summary — source-transcribed diagnostic values](../../figures/004-radius_transfer/summary.svg)
 
 > This SVG is a reconstructed visualization of historical rounded summaries, not a recovered 3D/2D projection. Actual figures will be embedded automatically under the latest computed run after executing the Conda pipeline.
+
+<!-- COMPUTED-RUN: manual-full-20261018 -->
+
+## Computed run: manual-full-20261018
+
+Run: **manual-full-20261018**; mode: **full**; seed: **20261018**. This run REBUILDS the research question using the current implementation; it is **not the recovered historical algorithm or an independent novelty claim**. Original arrays and metrics: [results](../../results/004-radius_transfer/runs/manual-full-20261018/metrics.csv); [metadata](../../results/004-radius_transfer/runs/manual-full-20261018/metadata.json).
+
+| K | Method | Within intrinsic stress / diagnostic RMSE | Between ambient stress |
+|---:|---|---:|---:|
+| - | PCA | 0.7159024240346602 | - |
+| - | Hybrid_MDS | 0.6150062196160003 | - |
+| - | PCA | 0.7180772414873239 | - |
+| - | Hybrid_MDS | 0.3050874846105693 | - |
+| - | PCA | 0.6895730415567148 | - |
+| - | Hybrid_MDS | 0.6502627997085528 | - |
+| - | PCA | 0.7301121789774011 | - |
+| - | Hybrid_MDS | 0.5855959319514874 | - |
+| - | PCA | 0.7189067106020747 | - |
+| - | Hybrid_MDS | 0.6331899690550084 | - |
+| - | PCA | 0.7085782688520167 | - |
+| - | Hybrid_MDS | 0.3048769595697021 | - |
+| - | PCA | 0.7323341762367679 | - |
+| - | Hybrid_MDS | 0.7017994284832516 | - |
+| - | PCA | 0.7432307984161083 | - |
+| - | Hybrid_MDS | 0.5127240974505551 | - |
+| - | PCA | 0.454952426328616 | - |
+| - | Hybrid_MDS | 0.20774285031053075 | - |
+| - | PCA | 0.5066279448999323 | - |
+| - | Hybrid_MDS | 0.30661309056642383 | - |
+
+![New 004 plot: density transfer](../../figures/004-radius_transfer/runs/manual-full-20261018/density_transfer.png)

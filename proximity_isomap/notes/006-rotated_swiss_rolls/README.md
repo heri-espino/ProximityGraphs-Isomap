@@ -77,3 +77,23 @@ $$
 ![Historical experiment 006-rotated_swiss_rolls summary — source-transcribed diagnostic values](../../figures/006-rotated_swiss_rolls/summary.svg)
 
 > This SVG is a reconstructed visualization of historical rounded summaries, not a recovered 3D/2D projection. Actual figures will be embedded automatically under the latest computed run after executing the Conda pipeline.
+
+<!-- COMPUTED-RUN: manual-full-20261018 -->
+
+## Computed run: manual-full-20261018
+
+Run: **manual-full-20261018**; mode: **full**; seed: **20261018**. This run REBUILDS the research question using the current implementation; it is **not the recovered historical algorithm or an independent novelty claim**. Original arrays and metrics: [results](../../results/006-rotated_swiss_rolls/runs/manual-full-20261018/metrics.csv); [metadata](../../results/006-rotated_swiss_rolls/runs/manual-full-20261018/metadata.json).
+
+| K | Method | Within intrinsic stress / diagnostic RMSE | Between ambient stress |
+|---:|---|---:|---:|
+| 2 | PCA | 0.7372677031750692 | 0.0162717633746389 |
+| 2 | Hybrid_MDS | 0.4277398349648867 | 0.19647359867476133 |
+| 2 | Component_Isomap_free | 0.058830235675303454 | 0.5501818787686987 |
+| 2 | Component_Isomap_separated | 0.058830235675303454 | 1.6226864931437803 |
+| 2 | PCA | 0.7587877602659892 | 0.0422869210188667 |
+| 2 | Hybrid_MDS | 0.5017440841388575 | 0.26399453512209825 |
+| 2 | Component_Isomap_free | 0.05883023567530342 | 0.5342529319237902 |
+| 2 | Component_Isomap_separated | 0.05883023567530342 | 1.5528517263476929 |
+
+![New 006 plot: parallel](../../figures/006-rotated_swiss_rolls/runs/manual-full-20261018/parallel.png)
+![New 006 plot: rotated](../../figures/006-rotated_swiss_rolls/runs/manual-full-20261018/rotated.png)

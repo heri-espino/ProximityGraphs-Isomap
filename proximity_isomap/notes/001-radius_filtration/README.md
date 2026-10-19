@@ -81,3 +81,33 @@ $$
 ![Historical experiment 001-radius_filtration summary — source-transcribed diagnostic values](../../figures/001-radius_filtration/summary.svg)
 
 > This SVG is a reconstructed visualization of historical rounded summaries, not a recovered 3D/2D projection. Actual figures will be embedded automatically under the latest computed run after executing the Conda pipeline.
+
+<!-- COMPUTED-RUN: manual-full-20261018 -->
+
+## Computed run: manual-full-20261018
+
+Run: **manual-full-20261018**; mode: **full**; seed: **20261018**. This run REBUILDS the research question using the current implementation; it is **not the recovered historical algorithm or an independent novelty claim**. Original arrays and metrics: [results](../../results/001-radius_filtration/runs/manual-full-20261018/metrics.csv); [metadata](../../results/001-radius_filtration/runs/manual-full-20261018/metadata.json).
+
+| K | Method | Within intrinsic stress / diagnostic RMSE | Between ambient stress |
+|---:|---|---:|---:|
+| - | graph | 0.2861143905495011 | - |
+| - | graph | 0.5308677754561624 | - |
+| - | graph | 1.4656212771071964 | - |
+| - | graph | 1.392473768360958 | - |
+| - | graph | 2.586459853775322 | - |
+| - | graph | 4.064467485279107 | - |
+| - | graph | 3.4866127505432236 | - |
+| - | graph | 3.1739801473150377 | - |
+| - | graph | 3.643431755044784 | - |
+| - | graph | 9.393421656050094 | - |
+| - | graph | 3.9064258147455786 | - |
+| - | graph | 3.03449736068922 | - |
+| - | graph | 2.6786602008028937 | - |
+| - | graph | 1.8163779236456465 | - |
+| - | graph | 1.519330825345455 | - |
+| - | graph | 1.3648603370489516 | - |
+| - | graph | 0.5567972419804263 | - |
+| - | graph | 28.006929578532212 | - |
+| - | graph | 28.397003156928072 | - |
+
+![New 001 plot: radius sweep](../../figures/001-radius_filtration/runs/manual-full-20261018/radius_sweep.png)
