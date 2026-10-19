@@ -1,6 +1,6 @@
 # EXP-010 — Cylinder versus five disconnected circular rings
 
-**Stage A complete:** [native Python runner](../../code/010-radius_density_and_rings/run.py) committed to GitHub. **Stage B pending:** the user's Windows experiment will generate new numerical results and figures; **Stage C:** the assistant will interpret the *actual pushed results* here and update Marp checkpoint 012.
+**New status (2026-10-19):** The full Windows experiment was executed and pushed. The earlier pilot remains labeled below; the new measurements and genuine PNG figures are documented in the computed-run section.
 
 ## Research question
 
@@ -46,3 +46,43 @@ The previous grid pilot also observed \(\beta_1(1.15)=343\) for the 360-point cy
 | \`projections\` | Original 3D, PCA and componentwise Isomap | Awaiting user run |
 
 Results will include CSV counts, raw observations NPZ, JSON metadata and SHA256 manifest under \`../../results/010-radius_density_and_rings/runs/<RUN_ID>/\`. After the user pushes the new run, the assistant must read those exact files and replace this pre-run checkpoint with findings, uncertainties, negative cases and embedded generated images. Do not silently combine previous-pilot values with new runs.
+
+## Computed run: 20261019T061001Z-full
+
+This section uses **the actual Windows run**, not the prior exploratory pilot. [Summary CSV](../../results/010-radius_density_and_rings/runs/20261019T061001Z-full/summary.csv), [fixed-scale Betti CSV](../../results/010-radius_density_and_rings/runs/20261019T061001Z-full/fixed_scale_betti.csv), [metadata](../../results/010-radius_density_and_rings/runs/20261019T061001Z-full/metadata.json) and actual PNG/SVG figures are on GitHub.
+
+### Connected-component recovery
+
+| Synthetic cloud | Points | Largest full-cloud MST edge | beta0 at r=0.50 | beta0 at r=1.25 |
+|---|---:|---:|---:|---:|
+| Cylinder 9 by 6 | 54 | 2.1205 | 54 | 54 |
+| Cylinder 12 by 12 | 144 | 1.6047 | 144 | 12 |
+| Cylinder 18 by 20 | 360 | 1.0766 | 18 | **1** |
+| Cylinder 24 by 30 | 720 | 0.8093 | 24 | **1** |
+| Five distinct circles | 450 | 2.0000 | **5** | **5** |
+
+The full-cloud MST threshold of 2.0000 for the rings includes **between-ring edges** and must not be presented as the per-ring connectivity threshold. On the cylinder, denser deterministic grids connect at a smaller radius. On the rings, five disconnected source supports remain five graph components over the chosen radius.
+
+### Homology at selected radii
+
+For the 360-point cylinder, the measured pairs \((\beta_0,\beta_1)\) are (18,0) at radius 0.50, (1,343) at 1.15, and (1,1) at both 1.25 and 1.50. Five circles have (5,5) at each tested radius 0.25, 0.50, 1.25 and 1.80. The numerous finite-grid cycles at 1.15 do **not** imply hundreds of holes in the continuous cylinder. The runner computes fixed-scale VR homology (including triangles), **not full persistence intervals**.
+
+### Original figures from this computed run
+
+![EXP-010 actual 3D cylinder and five circles](../../figures/010-radius_density_and_rings/runs/20261019T061001Z-full/geometry.png)
+
+The samples clarify that stacked slices of a connected cylinder are not five disconnected circles.
+
+![EXP-010 actual radius sweep and fixed-scale Rips H1](../../figures/010-radius_density_and_rings/runs/20261019T061001Z-full/radius_topology.png)
+
+Graph connectivity and VR loops respond differently to a changing radius; a sample grid can have spurious short-scale cycles.
+
+![EXP-010 actual component colors across four radii](../../figures/010-radius_density_and_rings/runs/20261019T061001Z-full/radius_snapshots.png)
+
+Changing the graph scale fragments or connects a *finite graph*; it does not change the topology of the underlying ideal support.
+
+![EXP-010 actual original 3D, PCA and componentwise Isomap](../../figures/010-radius_density_and_rings/runs/20261019T061001Z-full/projections.png)
+
+Isomap may produce a visually useful projection without preserving the source ambient VR filtration.
+
+**Limitations:** noiseless regular grids, selected radii rather than a full H1 barcode, no statistical repetition, and no guarantee that 2D Isomap preserves manifold topology. The next experiments should use random sampling, topology-aware diagnostics, and independently selected neighborhood scales.
