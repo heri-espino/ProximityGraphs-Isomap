@@ -28,3 +28,8 @@ The Markdown image paths are verified on GitHub. The rendered slides have **not 
 - The centroid loss does not identify component orientations when local embeddings are centered.
 - Convex-hull clearance and the ideal separation–distortion frontier are explicitly proposed optimization ingredients; EXP-011 uses a feasible strip layout, not the global constrained optimum.
 - One full synthetic-seed comparison is evidence, not a claim of universal superiority or established novelty.
+
+
+## EXP-013: shared research notebook extension (source prepared)
+
+[EXP-013 protocol](../013-classical_multicomponent_dashboards/README.md) and the [native runner](../../code/013-classical_multicomponent_dashboards/run.py) implement 7 families × far/near, with both Isomap-centered and general 3×3 dashboards. The lecture now includes the exact experimental design, metric equations, and open questions. The **actual 28 dashboards have not been generated yet**; the user will run the experiment and push the new results, after which all useful generated panels and failures will be embedded. The lecture is intentionally allowed to grow as a shared study and research notebook, not constrained to a short talk.

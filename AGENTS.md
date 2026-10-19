@@ -6,9 +6,13 @@ Read in order: [AI_HANDOFF.md](AI_HANDOFF.md), [experiment notes](proximity_isom
 
 **Permanent user instruction (2026-10-18):** A completed experiment is delivered **inside the GitHub repository**, not as an isolated ZIP, chat attachment or issue. Add code, actual CSV/JSON/NPZ results, both original PNG and SVG figures, and the mathematical Markdown note with rendered images, under matching numbered paths in `proximity_isomap/{code,results,figures,notes}/NNN-descriptive_title/`. Include seeds, method settings, provenance, tests, negative findings and experiment limitations. Update the experiment index, AI_HANDOFF.md, journal, state and next steps. **Push the generated source and output artifacts, verify their actual remote paths and cite the verified Git SHA before saying the experiment is complete.** If pushing originals is not possible, report exactly what remains unpublished and provide a runnable recovery command; do not claim the archived experiment is fully in GitHub. Never replace an actual experimental figure with an attractive but uncomputed plot.
 
-**Corrected numbers:** EXP-010 is cylinder versus five separate circles; EXP-011 is componentwise kNN Isomap against other Isomap baselines, PCA and t-SNE (UMAP not yet run); professor Marp presentation is checkpoint 012, not experiment 010. Preserve existing immutable run folders; do not import the rejected historical Integration.zip.
+**Corrected numbers:** EXP-010 is cylinder versus five separate circles; EXP-011 is the executed comparison including genuine UMAP; professor Marp presentation is checkpoint 012, not experiment 010. Preserve existing immutable run folders; do not import the rejected historical Integration.zip.
 
 **Math in Marp/Markdown:** Use `$...$` for inline formulas and `$$...$$` for displayed equations. Avoid `\(...\)` in Marp prose, which can display literal parentheses rather than typeset mathematics. Do not alter the mathematical expressions when changing delimiters; inspect the rendered slides after editing.
+
+## Shared research lecture convention (2026-10-19)
+
+The Marp lecture under proximity_isomap/notes/012-presentation_checkpoint is **a large collaborative research notebook**, not a minimal talk. It should contain the full mathematical derivations, all *actual* useful dashboards (even dozens), easy and difficult near/far examples, measured failures, warnings, unresolved questions, and proposed next experiments. Do not trim evidence solely to make it shorter; organize with sections and figure indices instead. When new user-run data is published, append run-specific observations and real figure references instead of fabricating slides in advance. Inline MathJax uses $...$ and block math $$...$$, not escaped parentheses.
 
 ## Mandatory three-stage experiment workflow (user confirmed 2026-10-18)
 

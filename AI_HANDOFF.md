@@ -22,3 +22,8 @@ Internal computed distances survive orthogonal motions exactly; intrinsic geodes
 ## What to do next
 
 Render and inspect the new Marp deck locally (instructions in 012 README). For specialized EXP-013, first **commit code/tests/pre-run note**; have the user run and push unique full-run files; only then interpret experiment results and update the lecture. Preserve earlier run records, failed methods and provenance.
+
+
+## EXP-013 code checkpoint — 2026-10-19
+
+The user requested a deliberately large, shared-research Marp notebook with all mathematical lessons, successful/failed near/far cases and every 3x3 dashboard. An EXP-013 runner has been committed at `proximity_isomap/code/013-classical_multicomponent_dashboards/run.py`, Windows launcher `scripts/run_exp_013.ps1`, tests `tests/test_exp013_classical_dashboards.py`, and full pre-run math/figures plan under `proximity_isomap/notes/013-classical_multicomponent_dashboards/README.md`. It includes 7 geometry families × far/near = 14 scenarios, two dashboards of 9 methods each per scenario (12 unique methods), and a k_detect/k_embed grid. **The user has not yet run EXP-013; no generated results or figures are claimed.** Next: user executes quick pytest/smoke/full and pushes; assistant reads actual files and adds all 28 generated dashboards and evidence-grounded interpretation to note 013 and Marp checkpoint 012. Never drop failures or oracle-K caveats.

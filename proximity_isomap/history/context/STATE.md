@@ -16,3 +16,8 @@ The assistant commits experiment code and pre-run math; the user runs the heavy 
 ## Research directions
 
 The present EXP-011 "componentwise kNN" method uses radius/supplied-K MST component discovery and *within-component* 10-NN, not global unsupervised kNN discovery. Proposed EXP-013 should distinguish k_detect and k_embed; characterize connectivity and partition errors, intracomponent graph-geodesic reconstruction and convex-hull clearance/cross-placement tradeoffs across k and sampling regimes. Optimization of the separation–distortion frontier remains proposed, not validated novelty.
+
+
+## EXP-013 prepared code (2026-10-19)
+
+Native runnable code/tests, a Windows launcher and experiment mathematical protocol now exist in `013-classical_multicomponent_dashboards`. The new experiment has not been executed by the user. It specifies 7 classical manifold families (rings, springs, Swiss rolls, S-curves, planes, tori, cylinder+ring), two strictly positive sampled-gap regimes far/near, 28 planned 3×3 dashboards (Isomap-centered and general), 28 additional 3D/parameter diagrams, 12 unique methods and separate kNN detection/embedding parameter sweeps. Its oracle-K comparator is marked; UMAP must be real; methods may fail. The shared Marp lecture is intended as a growing research notebook and has a pre-run EXP-013 design section. Source, not fabricated results, is committed.

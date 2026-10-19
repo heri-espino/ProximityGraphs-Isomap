@@ -44,3 +44,10 @@ Note that the previously committed 010/011 numerical **summary SVGs** describe a
 ## Mathematical lecture (checkpoint 012)
 
 [Componentwise kNN-Isomap — Marp Markdown lecture](proximity_isomap/notes/012-presentation_checkpoint/componentwise_knn_isomap_lecture.md) derives kNN graphs, graph geodesics, MDS, rigid alignment, geometric clearance, evaluation metrics, complexity and limitations, using the executed full EXP-010/011 run figures. [Marp rendering instructions](proximity_isomap/notes/012-presentation_checkpoint/README.md).
+
+
+## EXP-013 — Classical multicomponent dashboards (code ready, run pending)
+
+[Mathematical experiment protocol](proximity_isomap/notes/013-classical_multicomponent_dashboards/README.md) · [Native Python implementation](proximity_isomap/code/013-classical_multicomponent_dashboards/run.py) · [PowerShell launcher](scripts/run_exp_013.ps1).
+
+Seven classical manifold families in far/near regimes generate **28 real 3×3 dashboards** (one Isomap-centered and one general dimensionality-reduction comparison per scenario), plus 3D source views and k-sensitivity diagnostics. User must execute and push actual images/metrics. Only then will the assistant write run-specific results and incorporate all dashboards into the shared research lecture.

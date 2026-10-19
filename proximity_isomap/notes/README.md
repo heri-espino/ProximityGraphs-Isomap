@@ -17,7 +17,8 @@ Read the detailed notes (question, design, results, failed attempts, interpretat
 | 009 | Topological holes in Swiss roll, cylinder, torus | [Notes](009-topological_manifolds/README.md) |
 | 010 | Dense cylinder versus five separate circular rings | [Notes](010-radius_density_and_rings/README.md) |
 | 011 | Isomap variants, componentwise kNN Isomap, PCA, t-SNE, pending UMAP | [Notes](011-isomap_baselines/README.md) |
-| 012 | Professor Marp presentation (not a numerical experiment) | [Slides](012-presentation_checkpoint/presentation.md) |
+| 012 | Professor Marp presentation and shared mathematical lecture | [Slides](012-presentation_checkpoint/presentation.md) · [Lecture](012-presentation_checkpoint/componentwise_knn_isomap_lecture.md) |
+| 013 | Classical multicomponent far/near dashboards and kNN sensitivity (source prepared; results pending) | [Protocol](013-classical_multicomponent_dashboards/README.md) |
 
 [Mathematical proofs](mathematics/index.md) · [Historical journal](../history/README.md)
 

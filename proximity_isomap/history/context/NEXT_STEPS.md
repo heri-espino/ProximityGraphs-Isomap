@@ -21,3 +21,12 @@
 
 - [ ] Literature novelty matrix against source-verified D-C Isomap, M-Isomap, S-Isomap++, TopoMap, DIPOLE and metric-constrained alignments.
 - [ ] Perform multiple-seed and independent-confirmation tests; do not infer general superiority from the one-seed EXP-011.
+
+
+## EXP-013: immediate user-run task (not completed yet)
+
+- [x] Commit code, local Windows runner, regression tests, numbered notes and planned figure manifest for classical multi-manifold far/near dashboards.
+- [x] Expand the shared Marp lecture with both 3x3 dashboard definitions, sampled-distance construction, method caveats, mathematical and open-question sections; no ungenerated image links.
+- [ ] User: `git pull --ff-only`, install real `umap-learn` if needed, run `python -m pytest tests/test_exp013_classical_dashboards.py -q`, then `./scripts/run_exp_013.ps1 -Quick` (PowerShell invocation with backslash) and `./scripts/run_exp_013.ps1 -RequireUmap -Push`.
+- [ ] Assistant: after the user pushes, inspect full method_metrics, K recovery, k grid, 28 real dashboards and errors. Write 013 mathematical results and embed real figures in both EXP-013 notes and lecture checkpoint 012. Do not declare the new experiment measured until this occurs.
+- [ ] Follow up: rerun multiple seeds and vary near/far closeness for statistical confirmation; compare optimized placement and stronger published multi-manifold methods in a separate future experiment.
