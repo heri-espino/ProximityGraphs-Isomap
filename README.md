@@ -23,6 +23,19 @@ The script creates/updates the environment from `environment.yml`, including [co
 Read [AGENTS.md](AGENTS.md) and [AI_HANDOFF.md](AI_HANDOFF.md) before extending the experiments.
 
 
-## Corrected numbering and archive publication
+## EXP-010 / EXP-011 — local computation, GitHub publication, then scientific analysis
 
-[EXP-010: cylinder versus five separate rings](proximity_isomap/notes/010-radius_density_and_rings/README.md) · [EXP-011: componentwise kNN Isomap and baselines](proximity_isomap/notes/011-isomap_baselines/README.md) · [012: professor Marp presentation](proximity_isomap/notes/012-presentation_checkpoint/README.md). The EXP-010/011 **runnable source is now on GitHub**. Run it on the local Windows/Conda machine using `scripts/run_exp_010_011.ps1 -RequireUmap`, push new immutable CSV/NPZ/JSON and PNG/SVG outputs, then request a data-grounded Markdown interpretation. GitHub summaries are already present, but archives alone are not complete published experiments. See AGENTS.md.
+[EXP-010 — cylinder versus five rings](proximity_isomap/notes/010-radius_density_and_rings/README.md) · [EXP-011 — Isomap/kNN and PCA/t-SNE/UMAP comparisons](proximity_isomap/notes/011-isomap_baselines/README.md) · [Checkpoint 012 — Marp presentation](proximity_isomap/notes/012-presentation_checkpoint/README.md).
+
+**Working rule:** assistant pushes the runnable code and pre-run mathematical plan; user runs it on the Windows Conda machine and pushes actual numeric CSV/NPZ/JSON and PNG/SVG; assistant then reads the run files and writes the detailed experimental Markdown interpretation with real embedded figures, updating the Marp checkpoint. Do not use ZIP import and do not interpret a run that has not happened.
+
+~~~powershell
+git pull --ff-only
+conda install -n proximity-isomap -c conda-forge umap-learn -y
+.\scripts\run_exp_010_011.ps1 -Quick
+.\scripts\run_exp_010_011.ps1 -RequireUmap
+~~~
+
+The quick run is disposable/ignored. Full runs receive unique labels and never overwrite earlier runs. **Nothing is automatically pushed.** Inspect the generated outputs, commit and push only their full-run folders under `proximity_isomap/results/` and `proximity_isomap/figures/`. No Ruff or old `scripts/run_all.ps1` invocation is required for EXP-010/011.
+
+Note that the previously committed 010/011 numerical **summary SVGs** describe an *older exploratory pilot*, not the upcoming fresh run. The assistant will update both experiment notes after inspecting the user's exact new files.
