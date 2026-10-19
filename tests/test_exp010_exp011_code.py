@@ -21,7 +21,8 @@ def test_exp010_cylinder_and_rings_have_distinct_support_counts():
     assert rings.shape == (90, 3)
     assert len(np.unique(cylinder_labels)) == 1
     assert len(np.unique(ring_labels)) == 5
-    assert int(54 - np.searchsorted(mod["mst_deaths"](cylinder), 0.5, side="right")) == 54
+    remaining = 54 - np.searchsorted(mod["mst_deaths"](cylinder), 0.5, side="right")
+    assert int(remaining) == 54
 
 
 def test_exp011_detects_five_separate_rings_and_fits_componentwise_knn():
