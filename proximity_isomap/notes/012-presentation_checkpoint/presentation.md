@@ -464,6 +464,22 @@ Report the unsupervised graph's component accuracy, hull overlap, intrinsic stre
 ---
 
 <!-- _class: compact -->
+# EXP-010 — Cylinder versus five separate rings
+
+![h:350](../../figures/010-radius_density_and_rings/summary.svg)
+
+[Experiment 010](../010-radius_density_and_rings/README.md): graph components and VR holes under radius and sampling changes. Original 3D/2D galleries still await source archive import.
+
+---
+
+# EXP-011 — Our componentwise kNN Isomap versus baselines
+
+![h:350](../../figures/011-isomap_baselines/summary.svg)
+
+[Experiment 011](../011-isomap_baselines/README.md): PCA, global Isomap, componentwise kNN/radius Isomap, t-SNE; UMAP not yet executed. Original 3D/2D galleries await import.
+
+---
+
 # Related literature — essential comparisons
 
 - Tenenbaum, de Silva & Langford, 2000: Isomap.

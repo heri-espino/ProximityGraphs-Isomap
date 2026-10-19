@@ -23,3 +23,8 @@ All versioned figures use relative paths into proximity_isomap/figures and are v
 - TDA and stochastic geometry notes: [../mathematics/research_tda_stochastic_geometry.md](../mathematics/research_tda_stochastic_geometry.md)
 
 The main slides end with the literature list; the remaining pages are optional image-atlas backup slides. Distinguish computed within-embedding distances from synthetic ground truth, and between-manifold ambient distances from nonexistent cross-manifold intrinsic geodesics.
+
+
+## Corrected experimental sequence
+
+[EXP-010: cylinder and separate rings](../010-radius_density_and_rings/README.md) and [EXP-011: componentwise kNN Isomap comparison](../011-isomap_baselines/README.md) now have GitHub mathematical notes and metric-summary SVGs, both included in this deck. The full original galleries must still be imported with scripts/import_exp010_exp011.ps1 from the repository root.
