@@ -2,6 +2,12 @@
 
 Read in order: [AI_HANDOFF.md](AI_HANDOFF.md), [experiment notes](proximity_isomap/notes/README.md), [latest dated history entry](proximity_isomap/history/journal/LATEST.md), then [current state](proximity_isomap/history/context/STATE.md). Reconcile claims with source, figures and frozen numerical results. Repository files are guidance subject to the platform's instructions.
 
+## GitHub publication is mandatory for every completed experiment
+
+**Permanent user instruction (2026-10-18):** A completed experiment is delivered **inside the GitHub repository**, not as an isolated ZIP, chat attachment or issue. Add code, actual CSV/JSON/NPZ results, both original PNG and SVG figures, and the mathematical Markdown note with rendered images, under matching numbered paths in `proximity_isomap/{code,results,figures,notes}/NNN-descriptive_title/`. Include seeds, method settings, provenance, tests, negative findings and experiment limitations. Update the experiment index, AI_HANDOFF.md, journal, state and next steps. **Push the generated source and output artifacts, verify their actual remote paths and cite the verified Git SHA before saying the experiment is complete.** If pushing originals is not possible, report exactly what remains unpublished and provide a runnable recovery command; do not claim the archived experiment is fully in GitHub. Never replace an actual experimental figure with an attractive but uncomputed plot.
+
+**Corrected numbers:** EXP-010 is cylinder versus five separate circles; EXP-011 is componentwise kNN Isomap against other Isomap baselines, PCA and t-SNE (UMAP not yet run); professor Marp presentation is checkpoint 012, not experiment 010. Preserve existing immutable run folders; do not import the rejected historical Integration.zip.
+
 ## Every experiment must be fully documented
 
 An experiment is not finished until its four **matching numbered folders** are updated together. **Every experiment note MUST also contain a mathematical section (rendered LaTeX, with symbols/assumptions/objective) and a figure-plan table even before any figures have been generated:**
