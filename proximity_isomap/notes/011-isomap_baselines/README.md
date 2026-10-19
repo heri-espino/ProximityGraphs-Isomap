@@ -4,18 +4,18 @@
 
 ## Research question and methods
 
-Compare **componentwise kNN Isomap** and componentwise radius Isomap with global Isomap \(k=8,24\), global radius Isomap, PCA, t-SNE and actual **UMAP**. Five synthetic datasets are used: five rings, cylinder, two rotated Swiss rolls, two S-curves and torus. Global Isomap can automatically insert links across disconnected kNN components; this is recorded. Global radius Isomap reports failure rather than adding undocumented bridges. The torus analytic intrinsic geodesics are not computed. Some scenarios supply the true \(K\) to MST cutting (explicit oracle diagnostic).
+Compare **componentwise kNN Isomap** and componentwise radius Isomap with global Isomap $k=8,24$, global radius Isomap, PCA, t-SNE and actual **UMAP**. Five synthetic datasets are used: five rings, cylinder, two rotated Swiss rolls, two S-curves and torus. Global Isomap can automatically insert links across disconnected kNN components; this is recorded. Global radius Isomap reports failure rather than adding undocumented bridges. The torus analytic intrinsic geodesics are not computed. Some scenarios supply the true $K$ to MST cutting (explicit oracle diagnostic).
 
 ## Mathematics: distortion and spatial separation
 
-Before scoring, rescale each \(Y\) uniformly by the observed ambient within-group RMS ratio,
+Before scoring, rescale each $Y$ uniformly by the observed ambient within-group RMS ratio,
 
 $$
 s=\sqrt{\frac{\sum_k\sum_{i\ne j\in C_k}\|x_i-x_j\|^2}
 {\sum_k\sum_{i\ne j\in C_k}\|y_i-y_j\|^2}},\quad \widetilde Y=sY.
 $$
 
-For the known synthetic within-manifold geodesics \(g_{ij}\), use
+For the known synthetic within-manifold geodesics $g_{ij}$, use
 
 $$
 S_{\rm within}=\sqrt{\frac{\sum_k\sum_{i<j\in C_k}
@@ -23,7 +23,7 @@ S_{\rm within}=\sqrt{\frac{\sum_k\sum_{i<j\in C_k}
 {\sum_k\sum_{i<j\in C_k}g_{ij}^2}}.
 $$
 
-Across disconnected manifolds, **intrinsic geodesic distance is not finite**; we instead measure normalized cross-component *ambient* stress, centroid-distance stress, and the number of intersecting 2D convex-hull pairs. Neighborhood trustworthiness at \(k=8\) and runtime are reported separately: t-SNE and UMAP chiefly target local neighborhoods, not global metric fidelity. Generating labels are used only for synthetic diagnostic evaluation.
+Across disconnected manifolds, **intrinsic geodesic distance is not finite**; we instead measure normalized cross-component *ambient* stress, centroid-distance stress, and the number of intersecting 2D convex-hull pairs. Neighborhood trustworthiness at $k=8$ and runtime are reported separately: t-SNE and UMAP chiefly target local neighborhoods, not global metric fidelity. Generating labels are used only for synthetic diagnostic evaluation.
 
 ## Earlier exploratory pilot — not the forthcoming user run
 

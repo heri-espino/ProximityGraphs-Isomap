@@ -8,13 +8,13 @@ A cylinder is one connected surface with one essential loop; five separate circl
 
 ## Mathematics: H0 graph components and H1 VR holes
 
-Edges occur iff \(\|x_i-x_j\|_2\le r\). If \(T\) is the Euclidean minimum spanning tree, the number of components is
+Edges occur iff $\|x_i-x_j\|_2\le r$. If $T$ is the Euclidean minimum spanning tree, the number of components is
 
 $$
 \beta_0(r)=n-\#\{e\in T:w(e)\le r\}.
 $$
 
-For the Vietoris–Rips complex of vertices, edges and filled triangles, using the boundary map over \(\mathbb F_2\),
+For the Vietoris–Rips complex of vertices, edges and filled triangles, using the boundary map over $\mathbb F_2$,
 
 $$
 \beta_1(r)=|E_r|-n+\beta_0(r)-\operatorname{rank}_{\mathbb F_2}(\partial_2).
@@ -32,7 +32,7 @@ The runner calculates **fixed-scale H1 counts**, not persistence birth/death pai
 | Cylinder | 720 | 24 | 1 |
 | Five separated circles | 450 | 5 | 5 |
 
-The previous grid pilot also observed \(\beta_1(1.15)=343\) for the 360-point cylinder and \(\beta_1(1.25)=1\); the first number represents temporary grid cycles, not 343 holes in the underlying cylinder.
+The previous grid pilot also observed $\beta_1(1.15)=343$ for the 360-point cylinder and $\beta_1(1.25)=1$; the first number represents temporary grid cycles, not 343 holes in the underlying cylinder.
 
 ![Earlier pilot component counts](../../figures/010-radius_density_and_rings/summary.svg)
 
@@ -65,7 +65,7 @@ The full-cloud MST threshold of 2.0000 for the rings includes **between-ring edg
 
 ### Homology at selected radii
 
-For the 360-point cylinder, the measured pairs \((\beta_0,\beta_1)\) are (18,0) at radius 0.50, (1,343) at 1.15, and (1,1) at both 1.25 and 1.50. Five circles have (5,5) at each tested radius 0.25, 0.50, 1.25 and 1.80. The numerous finite-grid cycles at 1.15 do **not** imply hundreds of holes in the continuous cylinder. The runner computes fixed-scale VR homology (including triangles), **not full persistence intervals**.
+For the 360-point cylinder, the measured pairs $(\beta_0,\beta_1)$ are (18,0) at radius 0.50, (1,343) at 1.15, and (1,1) at both 1.25 and 1.50. Five circles have (5,5) at each tested radius 0.25, 0.50, 1.25 and 1.80. The numerous finite-grid cycles at 1.15 do **not** imply hundreds of holes in the continuous cylinder. The runner computes fixed-scale VR homology (including triangles), **not full persistence intervals**.
 
 ### Original figures from this computed run
 
