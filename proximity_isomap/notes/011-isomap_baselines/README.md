@@ -45,14 +45,14 @@ The old pilot's ring projection showed non-overlapping componentwise Isomap hull
 
 | PNG/SVG output stem | Interpretation | Status |
 |---|---|---|
-| \`rings_embeddings\`, \`cylinder_embeddings\` | Rings/cylinder across methods | User run pending |
-| \`swiss_pair_embeddings\`, \`s_curve_pair_embeddings\` | Separately rotated surfaces | User run pending |
-| \`torus_embeddings\` | One torus across methods | User run pending |
-| \`intrinsic_stress\` | Within-manifold geometry | User run pending |
-| \`centroid_stress\` | Intercomponent placement | User run pending |
-| \`trustworthiness_8\` | Local neighborhood fidelity | User run pending |
+| \`rings_embeddings\`, \`cylinder_embeddings\` | Rings/cylinder across methods | Completed: 20261019T061001Z-full |
+| \`swiss_pair_embeddings\`, \`s_curve_pair_embeddings\` | Separately rotated surfaces | Completed: 20261019T061001Z-full |
+| \`torus_embeddings\` | One torus across methods | Completed: 20261019T061001Z-full |
+| \`intrinsic_stress\` | Within-manifold geometry | Completed: 20261019T061001Z-full |
+| \`centroid_stress\` | Intercomponent placement | Completed: 20261019T061001Z-full |
+| \`trustworthiness_8\` | Local neighborhood fidelity | Completed: 20261019T061001Z-full |
 
-The full run will save \`metrics.csv\`, scenario input and embedding NPZ, metadata and SHA256 hashes under matching immutable results/figures folders. UMAP must be installed and explicitly required in the user's command. The assistant writes the run-specific scientific discussion **only after inspecting those pushed artifacts**.
+The completed full run saved \`metrics.csv\`, scenario input and embedding NPZ, metadata and SHA256 hashes under matching immutable results/figures folders. UMAP must be installed and explicitly required in the user's command. The Computed run section below documents the specific pushed artifacts.
 
 ## Computed run: 20261019T061001Z-full — genuine UMAP included
 

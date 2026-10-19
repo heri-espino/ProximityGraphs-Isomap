@@ -40,12 +40,12 @@ The previous grid pilot also observed \(\beta_1(1.15)=343\) for the 360-point cy
 
 | Native PNG + SVG figure stem | What it will show | Status |
 |---|---|---|
-| \`geometry\` | 3D cylinder versus separate circles | Awaiting user run |
-| \`radius_topology\` | Graph H0 and fixed-scale VR H1 | Awaiting user run |
-| \`radius_snapshots\` | Component fragmentation/merging | Awaiting user run |
-| \`projections\` | Original 3D, PCA and componentwise Isomap | Awaiting user run |
+| \`geometry\` | 3D cylinder versus separate circles | Completed: 20261019T061001Z-full |
+| \`radius_topology\` | Graph H0 and fixed-scale VR H1 | Completed: 20261019T061001Z-full |
+| \`radius_snapshots\` | Component fragmentation/merging | Completed: 20261019T061001Z-full |
+| \`projections\` | Original 3D, PCA and componentwise Isomap | Completed: 20261019T061001Z-full |
 
-Results will include CSV counts, raw observations NPZ, JSON metadata and SHA256 manifest under \`../../results/010-radius_density_and_rings/runs/<RUN_ID>/\`. After the user pushes the new run, the assistant must read those exact files and replace this pre-run checkpoint with findings, uncertainties, negative cases and embedded generated images. Do not silently combine previous-pilot values with new runs.
+Results will include CSV counts, raw observations NPZ, JSON metadata and SHA256 manifest under \`../../results/010-radius_density_and_rings/runs/<RUN_ID>/\`. The user has pushed the full run; the assistant's new Computed run section below uses those exact files and replaces the provisional findings with findings, uncertainties, negative cases and embedded generated images. Do not silently combine previous-pilot values with new runs.
 
 ## Computed run: 20261019T061001Z-full
 

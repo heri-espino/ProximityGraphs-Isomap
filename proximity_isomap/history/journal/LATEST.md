@@ -1,5 +1,5 @@
 # Latest research-history entry
 
-[2026-10-18 — User runs experiments, assistant interprets](2026-10/2026-10-18-user-runs-assistant-interprets.md).
+[2026-10-19 — Componentwise kNN-Isomap mathematical lecture and computed-run review](2026-10/2026-10-19-componentwise-knn-marp-lecture.md).
 
-[Experiment notes index](../../notes/README.md). Earlier history remains preserved.
+[Experiment notes index](../../notes/README.md). Earlier dated history remains preserved.

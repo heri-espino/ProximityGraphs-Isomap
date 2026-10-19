@@ -1,23 +1,23 @@
-# Next steps — 2026-10-18
+# Next steps — 2026-10-19
 
-## EXP-010 and EXP-011: current checkpoint
+## Completed checkpoint
 
-- [x] Commit Python executables under `proximity_isomap/code/010-radius_density_and_rings/` and `011-isomap_baselines/`.
-- [x] Commit `scripts/run_exp_010_011.ps1`, lightweight unit tests, math notes and figure plans.
-- [x] Record in AGENTS.md: assistant authors code → user runs/pushes data → assistant interprets actual evidence and updates notes.
-- [ ] User: `git pull --ff-only`; install `umap-learn` in `proximity-isomap` environment.
-- [ ] User: run `.\scripts\run_exp_010_011.ps1 -Quick` for smoke (ignored by Git).
-- [ ] User: run `.\scripts\run_exp_010_011.ps1 -RequireUmap` for the full experiment.
-- [ ] User: inspect generated metrics/figures; commit/push only original **full** `proximity_isomap/results/010*,011*` and `figures/010*,011*` run folders.
-- [ ] Assistant: retrieve latest actual run, verify metadata and saved arrays; interpret numerical/visual findings and update 010/011 scientific Markdown with *actual* inline PNGs.
-- [ ] Assistant: update [Marp presentation 012](../../notes/012-presentation_checkpoint/README.md), handoff and dated journal after the scientific analysis.
+- [x] User generated and pushed full numerical/visual EXP-010 and EXP-011 run 20261019T061001Z-full.
+- [x] Assistant reviewed actual CSV/metadata, UMAP availability and versioned figure paths; appended computed-run scientific results with 4 and 8 actual PNG figures.
+- [x] Expand checkpoint-012 main Marp with mathematical explanations and published EXP-010/011 galleries.
+- [x] Create **standalone 53-slide Marp mathematical lecture** deriving componentwise kNN-Isomap in detail (MDS, geodesics, component discovery, rigids, constrained placement, metrics, complexity).
+- [ ] On user's Windows machine, render and visually inspect lecture PDF/PPTX and presentation PDF for equation/table overflow.
 
-## Later scientific work
+## Proposed EXP-013 specialized kNN study (NOT RUN)
 
-- [ ] Infer radius and number of components without known labels/K; measure failures and probabilistic radius-recovery window under variable sampling/noise.
-- [ ] Compare source-verified D-C Isomap, M-Isomap, S-Isomap++ and TopoMap variants rather than merely relabeling componentwise Isomap.
-- [ ] Optimize relative rigid centroid/landmark placement with strict convex-hull clearance, characterize separation–ambient-distortion frontier.
-- [ ] Run multiple independent seeds, diverse manifold families and carefully tuned standard/global PCA/Isomap/t-SNE/UMAP comparisons.
-- [ ] Review the Marp PDF rendering before presenting to the professor.
+- [ ] Assistant: implement and commit the *new* experiment code, tests and matching preliminary mathematical/figure plan under numbered 013 folders. Do not claim completed results.
+- [ ] Sweep k_detect and k_embed separately; inspect per-dataset component recovery (evaluation labels only), connected local graphs and failure/bridge modes.
+- [ ] Add within-geodesic stress, local trustworthiness, ambient centroid/cross stress, hull-clearance violations, runtimes, sample-density/noise and random seeds.
+- [ ] Evaluate simple separated strips independently from centroid/landmark-constrained optimized placement; distinguish proposed solver from guaranteed optimum.
+- [ ] User: execute full EXP-013 on Windows, verify and push generated CSV/JSON/NPZ and PNG/SVG.
+- [ ] Assistant: read the exact EXP-013 outputs, append computed-run mathematical interpretation and real images to 013 notes, then update checkpoint 012.
 
-**GitHub publication rule:** an experiment is complete only when its executed source, exact metric/array outputs, real figures, and explanatory notes are verified on GitHub. An unrun source is `prepared`, not `completed`.
+## Scientific controls
+
+- [ ] Literature novelty matrix against source-verified D-C Isomap, M-Isomap, S-Isomap++, TopoMap, DIPOLE and metric-constrained alignments.
+- [ ] Perform multiple-seed and independent-confirmation tests; do not infer general superiority from the one-seed EXP-011.

@@ -39,3 +39,8 @@ conda install -n proximity-isomap -c conda-forge umap-learn -y
 The quick run is disposable/ignored. Full runs receive unique labels and never overwrite earlier runs. **Nothing is automatically pushed.** Inspect the generated outputs, commit and push only their full-run folders under `proximity_isomap/results/` and `proximity_isomap/figures/`. No Ruff or old `scripts/run_all.ps1` invocation is required for EXP-010/011.
 
 Note that the previously committed 010/011 numerical **summary SVGs** describe an *older exploratory pilot*, not the upcoming fresh run. The assistant will update both experiment notes after inspecting the user's exact new files.
+
+
+## Mathematical lecture (checkpoint 012)
+
+[Componentwise kNN-Isomap — Marp Markdown lecture](proximity_isomap/notes/012-presentation_checkpoint/componentwise_knn_isomap_lecture.md) derives kNN graphs, graph geodesics, MDS, rigid alignment, geometric clearance, evaluation metrics, complexity and limitations, using the executed full EXP-010/011 run figures. [Marp rendering instructions](proximity_isomap/notes/012-presentation_checkpoint/README.md).

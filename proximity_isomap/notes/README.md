@@ -1,6 +1,6 @@
 # Experiment notes — the canonical scientific record
 
-**[Marp professor presentation — checkpoint 012](012-presentation_checkpoint/README.md)** — math and complete versioned EXP-001–009 figure atlas.
+**[Marp professor checkpoint 012](012-presentation_checkpoint/README.md)** — updated EXP-001–011 figure atlas and the **[53-slide mathematical class on componentwise kNN-Isomap](012-presentation_checkpoint/componentwise_knn_isomap_lecture.md)**.
 
 Read the detailed notes (question, design, results, failed attempts, interpretation, limitations and actual figures). Newly computed figures are automatically embedded when the full Conda pipeline is run.
 
