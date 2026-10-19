@@ -8,6 +8,18 @@ Read in order: [AI_HANDOFF.md](AI_HANDOFF.md), [experiment notes](proximity_isom
 
 **Corrected numbers:** EXP-010 is cylinder versus five separate circles; EXP-011 is componentwise kNN Isomap against other Isomap baselines, PCA and t-SNE (UMAP not yet run); professor Marp presentation is checkpoint 012, not experiment 010. Preserve existing immutable run folders; do not import the rejected historical Integration.zip.
 
+## Mandatory three-stage experiment workflow (user confirmed 2026-10-18)
+
+**Stage A — assistant prepares code.** Implement and push runnable code in `proximity_isomap/code/NNN-description/` and tests, with CLI documentation and a clearly labeled pre-run mathematical plan in `proximity_isomap/notes/`. Commit and verify source on GitHub **before asking for a local run**. Do not require downloading or importing ZIPs. Do not claim data/figures were generated yet.
+
+**Stage B — user runs locally.** The user invokes the exact command on their Windows Conda machine, generating **new immutable runs** in the matching `proximity_isomap/results/NNN-description/runs/RUN_ID/` and `figures/NNN-description/runs/RUN_ID/` directories (CSV, JSON, NPZ, full PNG and SVG). The user then pushes those actual outputs to GitHub. Never automatically run heavy compute on every push; only manual local execution or manual workflow_dispatch.
+
+**Stage C — assistant interprets real evidence.** Only **after** the user-run files are available, inspect their actual metrics and figures, create/update the detailed Markdown scientific note with objective, equations, experimental configuration, observations including negative findings, limitations, and **embedded links to the specific pushed figures**, then update the professor's Marp slides, history, state, handoff and next steps. Verify remote paths and commit SHA before calling it published.
+
+**Hard prohibition:** Do not substitute local ZIP handoffs, hand-entered metrics, synthetic figures or summary charts for the user's intended completed run. If the user has not run the code, report `code prepared; run pending`. A previous local pilot may be discussed only if explicitly labeled as historical/pilot evidence, not as the result of the user's new run.
+
+**Correct numbered registry:** EXP-010 = cylinder vs five truly distinct rings; EXP-011 = other/global Isomap, componentwise kNN/radius, PCA, t-SNE, UMAP; Marp presentation = checkpoint 012. The previous `scripts/import_exp010_exp011.ps1` ZIP importer was superseded by `scripts/run_exp_010_011.ps1`; never ask the user to download the old archives.
+
 ## Every experiment must be fully documented
 
 An experiment is not finished until its four **matching numbered folders** are updated together. **Every experiment note MUST also contain a mathematical section (rendered LaTeX, with symbols/assumptions/objective) and a figure-plan table even before any figures have been generated:**

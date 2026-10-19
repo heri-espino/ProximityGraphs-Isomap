@@ -33,3 +33,8 @@ A professor-facing presentation at proximity_isomap/notes/012-presentation_check
 ## Corrected EXP-010/011 and presentation 012
 
 EXP-010 and EXP-011 have committed notes and derived metric SVGs; the original full code, experimental CSV/JSON/NPZ and real 3D/2D PNG/SVG galleries remain in local archives, awaiting user-side import with scripts/import_exp010_exp011.ps1 -Push. Presentation is checkpoint 012. AGENTS.md now mandates future completed experiment publication with verified remote sources/results/figures and notes; ZIP-only work does not meet the requirement. UMAP results are still pending.
+
+
+## Updated run ownership (2026-10-18)
+
+User explicitly owns local execution. Complete native EXP-010 and EXP-011 Python runners and one PowerShell launcher were committed to GitHub. The earlier ZIP importer is deprecated and removed. Current summary figures/measurements in Markdown are from the earlier local exploratory pilot, not the forthcoming new user-generated run. Wait for user push; then read actual numerical data/figures and write interpretive Markdown and refresh Marp checkpoint 012. See AGENTS.md three-stage workflow.

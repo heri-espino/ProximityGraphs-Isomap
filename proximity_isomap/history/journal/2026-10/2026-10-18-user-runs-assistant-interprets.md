@@ -1,0 +1,7 @@
+# 2026-10-18 — User-run experiments, assistant-written analysis
+
+The user explicitly rejected the ZIP import process after a missing-archive error and defined a permanent three-stage workflow: (A) assistant commits runnable experiment code and preliminary mathematical experiment plans in the GitHub proximity_isomap folder; (B) user runs that code locally and pushes actual figures/metrics/arrays to GitHub; (C) assistant reads those exact outputs and writes complete explanatory Markdown scientific notes and updates the Marp presentation. This policy is now in AGENTS.md and AI_HANDOFF.md.
+
+Native EXP-010 and EXP-011 Python code and scripts/run_exp_010_011.ps1 were committed. Both scripts create immutable numbered CSV/JSON/NPZ and PNG/SVG run directories without requiring ZIP archives or Ruff. EXP-011 optionally fits real UMAP, with --require-umap to fail before running if unavailable. The obsolete ZIP importer was removed.
+
+Local dry runs of the new Python runner designs were performed in the preparation environment (EXP-010 smoke run and EXP-011 five-dataset smoke run). Results were not committed as the user's scientific evidence. Existing EXP-010/011 GitHub summary metrics are from an earlier exploratory local pilot and must not be attributed to these fresh runners. Scientific Markdown interpretation and the new figures are pending the user's Windows runs. No full Windows Conda run or GitHub outputs have been observed for these new implementations.

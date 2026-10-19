@@ -47,3 +47,11 @@
 - [x] Add GitHub completion gate to AGENTS.md and a safe original-ZIP importer.
 - [ ] User: download both original EXP-010/011 ZIPs, run `scripts/import_exp010_exp011.ps1 -Push`, then verify original code, metrics, 3D/2D PNG/SVG and mathematical notes render on GitHub.
 - [ ] Execute genuine UMAP on a new run and update 011, without overwriting the exploratory run.
+
+
+## Active: native EXP-010 and EXP-011 reruns
+
+- [x] Commit code and Windows runner directly to GitHub; remove ZIP dependency.
+- [ ] User runs `scripts/run_exp_010_011.ps1 -Quick` followed by `scripts/run_exp_010_011.ps1 -RequireUmap` and pushes fresh immutable CSV/NPZ/JSON and PNG/SVG artifacts.
+- [ ] Assistant reviews the **new user-run evidence**, interprets and updates the full 010/011 mathematical Markdown notes with actual embedded figures and refreshes checkpoint 012 Marp.
+- [ ] Reconcile differences from the previous one-seed exploratory pilot; do not silently combine metric definitions or results from different implementations.

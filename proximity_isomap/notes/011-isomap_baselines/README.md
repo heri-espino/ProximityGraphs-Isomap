@@ -1,5 +1,6 @@
 # EXP-011 — Componentwise kNN Isomap versus other Isomap methods, PCA and t-SNE/UMAP
 
+> **New local run status:** The native EXP-011 Python code is now committed under `proximity_isomap/code/`. The numbers and derived SVG currently shown below are **previous exploratory pilot summaries**, NOT the result of your upcoming Windows run. After you push the new run's CSV/JSON/NPZ and PNG/SVG files, the assistant will replace this preliminary narrative with a mathematical interpretation grounded in your measured outputs. You do not need to download/import any ZIP.\n\n
 **Research status:** one exploratory local run completed, seed 20261018. The mathematical comparison and selected measured values are on GitHub. The exact original runner, full metrics, embeddings and five original 3D/2D image galleries plus diagnostic plots are still in the local EXP-011 archive pending binary import. UMAP was **not executed**: no missing result has been fabricated.
 
 ## Research question
@@ -61,7 +62,7 @@ The original archive holds five 3D/2D embedding galleries (rings, cylinder, Swis
 - proximity_isomap/figures/011-isomap_baselines/runs/exploratory_seed20261018/
 - tests/test_exp_011.py
 
-**Original GitHub binary publication is pending** scripts/import_exp010_exp011.ps1. After this script imports the exact ZIP, it replaces this provisional summary note with the original complete note containing all corresponding real PNG image links.
+**The new user-run evidence is pending** scripts/run_exp_010_011.ps1. After this script imports the exact ZIP, it replaces this provisional summary note with the original complete note containing all corresponding real PNG image links.
 
 ## Scientific limitations
 
