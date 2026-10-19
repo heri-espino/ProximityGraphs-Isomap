@@ -1,70 +1,48 @@
-# EXP-010 — Cylinder sampling versus five disconnected circular rings
+# EXP-010 — Cylinder versus five disconnected circular rings
 
-> **New local run status:** The native EXP-010 Python code is now committed under `proximity_isomap/code/`. The numbers and derived SVG currently shown below are **previous exploratory pilot summaries**, NOT the result of your upcoming Windows run. After you push the new run's CSV/JSON/NPZ and PNG/SVG files, the assistant will replace this preliminary narrative with a mathematical interpretation grounded in your measured outputs. You do not need to download/import any ZIP.
-
-**Research status:** completed locally, deterministic exploratory run (2026-10-18). This GitHub note records the mathematics and numerical findings. The full original Python runner, saved point arrays, detailed CSV/JSON, and four PNG/SVG figure pairs remain in the downloadable EXP-010 local ZIP, awaiting a fresh Windows/Conda run. The SVG summary below is derived directly from the locally recorded counts; it is not a substitute for the original projection figures.
+**Stage A complete:** [native Python runner](../../code/010-radius_density_and_rings/run.py) committed to GitHub. **Stage B pending:** the user's Windows experiment will generate new numerical results and figures; **Stage C:** the assistant will interpret the *actual pushed results* here and update Marp checkpoint 012.
 
 ## Research question
 
-Does a sampled cylinder contain several connected circles, or is it one connected surface? How do the proximity-graph connected components and the sampled Vietoris–Rips loops change as the radius becomes smaller and the number of observations grows?
+A cylinder is one connected surface with one essential loop; five separate circles are five connected components with five loops. How do graph radius and sample density affect their **sampled** graph connectivity and fixed-scale VR topology? Synthetic configurations: cylinders sampled on grids of 54, 144, 360 and 720 points; five rings with 90 points per ring. This is deterministic, not Poisson sampling.
 
-The cylinder is C = { (3.1 cos θ, 3.1 sin θ, z) : 0 ≤ θ < 2π, −4 ≤ z ≤ 4 }. We used four deterministic grids with 54, 144, 360 and 720 points. A second sample contains five genuinely disjoint circles at heights −4, −2, 0, 2 and 4, with 90 points on each ring (450 total). The grids are not nested random samples.
+## Mathematics: H0 graph components and H1 VR holes
 
-## Mathematics:
-
-The Euclidean proximity graph has an edge iff ||x_i − x_j||₂ ≤ r. Using the Euclidean minimum spanning tree,
+Edges occur iff \(\|x_i-x_j\|_2\le r\). If \(T\) is the Euclidean minimum spanning tree, the number of components is
 
 $$
-\beta_0(r)=n-\#\{e\in\operatorname{MST}(X):w(e)\le r\}.
+\beta_0(r)=n-\#\{e\in T:w(e)\le r\}.
 $$
 
-For the Vietoris–Rips complex including all triangles, the first Betti number at a *fixed radius* is
+For the Vietoris–Rips complex of vertices, edges and filled triangles, using the boundary map over \(\mathbb F_2\),
 
 $$
 \beta_1(r)=|E_r|-n+\beta_0(r)-\operatorname{rank}_{\mathbb F_2}(\partial_2).
 $$
 
-This is fixed-scale homology, **not** a computation of every individual persistent birth/death interval. For the ideal support, the cylinder has (β₀,β₁)=(1,1); five disconnected circles have (5,5).
+The runner calculates **fixed-scale H1 counts**, not persistence birth/death pairs. It also produces a 2D componentwise Isomap illustration at radius 1.25; this does not guarantee preservation of the input-space Rips topology.
 
-## Measured components
+## Earlier exploratory pilot — not the forthcoming user run
 
-| Dataset | Observations | Entire-sample MST threshold | β₀(0.5) | β₀(1.25) |
-|---|---:|---:|---:|---:|
-| Cylinder (9×6) | 54 | 2.1205 | 54 | 54 |
-| Cylinder (12×12) | 144 | 1.6047 | 144 | 12 |
-| Cylinder (18×20) | 360 | 1.0766 | 18 | **1** |
-| Cylinder (24×30) | 720 | 0.8093 | 24 | **1** |
-| Five rings (5×90) | 450 | 2.0000 | **5** | **5** |
+| Sample | Points | Components at r=0.5 | Components at r=1.25 |
+|---|---:|---:|---:|
+| Cylinder sparse | 54 | 54 | 54 |
+| Cylinder | 144 | 144 | 12 |
+| Cylinder | 360 | 18 | 1 |
+| Cylinder | 720 | 24 | 1 |
+| Five separated circles | 450 | 5 | 5 |
 
-For the 360-point cylinder, at radius 1.15 the sampled VR complex had β₀=1 and β₁=343; by radius 1.25 these values were β₀=1 and β₁=1. The 343 transient grid cycles are not 343 holes in the continuous cylinder. The separate rings retained β₀=5 and β₁=5 through the tested interval 0.25–1.80; they begin merging at their 2-unit vertical separation.
+The previous grid pilot also observed \(\beta_1(1.15)=343\) for the 360-point cylinder and \(\beta_1(1.25)=1\); the first number represents temporary grid cycles, not 343 holes in the underlying cylinder.
 
-![Observed component-count comparison (summary of local numerical results)](../../figures/010-radius_density_and_rings/summary.svg)
-
-## Original 3D and 2D figures
-
-The executed local experiment generated geometry.png, radius_topology.png, radius_snapshots.png and projections.png **and matching SVGs**. Its original complete Markdown note embeds those actual images. They belong under:
-
-proximity_isomap/figures/010-radius_density_and_rings/runs/20261018-exploratory/
-
-Corresponding results include fixed_scale_betti.csv, beta0_curve.csv, summary.csv, metrics.json, observations.npz and sha256.json. Runner: proximity_isomap/code/010-radius_density_and_rings/run.py.
-
-**Full GitHub publication is pending the fresh user-run output publication.** Use scripts/run_exp_010_011.ps1 after downloading the EXP-010 and EXP-011 ZIPs. The importer replaces this provisional note with the original complete illustrated note.
-
-## Limitations
-
-Deterministic regular grids can generate spurious VR cycles and do not establish probabilistic manifold recovery. Lowering radius too far fragments the finite sample; it does not turn a continuous cylinder into several genuinely disconnected rings. Independent Isomap projections do not automatically preserve original Euclidean VR persistence.
-
-## Native execution and analysis handoff
-
-The user runs [the committed Python source](../../code/010-radius_density_and_rings/run.py) on their Windows machine using `scripts/run_exp_010_011.ps1`. New results appear in numbered immutable `results/` and `figures/` runs. The assistant inspects the actual remote data and **writes the final interpretation only after the user pushes**. Numbers above are from an earlier local pilot and must not be attributed to this new run.
+![Earlier pilot component counts](../../figures/010-radius_density_and_rings/summary.svg)
 
 ## Figure plan and reproduction status
 
-| Expected PNG and SVG output | Geometric question | Status |
+| Native PNG + SVG figure stem | What it will show | Status |
 |---|---|---|
-| `geometry` | 3D cylinder versus five rings | New user run pending |
-| `radius_topology` | Fixed-scale VR H0 versus H1 | New user run pending |
-| `radius_snapshots` | Radius and graph components | New user run pending |
-| `projections` | Original, PCA and componentwise Isomap | New user run pending |
+| \`geometry\` | 3D cylinder versus separate circles | Awaiting user run |
+| \`radius_topology\` | Graph H0 and fixed-scale VR H1 | Awaiting user run |
+| \`radius_snapshots\` | Component fragmentation/merging | Awaiting user run |
+| \`projections\` | Original 3D, PCA and componentwise Isomap | Awaiting user run |
 
-The currently embedded `summary.svg` is from the older exploratory pilot, not the new run.
+Results will include CSV counts, raw observations NPZ, JSON metadata and SHA256 manifest under \`../../results/010-radius_density_and_rings/runs/<RUN_ID>/\`. After the user pushes the new run, the assistant must read those exact files and replace this pre-run checkpoint with findings, uncertainties, negative cases and embedded generated images. Do not silently combine previous-pilot values with new runs.
