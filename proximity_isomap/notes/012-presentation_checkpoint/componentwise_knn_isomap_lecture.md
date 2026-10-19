@@ -818,25 +818,123 @@ Let $n=\sum_c n_c$ and $m_c=|E(G_c)|$.
 
 ---
 
-# The experimental design for EXP-013 (proposed)
+# EXP-013 — Two controlled neighborhood parameters
 
-**Separate the two stages** rather than mixing effects:
+The native EXP-013 code is **prepared on GitHub**, but **the new experiment has not run**.
 
-$$
-k_{\rm detect}\in\{4,6,8,10,12,16,20,24,32\}
-$$
+Default dashboards use $k_{\rm detect}=8$ and $k_{\rm embed}=10$. A separate diagnostic explores
 
-and
+$
+k_{\rm detect}\in\{3,5,8,12,18,26\},\qquad
+k_{\rm embed}\in\{6,10,16\}.
+$
 
-$$
-k_{\rm embed}\in\{4,6,8,10,12,16,20,24,32\}.
-$$
+The first parameter determines the unsupervised **global kNN component partition**; the second computes **within-detected-component graph geodesics**.
 
-Compare at least three placement choices: unaligned, guaranteed strips, and **optimized** centroid/landmark placement *if implemented*.
+The experiment records component recovery, false bridges, metric distortion, hull overlap, local trustworthiness and runtime. Current placement is a feasible strip heuristic; **optimized placement is future work**, not a claimed completed baseline.
 
-Evaluate connected-component count, partition accuracy (synthetic evaluation only), within-stress, trustworthiness, centroid/cross stress, clearance, running time and errors.
+---
 
-**These are future experiment settings, not completed EXP-013 results.**
+# EXP-013 — The lecture is a shared research notebook
+
+The purpose is for collaborators to learn together, not to make a minimal presentation.
+
+**Every completed example will document** its generating equations, actual 3D data, two 3×3 dashboards, numerical metrics, errors and failures, what we learned and what remains unexplained.
+
+The lecture may grow large. **Do not shorten it by silently removing negative results.**
+
+**Current status:** only EXP-013 code and the mathematical protocol have been committed. The diagrams below are planned, not results.
+
+---
+
+# Seven classical examples, each far and near
+
+| Classical family | Number of supports | Main difficulty |
+|---|---:|---|
+| Rings | 3 | Periodicity and disconnected loops |
+| Springs / helices | 2 | Intrinsic arc length versus 3D chords |
+| Swiss rolls | 2 | Folded surfaces and shortcuts |
+| S-curves | 2 | Intrinsic unfolding of curved strips |
+| Planes | 2 | Flat geometry control |
+| Tori | 2 | Nontrivial topology |
+| Cylinder + ring | 2 | Different support dimensions |
+
+**14 scenarios, 28 main comparison dashboards.** The same intrinsic clouds appear in both near/far regimes.
+
+---
+
+# Near and far — measurable geometric regimes
+
+Let $\rho$ be the median eighth-neighbor distance *within the generated supports*, used only for synthetic construction.
+
+$
+g_{\rm near}=0.48\rho,\qquad
+g_{\rm far}=7\rho.
+$
+
+By translating distinct first-coordinate intervals and aligning the extremal points, the sampled minimum Euclidean gap is **strictly positive and recorded**.
+
+**Near** means an ambient gap smaller than the local eighth-neighbor scale; it does **not** mean that generating manifolds intersect.
+
+This construction lets us study cross-support kNN edges without silently changing the sampled intrinsic shapes.
+
+---
+
+<!-- _class: compact -->
+# Dashboard 1 — Isomap-centered 3×3
+
+| | | |
+|:---|:---|:---|
+| PCA | Classical MDS | Global kNN Isomap |
+| Global radius Isomap | **Componentwise kNN Isomap** | Componentwise radius Isomap |
+| MST-cut + kNN (*oracle K*) | t-SNE | UMAP |
+
+The oracle reference is given only the *true number* of components, not their labels. Ordinary scikit-learn global Isomap may add graph bridges. Global radius Isomap can fail and must be marked as such.
+
+**Use the same source-point colors across all panels**, only for plotting and evaluation.
+
+---
+
+<!-- _class: compact -->
+# Dashboard 2 — General dimensionality reduction 3×3
+
+| | | |
+|:---|:---|:---|
+| PCA | Classical MDS | Spectral embedding |
+| Locally Linear Embedding (LLE) | **Componentwise kNN Isomap** | LTSA |
+| t-SNE | UMAP | Global kNN Isomap |
+
+The union of the two dashboards contains **12 distinct fitted methods**; shared methods reuse their coordinates instead of being fitted twice.
+
+The objective functions differ. Do not rank a neighborhood-optimizing method solely by raw geodesic stress.
+
+---
+
+# Every far/near case will have four figure pairs
+
+**Original 3D:** what the simulated supports actually are.
+
+**Isomap-centered dashboard:** all nine methods and failures.
+
+**General 3×3 dashboard:** independent comparison set.
+
+**Detection/embedding k diagnostic:** number of graph components versus $k_{\rm detect}$, and within-geodesic stress over $(k_{\rm detect},k_{\rm embed})$.
+
+Each view will be saved in PNG and SVG in an immutable, versioned run folder. **No nonexistent PNG links are inserted in this lecture.**
+
+---
+
+# How to read the future EXP-013 dashboards
+
+For each family and regime, record:
+
+1. **Partition:** $\widehat K$, cross-support edges, overfragmentation, ARI against synthetic truth.
+2. **Inside manifolds:** analytic within-stress (N/A for torus), trustworthiness.
+3. **Across manifolds:** ambient cross-stress, centroid stress, convex-hull overlaps and clearance.
+4. **Reliability:** warnings, failed algorithms, runtimes and fixed seed.
+5. **Open questions:** surprising cases, apparent metric conflicts and proposed explanations.
+
+The assistant will append **all 28 actual dashboards and their interpretations after the user runs and pushes EXP-013**.
 
 ---
 
