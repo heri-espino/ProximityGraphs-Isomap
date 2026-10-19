@@ -1,6 +1,6 @@
 # Experiment notes — the canonical scientific record
 
-**[Marp presentation checkpoint](010_presentation_checkpoint/README.md)** — professor-facing research narrative, formulas and all currently versioned experiment figures. Presentation, not a new EXP-010 numerical run.
+**[Marp professor presentation — checkpoint 012](012-presentation_checkpoint/README.md)** — math and complete versioned EXP-001–009 figure atlas.
 
 Read the detailed notes (question, design, results, failed attempts, interpretation, limitations and actual figures). Newly computed figures are automatically embedded when the full Conda pipeline is run.
 
@@ -15,6 +15,9 @@ Read the detailed notes (question, design, results, failed attempts, interpretat
 | 007 | Component alignment | [Notes](007-component_alignment/README.md) |
 | 008 | One to six Swiss rolls | [Notes](008-multiple_swiss_rolls/README.md) |
 | 009 | Topological holes in Swiss roll, cylinder, torus | [Notes](009-topological_manifolds/README.md) |
+| 010 | Dense cylinder versus five separate circular rings | [Notes](010-radius_density_and_rings/README.md) |
+| 011 | Isomap variants, componentwise kNN Isomap, PCA, t-SNE, pending UMAP | [Notes](011-isomap_baselines/README.md) |
+| 012 | Professor Marp presentation (not a numerical experiment) | [Slides](012-presentation_checkpoint/presentation.md) |
 
 [Mathematical proofs](mathematics/index.md) · [Historical journal](../history/README.md)
 

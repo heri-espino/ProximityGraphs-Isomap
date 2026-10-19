@@ -394,7 +394,7 @@ The filtration is truncated at $r=7$; sampling artifacts are present. The differ
 <!-- _class: compact -->
 # EXP-010 — Dense cylinder or five circles?
 
-**Local exploratory extension; PNG/SVG not yet committed to the repository.**
+**Exploratory summary backfilled into the GitHub 010 note; original local galleries are pending binary import.**
 
 | Synthetic dataset | $r$ | $\beta_0$ | $\beta_1$ |
 |---|---:|---:|---:|
@@ -410,7 +410,7 @@ A dense cylindrical grid at $r=1.15$ exhibited 343 short-lived Rips $H_1$ classe
 <!-- _class: compact -->
 # EXP-011 — Other Isomap variants, t-SNE, UMAP
 
-**One-seed local comparison; UMAP installation/evaluation remains pending.**
+**Exploratory summary backfilled into the GitHub 011 note; full local galleries remain pending binary import and UMAP remains unrun.**
 
 | Method | Five rings | Cylinder | Swiss-roll pair | S-curve pair |
 |---|---:|---:|---:|---:|
