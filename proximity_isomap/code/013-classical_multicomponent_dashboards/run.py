@@ -508,7 +508,7 @@ def main():
                 cross=int(sum(truth[i]!=truth[j] for i,j in zip(*g.nonzero()) if i<j))
                 fragments=sum(connected_components(g[np.ix_(np.flatnonzero(truth==c),
                     np.flatnonzero(truth==c))],directed=False)[0]-1 for c in np.unique(truth))
-                crow=dict(**observed,k_detect=kd,detected_K=len(np.unique(labels)),
+                crow=dict(observed, k_detect=kd,detected_K=len(np.unique(labels)),
                           partition_ARI=float(adjusted_rand_score(truth,labels)),
                           cross_support_edges=cross,within_fragments=fragments)
                 curve.append(crow);detect_rows.append(crow)
