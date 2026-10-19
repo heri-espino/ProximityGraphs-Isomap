@@ -27,4 +27,9 @@ All experiment notes EXP-001..009 now include LaTeX mathematical models, assumpt
 
 ## Marp presentation checkpoint (2026-10-18)
 
-A professor-facing presentation at proximity_isomap/notes/010_presentation_checkpoint/ includes the mathematics, versioned EXP-001–009 figures, and text-only provisional EXP-010/011 findings. Generating this presentation did not execute any numerical experiment, and it does not establish novelty.
+A professor-facing presentation at proximity_isomap/notes/012-presentation_checkpoint/ includes the mathematics, versioned EXP-001–009 figures, and text-only provisional EXP-010/011 findings. Generating this presentation did not execute any numerical experiment, and it does not establish novelty.
+
+
+## Corrected EXP-010/011 and presentation 012
+
+EXP-010 and EXP-011 have committed notes and derived metric SVGs; the original full code, experimental CSV/JSON/NPZ and real 3D/2D PNG/SVG galleries remain in local archives, awaiting user-side import with scripts/import_exp010_exp011.ps1 -Push. Presentation is checkpoint 012. AGENTS.md now mandates future completed experiment publication with verified remote sources/results/figures and notes; ZIP-only work does not meet the requirement. UMAP results are still pending.

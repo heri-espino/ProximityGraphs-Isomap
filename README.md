@@ -21,3 +21,8 @@ The script creates/updates the environment from `environment.yml`, including [co
 **Methodological qualification:** this rebuild does NOT import the unavailable historical Integration.zip. Algorithms and numeric results may differ from those older runs. Synthetic generating labels are still used for some diagnostic radii. The reusable library stays in `src/proximity_isomap/`, literature in `literature/`, tests in `tests/`, manuscript in `paper/`.
 
 Read [AGENTS.md](AGENTS.md) and [AI_HANDOFF.md](AI_HANDOFF.md) before extending the experiments.
+
+
+## Corrected numbering and archive publication
+
+[EXP-010: cylinder versus five separate rings](proximity_isomap/notes/010-radius_density_and_rings/README.md) · [EXP-011: componentwise kNN Isomap and baselines](proximity_isomap/notes/011-isomap_baselines/README.md) · [012: professor Marp presentation](proximity_isomap/notes/012-presentation_checkpoint/README.md). The original 010/011 experimental code, full results and PNG/SVG galleries must still be imported from the original local ZIPs using `scripts/import_exp010_exp011.ps1 -Push`. GitHub summaries are already present, but archives alone are not complete published experiments. See AGENTS.md.

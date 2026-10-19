@@ -39,3 +39,11 @@
 - [x] Author professor-facing Marp presentation with mathematics, metric definitions, measured tradeoffs and all current GitHub versioned experimental figures.
 - [ ] Inspect the Marp PDF/PPTX export visually on the user's machine; this connector session did not run the browser renderer.
 - [ ] Integrate and rerun EXP-010/011 locally generated figures in GitHub, then extend the slide atlas.
+
+
+## Mandatory publication of EXP-010 and EXP-011
+
+- [x] Record experiments 010/011 as scientific Markdown notes and derived summary SVGs on GitHub; move Marp presentation to 012.
+- [x] Add GitHub completion gate to AGENTS.md and a safe original-ZIP importer.
+- [ ] User: download both original EXP-010/011 ZIPs, run `scripts/import_exp010_exp011.ps1 -Push`, then verify original code, metrics, 3D/2D PNG/SVG and mathematical notes render on GitHub.
+- [ ] Execute genuine UMAP on a new run and update 011, without overwriting the exploratory run.
