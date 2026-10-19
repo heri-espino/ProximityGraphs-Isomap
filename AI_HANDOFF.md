@@ -1,6 +1,6 @@
 # AI handoff — ProximityGraphs-Isomap
 
-**Updated 2026-10-19.** Read [AGENTS.md](AGENTS.md), the [experiment notes](proximity_isomap/notes/README.md), the [latest dated journal](proximity_isomap/history/journal/LATEST.md), and [current research state](proximity_isomap/history/context/STATE.md) before new work.
+**Updated 2026-10-19.** Read [AGENTS.md](AGENTS.md), the [experiment notes](proximity_isomap/notes/README.md), the [latest dated journal](proximity_isomap/history/journal/LATEST.md), the [2026-10-19 research entry](proximity_isomap/history/journal/2026-10/2026-10-19-componentwise-knn-marp-lecture.md), and [current research state](proximity_isomap/history/context/STATE.md) before new work.
 
 ## Mandatory three-stage experiment workflow
 
