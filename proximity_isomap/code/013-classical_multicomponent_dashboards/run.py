@@ -439,7 +439,7 @@ def main():
         chosen=("rings","springs") if args.quick else FAMILIES
     if args.k_detect<2 or args.k_embed<2:
         p.error("k values must be >=2")
-    label=args.label or datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")+("-quick" if args.quick else "-full")
+    label=args.label or datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")+("-smoke" if args.quick else "-full")
     out=ROOT/"proximity_isomap"/"results"/SLUG/"runs"/label
     figs=ROOT/"proximity_isomap"/"figures"/SLUG/"runs"/label
     if out.exists() or figs.exists():raise FileExistsError("Run ID already exists: "+label)

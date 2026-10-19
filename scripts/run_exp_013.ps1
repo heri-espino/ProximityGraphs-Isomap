@@ -17,7 +17,7 @@ Set-Location (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 if ($Push -and $Quick) { throw "A smoke test must not be pushed as research evidence." }
 if ($Push -and (git status --porcelain)) { throw "Commit or stash unrelated local changes before -Push." }
 $run=(Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmssZ")
-if ($Quick) { $run+="-quick" } else { $run+="-full" }
+if ($Quick) { $run+="-smoke" } else { $run+="-full" }
 $exp="013-classical_multicomponent_dashboards"
 $arguments=@("proximity_isomap/code/$exp/run.py","--label",$run,
              "--seed","$Seed","--k-detect","$KDetect","--k-embed","$KEmbed")
