@@ -1,0 +1,8 @@
+{
+  "experiment": "EXP-010",
+  "label": "20261019T061001Z-full",
+  "quick": false,
+  "date_utc": "2026-10-19T06:10:06.093632+00:00",
+  "method": "fixed H0/H1 of deterministic grids, 2D Isomap at r=1.25",
+  "caveat": "H1 at selected radii is not a persistence barcode"
+}

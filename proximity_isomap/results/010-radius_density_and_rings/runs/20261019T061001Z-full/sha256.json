@@ -1,0 +1,15 @@
+{
+  "proximity_isomap\\results\\010-radius_density_and_rings\\runs\\20261019T061001Z-full\\beta0_curve.csv": "dc07c2a2351343c896fd4fb57060f11f217bd2387ce07d5c14fd447bc57db478",
+  "proximity_isomap\\results\\010-radius_density_and_rings\\runs\\20261019T061001Z-full\\fixed_scale_betti.csv": "3d5fc1a7d657cd3965a2a924bee3ecc3789dce948e769bb89f1c8b2b0889de78",
+  "proximity_isomap\\results\\010-radius_density_and_rings\\runs\\20261019T061001Z-full\\metadata.json": "03d8e15bf6894bf40920b09fc81791aeca258074d4b9a6f65452a30f1e901c0b",
+  "proximity_isomap\\results\\010-radius_density_and_rings\\runs\\20261019T061001Z-full\\observations.npz": "8fff5067657efacf0f732707b6ac18fa28d9ef2d39f1184a531b96e396ca6eed",
+  "proximity_isomap\\results\\010-radius_density_and_rings\\runs\\20261019T061001Z-full\\summary.csv": "a418f11cda7ed0df9d1faac010c804e8f4e2da7a47871fb8bb1b994e0dd1ff1f",
+  "proximity_isomap\\figures\\010-radius_density_and_rings\\runs\\20261019T061001Z-full\\geometry.png": "3f097f38df705ab73976a862cc3adfc5a3ab375646bd520a4941f9fc306fb260",
+  "proximity_isomap\\figures\\010-radius_density_and_rings\\runs\\20261019T061001Z-full\\geometry.svg": "219b4aeddc85ee0f20a5c50043c4684bd778912fb5c6fda382e505b168d23d39",
+  "proximity_isomap\\figures\\010-radius_density_and_rings\\runs\\20261019T061001Z-full\\projections.png": "ddc53686cb57ebc120697782ef8f4d276d19ab656c29489e1eee79d6d382c568",
+  "proximity_isomap\\figures\\010-radius_density_and_rings\\runs\\20261019T061001Z-full\\projections.svg": "7ec50a8984f4bbabeec594e581d9b85301eb508a71fa2c203958c1aa4c345035",
+  "proximity_isomap\\figures\\010-radius_density_and_rings\\runs\\20261019T061001Z-full\\radius_snapshots.png": "fb42d8704e596aa663026bbd34e7e04bfdcbc50a59007e284a21da0d38eec06a",
+  "proximity_isomap\\figures\\010-radius_density_and_rings\\runs\\20261019T061001Z-full\\radius_snapshots.svg": "c9e35c5d13d570b301b15e32bb8a796b361d17aed3adcd2426d8a26e117abb3d",
+  "proximity_isomap\\figures\\010-radius_density_and_rings\\runs\\20261019T061001Z-full\\radius_topology.png": "45ece3e516a7b05216964f1de8d406f583366f881d0e2874c62c755f9e9a94bd",
+  "proximity_isomap\\figures\\010-radius_density_and_rings\\runs\\20261019T061001Z-full\\radius_topology.svg": "e6d1891c724ccf7c665e072179af27d1214d8973b8b21674ff8c850a216905c1"
+}

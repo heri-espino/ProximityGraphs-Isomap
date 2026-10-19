@@ -1,0 +1,24 @@
+{
+  "experiment": "EXP-011",
+  "seed": 20261018,
+  "label": "20261019T061001Z-full",
+  "quick": false,
+  "generated_utc": "2026-10-19T06:10:29.259572+00:00",
+  "umap_available": true,
+  "methods": [
+    "PCA",
+    "Global Isomap k=8",
+    "Global Isomap k=24",
+    "Global radius Isomap",
+    "Componentwise radius Isomap",
+    "Componentwise kNN Isomap",
+    "t-SNE",
+    "UMAP"
+  ],
+  "caveats": [
+    "one seed",
+    "some supplied K",
+    "scikit Isomap may add artificial bridges",
+    "torus analytic geodesics not evaluated"
+  ]
+}
