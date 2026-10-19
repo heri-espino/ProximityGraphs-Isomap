@@ -112,28 +112,56 @@ def fit(method,x,labels,r,seed):
         return umap.UMAP(n_components=2,n_neighbors=15,random_state=seed).fit_transform(x)
     raise ValueError(method)
 
+def convex_overlap(y,a,b):
+    """Test 2D convex hull intersection by the separating-axis theorem."""
+    from scipy.spatial import ConvexHull
+    p=y[a];q=y[b]
+    if len(p)<3 or len(q)<3:return bool(cdist(p,q).min()<1e-9)
+    try:p=p[ConvexHull(p).vertices];q=q[ConvexHull(q).vertices]
+    except Exception:return bool(cdist(p,q).min()<1e-9)
+    for poly in (p,q):
+        for edge in np.roll(poly,-1,axis=0)-poly:
+            axis=np.array([-edge[1],edge[0]])
+            ap=p@axis;aq=q@axis
+            if ap.max()<aq.min()-1e-9 or aq.max()<ap.min()-1e-9:return False
+    return True
+
 def metrics(x,y,labels,intrinsic,kind):
-    within=None
+    """Score embeddings after common ambient-within scale calibration.
+
+    The positive scale uses original ambient distances, never analytic
+    geodesics. Generating labels are used for diagnostic evaluation only.
+    """
+    x=np.asarray(x,float);y=np.asarray(y,float);n=len(x)
+    dx=squareform(pdist(x));dy=squareform(pdist(y))
+    within=np.equal.outer(labels,labels)&~np.eye(n,dtype=bool)
+    scale=float(np.sqrt(np.sum(dx[within]**2)/max(np.sum(dy[within]**2),1e-12)))
+    y_scaled=y*scale;dy=dy*scale
+    intrinsic_error=None
     if intrinsic is not None:
-        numerator=denominator=0.
+        target=np.zeros_like(dx)
         for c in np.unique(labels):
-            ids=np.flatnonzero(labels==c);u=intrinsic[ids]
+            idx=np.flatnonzero(labels==c);u=intrinsic[idx]
             if kind in ("circle","cylinder"):
                 theta=np.abs(u[:,0,None]-u[:,0][None,:]);theta=np.minimum(theta,2*np.pi-theta)
                 d=np.sqrt((3.1*theta)**2+(u[:,1,None]-u[:,1][None,:])**2)
             else:d=squareform(pdist(u))
-            yd=squareform(pdist(y[ids]));up=np.triu_indices(len(ids),1)
-            numerator+=np.square(yd[up]-d[up]).sum();denominator+=np.square(d[up]).sum()
-        within=float(np.sqrt(numerator/denominator)) if denominator>0 else None
-    sx=sy=bx=by=0.
-    for i,c in enumerate(np.unique(labels)):
-        for d in np.unique(labels)[i+1:]:
-            a=np.flatnonzero(labels==c);b=np.flatnonzero(labels==d)
-            original=cdist(x[a],x[b]);projected=cdist(y[a],y[b])
-            sx+=np.square(original-projected).sum();sy+=np.square(original).sum()
-            u=np.linalg.norm(x[a].mean(0)-x[b].mean(0));v=np.linalg.norm(y[a].mean(0)-y[b].mean(0))
-            bx+=(u-v)**2;by+=u*u
-    return dict(intrinsic_stress=within,cross_ambient_stress=float(np.sqrt(sx/sy)) if sy else None,centroid_stress=float(np.sqrt(bx/by)) if by else None,trustworthiness_8=float(trustworthiness(x,y,n_neighbors=8)))
+            target[np.ix_(idx,idx)]=d
+        intrinsic_error=float(np.sqrt(np.sum((dy[within]-target[within])**2)/np.sum(target[within]**2)))
+    distinct=np.unique(labels);between=~np.equal.outer(labels,labels)
+    result=dict(rescale_factor=scale,intrinsic_stress=intrinsic_error,
+                trustworthiness_8=float(trustworthiness(x,y,n_neighbors=8)))
+    if len(distinct)>1:
+        cx=np.array([x[labels==c].mean(0) for c in distinct])
+        cy=np.array([y_scaled[labels==c].mean(0) for c in distinct])
+        mx=squareform(pdist(cx));my=squareform(pdist(cy))
+        upper=np.triu_indices(len(cx),1)
+        result["centroid_stress"]=float(np.linalg.norm(mx[upper]-my[upper])/np.linalg.norm(mx[upper]))
+        result["cross_ambient_stress"]=float(np.linalg.norm(dx[between]-dy[between])/np.linalg.norm(dx[between]))
+        result["overlapping_hull_pairs"]=int(sum(convex_overlap(y,labels==a,labels==b)
+            for a in distinct for b in distinct if a<b))
+    else:result.update(centroid_stress=None,cross_ambient_stress=None,overlapping_hull_pairs=0)
+    return result
 
 def save(fig,p):
     for ext in ("png","svg"):fig.savefig(p.with_suffix("."+ext),dpi=175,bbox_inches="tight")
@@ -173,6 +201,9 @@ def main():
                     warnings.simplefilter("always");y=fit(method,x,detected,r,a.seed)
                 if not np.isfinite(y).all():raise ValueError("Nonfinite embedding")
                 row.update(metrics(x,y,truth,intrinsic,kind));row.update(status="ok",warnings=" | ".join(str(w.message)[:100] for w in ww[:3]))
+                if method.startswith("Global Isomap"):
+                    g=kneighbors_graph(x,n_neighbors=int(method.split("=")[-1]),mode="distance");g=g.maximum(g.T)
+                    row["auto_bridged"]=bool(connected_components(g,directed=False)[0]>1)
                 fitted[method]=y
                 np.savez_compressed(out/(name+"__"+method.lower().replace(" ","_").replace("=","_")+".npz"),embedding=y)
             except Exception as exc:
