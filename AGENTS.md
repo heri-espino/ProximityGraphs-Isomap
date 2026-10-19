@@ -39,6 +39,6 @@ Keep the root minimal. Historical journal entries and decision records live in `
 
 ## Every repository-changing task
 
-Run pytest, Ruff, `scripts/validate_research.py`, `scripts/validate_experiment_archive.py`, and Sphinx `-W`; report what ran and what did not. Update experiment notes/results/figures, `AI_HANDOFF.md`, current `proximity_isomap/history/context/STATE.md` and `NEXT_STEPS.md` as appropriate. Append dated history under `proximity_isomap/history/journal/YYYY-MM/` for substantive methodological decisions, advance LATEST.md; never rewrite old journal entries. Only claim GitHub synchronization after push and CI succeed.
+Run pytest and the lightweight `scripts/validate_research.py` and `scripts/validate_experiment_archive.py` structure checks; run optional docs checks as relevant. Ruff is **not** required to execute experiments. Report which checks actually ran and which did not. Update experiment notes/results/figures, `AI_HANDOFF.md`, current `proximity_isomap/history/context/STATE.md` and `NEXT_STEPS.md` as appropriate. Append dated history under `proximity_isomap/history/journal/YYYY-MM/` for substantive methodological decisions, advance LATEST.md; never rewrite old journal entries. Only claim GitHub synchronization after push and CI succeed.
 
 Mathematical claims require assumptions and proofs; literature citations require verified primary PDFs and page locations. All public reusable Python API code must use Sphinx-compatible NumPy-style docstrings.

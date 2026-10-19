@@ -27,7 +27,7 @@ The main slides end with the literature list; the remaining pages are optional i
 
 ## Corrected experimental sequence
 
-[EXP-010: cylinder and separate rings](../010-radius_density_and_rings/README.md) and [EXP-011: componentwise kNN Isomap comparison](../011-isomap_baselines/README.md) now have GitHub mathematical notes and metric-summary SVGs, both included in this deck. The full original galleries must still be imported with scripts/import_exp010_exp011.ps1 from the repository root.
+[EXP-010: cylinder and separate rings](../010-radius_density_and_rings/README.md) and [EXP-011: componentwise kNN Isomap comparison](../011-isomap_baselines/README.md) now have GitHub mathematical notes and metric-summary SVGs, both included in this deck. The newly executed galleries must still be generated and pushed with scripts/run_exp_010_011.ps1 from the repository root.
 
 
 ## New experiment workflow

@@ -1,65 +1,32 @@
-**Current dated checkpoint:** [user-run experiment ownership](proximity_isomap/history/journal/2026-10/2026-10-18-user-runs-assistant-interprets.md).
-
-## Three-stage local-run experiment policy — 2026-10-18
-
-The user explicitly wants: **assistant writes and pushes experiment code** -> **user executes locally on Windows and pushes generated numerical results + actual PNG/SVG** -> **assistant reads those files and writes the detailed mathematical Markdown interpretation and updates the Marp presentation**. No ZIP-based workflow. This policy is binding in AGENTS.md. Code for EXP-010 and EXP-011 is available at `proximity_isomap/code/010-radius_density_and_rings/run.py` and `proximity_isomap/code/011-isomap_baselines/run.py`, with `scripts/run_exp_010_011.ps1` as a shared launcher. The user's fresh reruns and final interpretation are **pending**. EXP-010/011 current numerical summaries derive from an earlier local exploratory pilot, not the upcoming user's new runs. The previous `scripts/import_exp010_exp011.ps1` is removed, not needed. Checkpoint 012 is the Marp presentation. Install umap-learn and require it for complete EXP-011 UMAP comparison.
-
-# EXP-010/011 and the GitHub publication gate (2026-10-18)
-
-**Correct numbering:** EXP-010 = sampled cylinder versus five disjoint circles; EXP-011 = Isomap and componentwise kNN versus PCA/t-SNE (UMAP not yet run); professor Marp presentation = 012. Both experiment summaries and newly-derived summary SVGs are on GitHub. Their *original* code, numerical CSV/NPZ/JSON and complete PNG/SVG galleries are only in the original local ZIP archives until imported. **Next step:** download the two experiment ZIP files to Windows Downloads and run `scripts/import_exp010_exp011.ps1 -Push`. Do not claim full publication until real files and commit SHA are verified. AGENTS.md permanently requires every completed experiment to be published in GitHub under proximity_isomap/ with code, results, actual figures and notes, not ZIP-only.
-
-**Presentation checkpoint (2026-10-18):** New professor-facing Marp deck: [notes/012-presentation_checkpoint](proximity_isomap/notes/012-presentation_checkpoint/README.md), containing 63 slides and a checked, repository-relative figure atlas of 30 published/historical figures. Local EXP-010/011 plots are not yet part of the GitHub tree; the deck does not fabricate or link missing images. This is documentation only, not new numerical evidence. See [session journal](proximity_isomap/history/journal/2026-10/2026-10-18-marp-presentation-checkpoint.md).
-
 # AI handoff — ProximityGraphs-Isomap
 
-**Updated:** 2026-10-18
-**Latest history:** [2026-10-18 — Mathematical experiment notes and figure plans](proximity_isomap/history/journal/2026-10/2026-10-18-math-and-figure-notes.md).
+**Updated: 2026-10-18.** [Latest dated journal entry](proximity_isomap/history/journal/2026-10/2026-10-18-user-runs-assistant-interprets.md). [Experiment index](proximity_isomap/notes/README.md). Read [AGENTS.md](AGENTS.md) first.
 
-## Canonical structure
+## Mandatory ownership and publication sequence
 
-- **[Experiment notes](proximity_isomap/notes/README.md)** are the primary scientific record for EXP-001..009, with matching numbered folders in code, figures and results.
-- Original historical journal and decisions preserved at [history](proximity_isomap/history/README.md), and mathematics at [notes/mathematics](proximity_isomap/notes/mathematics/index.md). Root legacy journal/context/experiments/figures/results/notes have been consolidated rather than erased.
-- Shared scientific Python library remains in `src/proximity_isomap/`. Working paper direction: [separation–distortion frontier](paper/RESEARCH_DIRECTION.md). Originality is **not established**.
+1. **Assistant:** create tested runnable research code and a pre-run math/figure plan under `proximity_isomap/`, then push source to GitHub. Never send a ZIP instead of a repository update.
+2. **User:** run the experiment using the user's Windows Conda environment; produce new immutable CSV/JSON/NPZ and actual PNG/SVG in matching numbered folders; push the generated artifacts.
+3. **Assistant:** inspect the precise new runs on GitHub, interpret metrics/plots including failures, write detailed mathematical Markdown notes embedding real figures, update the Marp presentation and history. Never claim a new experimental result without examining the user's generated files.
 
-## Prepared mathematical exposition and pending figures (2026-10-18)
+The current launcher is `scripts/run_exp_010_011.ps1`. **The older ZIP importer is obsolete and has been deleted. Ruff is not required to execute experiments.** Heavy science is local/manual, never on ordinary git push.
 
-All **nine** experiment notes now include short mathematical derivations/objectives and a **Figure plan and reproduction status** table. The [math-and-figure writing guide](proximity_isomap/notes/MATHEMATICS_AND_FIGURES.md) explains the LaTeX, generated image paths, evidence provenance and how to add interpretation. Existing historical `summary.svg` appears inline for 001–008; EXP-009 already embeds real ContrastColors geometry and H1 barcodes. Do not claim a new 001–008 PNG exists before the local full Conda rerun, tracked in [issue #6](https://github.com/heri-espino/ProximityGraphs-Isomap/issues/6).
+## Canonical repository state
 
-The `research_runner.py` note writer now **appends computed-run sections** instead of overwriting earlier records. Both the full-run metrics and PNG/SVG must be saved; do not merge the old Integration.zip.
+- EXP-001–008 are *new reconstructions*, not recovered original historical ZIP experiments. Full versioned PNG/SVG and CSV evidence exists for local run `manual-full-20261018`; note historical and rebuilt output differences.
+- EXP-009 is a computed 172-point Swiss-roll, cylinder and torus **pilot**, with the number \(K=3\) supplied. It demonstrated that rigid separation preserves computed distances but cannot recover VR H1 features lost during Isomap embedding.
+- **EXP-010:** radius/density, connected cylinder versus five independent rings. Native source: [run.py](proximity_isomap/code/010-radius_density_and_rings/run.py). Its GitHub summary SVG is a **previous exploratory pilot**, not a new user-machine run. Fresh run is pending.
+- **EXP-011:** global Isomap and componentwise kNN/radius Isomap compared with PCA, t-SNE and actual optional UMAP. Native source: [run.py](proximity_isomap/code/011-isomap_baselines/run.py). It reports both within-manifold metric error and across-manifold placement, trustworthiness, convex-hull overlaps and graph-bridging diagnostics. Its existing numerical summaries likewise describe a **previous pilot**. The new user run is pending.
+- **Checkpoint 012:** [Marp professor presentation](proximity_isomap/notes/012-presentation_checkpoint/README.md). Its original 001–009 versioned image atlas is valid; the added 010/011 charts are prior-pilot *summary SVGs*. Update with the user's actual newly pushed figures after execution.
+- Mathematical theory: [stochastic geometry + topology](proximity_isomap/notes/mathematics/research_tda_stochastic_geometry.md), [finite-sample component-recovery radius window](proximity_isomap/notes/mathematics/results/PROP-0003-component-recovery-window.md).
+- Working paper question: [separation-constrained Isomap](paper/RESEARCH_DIRECTION.md), optimizing relative intercomponent placement subject to positive projected hull clearance while preserving independently computed internal Isomap distances.
 
-## New reconstructed experiments
+## Scientific validity
 
-The current `proximity_isomap/code/research_runner.py` implements **new reconstructions** of EXP-001..008 (radius scan, hybrid MDS, density transfer, separate Swiss/S-curve manifolds, rotated rolls, rigid separation and 1–6 roll panels). The user explicitly rejected importing Integration.zip. Numerical parity with the old original 002–008 algorithms must not be claimed.
+Rigid motions exactly preserve within-component computed pairwise distances, **not** original manifold geodesics. Cross-manifold *intrinsic* geodesic distances are undefined/infinite for disconnected supports; evaluate relative arrangement using ambient original intercomponent distances. The proposed frontier is not a confirmed novel theorem; prior work includes D-C Isomap, M-Isomap, S-Isomap++, TopoMap/TopoMap++ and DIPOLE. Synthetic known labels or supplied K in diagnostics do not constitute an unsupervised selector. Do not obscure negative findings, including worsening ambient placement stress under forced separation.
 
-The Windows Conda/PowerShell entrypoint is `scripts/run_all.ps1`. The environment pins the user's own [contrastcolors](https://github.com/heri-espino/Colors) package at Git SHA `84e05b40b6ba6aa6864f5bc13ad43da3c4c1e93d`. Every **full** run writes CSV/JSON/NPZ and actual PNG/SVG figures and embeds its newly generated PNG panels into that experiment's Markdown note. Smoke runs are ignored from version control and do not change the notes.
+## Immediate actions
 
-**Run status:** Full experiments have NOT been run on the user's Windows machine during this repository-edit session. CI tests are separate from scientific data generation. Use `./scripts/run_all.ps1 -Quick` to smoke-test and `./scripts/run_all.ps1 -Push` to compute/commit/push full evidence.
+**Waiting on user:** 
+`git pull --ff-only` then install `umap-learn` if desired, run `scripts/run_exp_010_011.ps1 -Quick` then `scripts/run_exp_010_011.ps1 -RequireUmap`, inspect and `git add/commit/push` full-run results and figures.
 
-## Verified GitHub CI
-
-[Run 39139028489](https://github.com/heri-espino/ProximityGraphs-Isomap/actions/runs/39139028489) passed on Python 3.11 and 3.12, including tests, Ruff, structure validators, Sphinx and actual **quick-mode runs for all eight rebuilt experiments using the pinned ContrastColors library**. This is evidence the smoke pipeline executes, **not** evidence of full numerical reproduction on the user's Windows environment or parity with the old original algorithms.
-
-## Upcoming research: TDA filtration + stochastic geometry (proposed 2026-10-18)
-
-**Read:** [VR–random-geometry research brief](proximity_isomap/notes/mathematics/research_tda_stochastic_geometry.md) and [PROP-0003, finite-sample recovery window](proximity_isomap/notes/mathematics/results/PROP-0003-component-recovery-window.md).
-
-- Existing results: β0(VR_r) equals graph component count; MST edge lengths are H0 death events; for known true groups, b=max within-MST bottleneck and δ=min cross-group point distance, and an exact partition radius exists iff b<δ. These statements are elementary, **not new theory**.
-- Candidate probabilistic bound: under separated compact connected supports and positive-mass radius-r/4 covering balls, binomial and support-wise Poisson void probabilities yield a union bound on connected-component recovery. Requires strong sampling assumptions; no Isomap geodesic-consistency guarantee follows automatically.
-- **Prior art to confront:** M-Isomap, S-Isomap++, supervised MMD-Isomap, TopoMap/TopoMap++ (full 0D VR persistence), DIPOLE (metric + persistent homology), Joint MDS and tuned Isomap. Novelty/predicted superiority not demonstrated.
-- Run **EXP-009 only after a documented fair comparison protocol**. Full EXP-001–008 reruns remain on the explicit GitHub to-do issue: https://github.com/heri-espino/ProximityGraphs-Isomap/issues/6. Do not mark them complete because quick CI passed.
-
-**Latest dated history:** [2026-10-18 — stochastic geometry proposal](proximity_isomap/history/journal/2026-10/2026-10-18-tda-stochastic-direction.md).
-
-## Proposed H1 holes and visualization (2026-10-18)
-
-See [TDA stochastic geometry research brief](proximity_isomap/notes/mathematics/research_tda_stochastic_geometry.md). Unlike H0 graph components, H1 must be computed on VR **simplicial complexes**, including filled triangles. Two Swiss-roll strips have no true H1; two circles have two loops. Rigid placement preserves **all** VR persistence of already embedded individual components, but not necessarily the persistence of the original ambient cloud or of the union. Ripser/GUDHI can compute diagrams; representative cocycles and geometric cycles are not interchangeable. Proposed only, no EXP-009 benchmark performed. Future published figures must use ContrastColors.
-
-## EXP-009 topological-manifolds pilot (executed 2026-10-18)
-
-[Experiment note](proximity_isomap/notes/009-topological_manifolds/README.md) and [runnable code](proximity_isomap/code/009-topological_manifolds/run.py). Deterministic 172-point Swiss-roll/cylinder/torus test: K=3 MST-cut partition given the number K recovered the groups; isometric rigid separation preserved independent Isomap distances but did **not** preserve H1 barcodes computed with ambient Euclidean VR before/after embedding (within r<=7). Long H1 counts (lifetime>=1): Swiss 1 to 0, cylinder 1 to 0, torus 9 to 1. The true Betti-1 counts are 0, 1, 2; excess torus and Swiss sample bars are finite-grid artifacts. **GitHub reproducibility verified:** [publication workflow run 39163692726](https://github.com/heri-espino/ProximityGraphs-Isomap/actions/runs/39163692726) successfully generated and committed ContrastColors PNG/SVG, coordinates NPZ and full H1 persistence JSON in [run_efbeaad418](proximity_isomap/results/009-topological_manifolds/runs/run_efbeaad418/metrics.json). The experiment note embeds the actual figures. Full 001–008 local reruns remain pending issue #6. Full 001-008 local reruns still pending issue #6.
-
-## Scientific limitations and next work
-
-Radius choices for many disconnected configurations are diagnostic and use known true generating labels; EXP-004 development uses analytic intrinsic truth for choosing a radius multiplier. The hybrid MDS and rigid alignment variants are newly rebuilt approximations of the historical methodology; separation uses a feasible ordered strip heuristic, not a proven globally optimal frontier.
-
-After full local reruns, inspect generated figures and metrics, confirm GitHub CI, report commit SHA, then focus on *unsupervised* radius selection, tuned prior-art comparisons and separation–distortion frontiers. Read [AGENTS.md](AGENTS.md) and follow its mandatory synchronized per-experiment notes/figures/results rules.
+**After the push:** locate the exact run IDs, inspect `metrics.csv`, `metadata.json`, saved arrays and all PNG/SVG; update the 010/011 notes with computations, tables, mathematical interpretation, actual inline images and method limitations. Refresh checkpoint 012 and the journal, then verify the remote commit.

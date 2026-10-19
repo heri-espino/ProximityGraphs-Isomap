@@ -1,40 +1,11 @@
-# Current state (2026-10-18)
+# Current state — 2026-10-18
 
-The repository has a single numbered `proximity_isomap/` research archive, historic dated journal and decisions under `history/journal/`, and proofs under `notes/mathematics/`. The root journal/context/legacy experiments/results/figures/notes were moved; old content preserved in history.
+**Repo:** heri-espino/ProximityGraphs-Isomap. Canonical research directories: `proximity_isomap/{code,results,figures,notes}/`, matching numbered folders, immutable result run labels, historical journals in `proximity_isomap/history/`. Read AGENTS.md and AI_HANDOFF.md.
 
-Eight new executable experiment implementations are included in `proximity_isomap/code/research_runner.py` and numbered wrappers. They are reconstructions, **not identical historical algorithms**. The user explicitly does not want Integration.zip imported.
+**Paper:** working research question is separation-constrained componentwise Isomap and the tradeoff between positive projected convex-hull clearance, within-manifold geodesic stress and original ambient cross-manifold placement stress. Novelty and overall superiority remain unestablished. Rigid alignment preserves only *computed* within-component pairwise distances.
 
-All figures will use `contrastcolors` pinned from `heri-espino/Colors`, white publication style and Okabe–Ito palette. Running the Windows PowerShell script produces new actual figures and saves them in numbered folders, and embeds PNGs in the corresponding README notes.
+**EXP-001–008:** reconstructed executable designs, versioned full run `manual-full-20261018` figures/results already in GitHub; not numerical reproductions of earlier historical code. **EXP-009:** completed exploratory VR H1 pilot, supplied K=3. **EXP-010:** cylinder versus five rings; **EXP-011:** componentwise kNN/radius Isomap and global Isomap/PCA/t-SNE/UMAP comparison; their **native executable scripts are now committed** but the new user's Windows runs are **pending**. Existing 010/011 summary plots report an older local exploratory pilot, not new user-run data. **Presentation 012** is Marp and must be updated when new results are available.
 
-**Not yet executed by user:** full Conda-based experiments and their generated outputs. CI can confirm code quality but not the unrun science. Paper remains a prospective separation–distortion methods contribution, not proved novel.
+**Standing user workflow:** assistant pushes executable code; user runs locally, saves and pushes real outputs; assistant reads actual files and writes scientific Markdown and modifies Marp. Do not request ZIP downloads, use import scripts or claim results before run. The active PowerShell launcher is `scripts/run_exp_010_011.ps1`. UMAP requires `umap-learn`; no Ruff needed for experimental execution.
 
-## Verification (2026-10-18)
-
-[GitHub Actions run 39139028489](https://github.com/heri-espino/ProximityGraphs-Isomap/actions/runs/39139028489) succeeded for Python 3.11/3.12: tests, lint, research validators, Sphinx and Quick-mode runs of all eight newly reconstructed experiments with the pinned ContrastColors library. Full Conda runs are still pending user execution; source and historical numeric parity cannot be inferred from smoke results.
-
-## Proposed VR-filtration and sampling-theory workstream (2026-10-18)
-
-The mathematical extension is [the TDA/stochastic-geometry research brief](../../notes/mathematics/research_tda_stochastic_geometry.md), not an implemented algorithm. [PROP-0003](../../notes/mathematics/results/PROP-0003-component-recovery-window.md) records the elementary exact component-recovery window and a 4ε perturbation sufficient condition. Existing TopoMap/TopoMap++ and DIPOLE challenge any broad novelty claim for topological persistence plus manifold learning. Full local reruns are **pending** at https://github.com/heri-espino/ProximityGraphs-Isomap/issues/6; CI only verified small smoke runs. EXP-009 is a proposed future benchmark, not executed.
-
-## EXP-009 published pilot, 2026-10-18
-
-The topologically heterogeneous Swiss-roll/cylinder/torus pilot was computed from 172 deterministic grid points. Three components were correctly recovered **with K=3 provided**, then embedded separately in 2D. The separation gap was positive and within-independent-embedding distances were preserved. Original-vs-2D VR H1 bars differ. The [dedicated publish workflow](https://github.com/heri-espino/ProximityGraphs-Isomap/actions/runs/39163692726) succeeded and committed full PNG/SVG from pinned ContrastColors, NPZ and persistence JSON; linked in [EXP-009 notes](../../notes/009-topological_manifolds/README.md). Full EXP-001–008 reruns remain pending.
-
-## Mathematical Markdown notes and figure plans (2026-10-18)
-
-All experiment notes EXP-001..009 now include LaTeX mathematical models, assumption/metric distinctions and a table of expected figure filenames. Historical summary SVGs are already embedded for 001..008; EXP-009 embeds existing genuine pinned-ContrastColors images. The full new EXP-001..008 figures are **not generated yet**. Rebuilt shared runner now appends versioned Markdown run records instead of discarding earlier runs. The [math and figure guide](../../notes/MATHEMATICS_AND_FIGURES.md) and updated experiment validator enforce the workflow. No scientific experiment was performed by this documentation-only task.
-
-
-## Marp presentation checkpoint (2026-10-18)
-
-A professor-facing presentation at proximity_isomap/notes/012-presentation_checkpoint/ includes the mathematics, versioned EXP-001–009 figures, and text-only provisional EXP-010/011 findings. Generating this presentation did not execute any numerical experiment, and it does not establish novelty.
-
-
-## Corrected EXP-010/011 and presentation 012
-
-EXP-010 and EXP-011 have committed notes and derived metric SVGs; the original full code, experimental CSV/JSON/NPZ and real 3D/2D PNG/SVG galleries remain in local archives, awaiting user-side import with scripts/import_exp010_exp011.ps1 -Push. Presentation is checkpoint 012. AGENTS.md now mandates future completed experiment publication with verified remote sources/results/figures and notes; ZIP-only work does not meet the requirement. UMAP results are still pending.
-
-
-## Updated run ownership (2026-10-18)
-
-User explicitly owns local execution. Complete native EXP-010 and EXP-011 Python runners and one PowerShell launcher were committed to GitHub. The earlier ZIP importer is deprecated and removed. Current summary figures/measurements in Markdown are from the earlier local exploratory pilot, not the forthcoming new user-generated run. Wait for user push; then read actual numerical data/figures and write interpretive Markdown and refresh Marp checkpoint 012. See AGENTS.md three-stage workflow.
+**Next scientific development:** after recording user outputs, study radius inference without labels, optimize separation-constrained centroid/landmark placement, test frontiers V(mu), compare D-C Isomap, M-Isomap, TopoMap and tuned UMAP/t-SNE with matched seeds/densities. See [NEXT_STEPS](NEXT_STEPS.md).
