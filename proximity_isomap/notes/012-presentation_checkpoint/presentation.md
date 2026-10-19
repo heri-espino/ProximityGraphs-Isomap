@@ -392,9 +392,161 @@ The filtration is truncated at $r=7$; sampling artifacts are present. The differ
 ---
 
 <!-- _class: compact -->
+# Mathematical lesson: two roles for kNN
+
+A fully kNN-based method should distinguish the neighborhood parameter used to *discover* components from the one used to *unfold* them:
+
+$
+k_{\rm detect}\quad\text{versus}\quad k_{\rm embed}.
+$
+
+**Current EXP-011 implementation:** radius graph or supplied-K MST detects components; a new symmetrized **10-NN graph** is constructed inside each component for Isomap.
+
+This is not yet unsupervised kNN discovery. A specialized EXP-013 should sweep both parameters.
+
+---
+
+# Mathematical lesson: symmetrized kNN
+
+For ambient observations $x_i\in\mathbb R^D$ and their $k$ nearest neighbors $N_k(i)$,
+
+$
+\{i,j\}\in E_k
+\iff j\in N_k(i)\ \text{or}\ i\in N_k(j),
+\qquad w_{ij}=\|x_i-x_j\|_2.
+$
+
+The graph components form a partition $V=\bigsqcup_c C_c(k)$.
+
+With deterministic tie-breaking, $E_k\subseteq E_{k+1}$, so
+
+$
+\boxed{K(k+1)\le K(k).}
+$
+
+**Smaller k:** possible fragmentation. **Larger k:** possible false bridges between manifolds.
+
+---
+
+# Mathematical lesson: estimated geodesics
+
+On a connected local graph $G_c$, estimate distances by
+
+$
+d_{G_c}(i,j)=\min_{\pi:i\leadsto j}
+\sum_{(u,v)\in\pi}\|x_u-x_v\|_2.
+$
+
+Isomap assumes graph-shortest paths provide a useful approximation to **intrinsic surface/geodesic distance**.
+
+If the graph takes shortcuts across nearby folds, this assumption fails, even when its component labels are correct.
+
+---
+
+# Mathematical lesson: classical MDS from distances
+
+Let $B=ZZ^\top$ be the centered coordinate Gram matrix. The squared distances obey
+
+$
+D_{ij}^2=B_{ii}+B_{jj}-2B_{ij}.
+$
+
+Let $H=I-\frac1n\mathbf1\mathbf1^\top$ be the centering operator. Multiplying the identity by $H$ on both sides gives
+
+$
+\boxed{B=-\tfrac12HD^{\circ2}H.}
+$
+
+With $B=U\Lambda U^\top$, use leading positive eigenpairs to approximate $B$ by a **positive rank-d** matrix.
+
+Classical MDS solves a **Gram-matrix strain** problem; it need not minimize raw Euclidean distance stress.
+
+---
+
+# Mathematical lesson: rigid invariance
+
+For independently computed $Z_c$, place each component via
+
+$
+Y_c=Z_cQ_c+\mathbf1t_c^\top,\qquad Q_c^\top Q_c=I.
+$
+
+For $i,j\in C_c$,
+
+$
+\begin{aligned}
+\|y_i-y_j\|_2^2
+&=(z_i-z_j)Q_cQ_c^\top(z_i-z_j)^\top\\
+&=\|z_i-z_j\|_2^2.
+\end{aligned}
+$
+
+Rigid placement **exactly preserves computed within-embedding distances**, not necessarily the original manifold geodesics.
+
+---
+
+# Mathematical lesson: separation versus placement
+
+Require positive projected convex-hull clearance:
+
+$
+\operatorname{dist}(\operatorname{conv}(Y_c),\operatorname{conv}(Y_\ell))
+\ge\mu>0.
+$
+
+If embeddings are centered, $\bar z_c=0$, then $\bar y_c=t_c$. Thus a centroid-distance loss depends on **translations** but not component rotations:
+
+$
+\mathcal L_{\rm cent}
+=\sum_{c<\ell}w_{c\ell}
+\big(\|t_c-t_\ell\|-\|\bar x_c-\bar x_\ell\|\big)^2.
+$
+
+To identify orientations, include landmark or pointwise cross-component stress, as well as separation constraints.
+
+---
+
+# Mathematical lesson: separation–distortion frontier
+
+Let $\mathcal L_{\rm cross}$ measure cross-component **ambient-distance** distortion. Define
+
+$
+V(\mu)=\inf_{\{Q_c,t_c\}:\,
+\operatorname{dist}(\operatorname{conv}Y_c,\operatorname{conv}Y_\ell)\ge\mu}
+\mathcal L_{\rm cross}(Q,t).
+$
+
+Since larger $\mu$ leaves fewer feasible placements,
+
+$
+\boxed{\mu_1\le\mu_2\implies V(\mu_1)\le V(\mu_2).}
+$
+
+This monotonicity is elementary. **EXP-011 uses a feasible strip placement; it does not solve this global optimization.**
+
+---
+
+<!-- _class: compact -->
+# EXP-011 — The actual five-ring tradeoff
+
+**Completed Windows run, seed 20261018:**
+
+| Method | Intrinsic stress ↓ | Trustworthiness ↑ | Centroid stress ↓ | Hull overlaps ↓ |
+|---|---:|---:|---:|---:|
+| PCA | 0.463 | 0.848 | **0.414** | 0 |
+| Global Isomap k=24 | 0.250 | 0.809 | 0.996 | 10 |
+| Componentwise kNN Isomap | **0.245** | 0.944 | 2.311 | **0** |
+| t-SNE | 0.323 | 1.000 | 2.178 | 1 |
+| UMAP | 0.253 | 1.000 | 6.263 | 0 |
+
+A different objective gives a different winner. **Intrinsic fidelity, local trustworthiness, and relative manifold placement must be reported separately.**
+
+---
+
+<!-- _class: compact -->
 # EXP-010 — Dense cylinder or five circles?
 
-**Exploratory summary backfilled into the GitHub 010 note; original local galleries are pending binary import.**
+**Computed full run 20261019T061001Z-full — original PNG/SVG and CSV/NPZ now in GitHub.**
 
 | Synthetic dataset | $r$ | $\beta_0$ | $\beta_1$ |
 |---|---:|---:|---:|
@@ -410,16 +562,17 @@ A dense cylindrical grid at $r=1.15$ exhibited 343 short-lived Rips $H_1$ classe
 <!-- _class: compact -->
 # EXP-011 — Other Isomap variants, t-SNE, UMAP
 
-**Exploratory summary backfilled into the GitHub 011 note; full local galleries remain pending binary import and UMAP remains unrun.**
+**Computed full run 20261019T061001Z-full — UMAP successfully executed.**
 
 | Method | Five rings | Cylinder | Swiss-roll pair | S-curve pair |
 |---|---:|---:|---:|---:|
 | PCA | 0.463 | 0.328 | 0.720 | 0.372 |
-| Global Isomap $k=8$ | 0.460 | 0.272 | 0.733 | 0.355 |
+| Global Isomap $k=8$ | 0.439 | 0.272 | 0.733 | 0.355 |
 | Global Isomap $k=24$ | 0.250 | **0.271** | 0.774 | 0.435 |
 | Componentwise radius Isomap | **0.245** | **0.271** | **0.676** | 0.333 |
 | Componentwise kNN Isomap | **0.245** | 0.272 | 0.729 | **0.312** |
-| t-SNE | 0.354 | 0.381 | 0.721 | 0.342 |
+| t-SNE | 0.323 | 0.337 | 0.721 | 0.344 |
+| **UMAP (executed)** | 0.253 | 0.349 | 0.717 | 0.353 |
 
 All entries are normalized within-component intrinsic stress; do **not** compare t-SNE/UMAP only on global distance error.
 
@@ -458,7 +611,7 @@ Report the unsupervised graph's component accuracy, hull overlap, intrinsic stre
 2. Optimize centroid- and landmark-based rigid alignment with strict clearance.
 3. Quantify the entire frontier $V(\mu)$ rather than one arbitrary gap.
 4. Evaluate independent seeds, unequal densities, rotations and observation noise.
-5. Integrate and rerun EXP-010/011 in a versioned environment, including real UMAP.
+5. Use the newly published EXP-010/011 PNGs and CSV results; replicate with more seeds and tune the baselines.
 6. Implement and compare source-verified D-C Isomap, M-Isomap and TopoMap.
 
 ---
@@ -468,7 +621,7 @@ Report the unsupervised graph's component accuracy, hull overlap, intrinsic stre
 
 ![h:350](../../figures/010-radius_density_and_rings/summary.svg)
 
-[Experiment 010](../010-radius_density_and_rings/README.md): graph components and VR holes under radius and sampling changes. Original 3D/2D galleries still await source archive import.
+[Experiment 010](../010-radius_density_and_rings/README.md): graph components and VR holes under radius and sampling changes. Original 3D/2D galleries are now available in the versioned full run.
 
 ---
 
@@ -476,7 +629,7 @@ Report the unsupervised graph's component accuracy, hull overlap, intrinsic stre
 
 ![h:350](../../figures/011-isomap_baselines/summary.svg)
 
-[Experiment 011](../011-isomap_baselines/README.md): PCA, global Isomap, componentwise kNN/radius Isomap, t-SNE; UMAP not yet executed. Original 3D/2D galleries await import.
+[Experiment 011](../011-isomap_baselines/README.md): PCA, global Isomap, componentwise kNN/radius Isomap, t-SNE; UMAP executed in the versioned full run. Original 3D/2D galleries are available in the versioned full run.
 
 ---
 
@@ -495,11 +648,127 @@ Report the unsupervised graph's component accuracy, hull overlap, intrinsic stre
 
 ---
 
+# Newly generated figure atlas — EXP-010 and EXP-011
+
+**All 12 original PNG panels below were generated on Windows and committed to GitHub.**
+
+The previous exploratory summaries remain separate; the original EXP-001–009 atlas follows these panels.
+
+---
+
+<!-- _class: figure -->
+# EXP-010 — Three-dimensional cylinder versus five separate circles
+
+![h:500](../../figures/010-radius_density_and_rings/runs/20261019T061001Z-full/geometry.png)
+
+**Original executed figure · 20261019T061001Z-full**
+
+---
+
+<!-- _class: figure -->
+# EXP-010 — Graph components and fixed-scale H1
+
+![h:500](../../figures/010-radius_density_and_rings/runs/20261019T061001Z-full/radius_topology.png)
+
+**Original executed figure · 20261019T061001Z-full**
+
+---
+
+<!-- _class: figure -->
+# EXP-010 — Component snapshots by radius
+
+![h:500](../../figures/010-radius_density_and_rings/runs/20261019T061001Z-full/radius_snapshots.png)
+
+**Original executed figure · 20261019T061001Z-full**
+
+---
+
+<!-- _class: figure -->
+# EXP-010 — PCA and independent Isomap projections
+
+![h:500](../../figures/010-radius_density_and_rings/runs/20261019T061001Z-full/projections.png)
+
+**Original executed figure · 20261019T061001Z-full**
+
+---
+
+<!-- _class: figure -->
+# EXP-011 — Five rings across PCA, Isomap, t-SNE and UMAP
+
+![h:500](../../figures/011-isomap_baselines/runs/20261019T061001Z-full/rings_embeddings.png)
+
+**Original executed figure · 20261019T061001Z-full**
+
+---
+
+<!-- _class: figure -->
+# EXP-011 — One connected cylinder across methods
+
+![h:500](../../figures/011-isomap_baselines/runs/20261019T061001Z-full/cylinder_embeddings.png)
+
+**Original executed figure · 20261019T061001Z-full**
+
+---
+
+<!-- _class: figure -->
+# EXP-011 — Rotated Swiss-roll pair across methods
+
+![h:500](../../figures/011-isomap_baselines/runs/20261019T061001Z-full/swiss_pair_embeddings.png)
+
+**Original executed figure · 20261019T061001Z-full**
+
+---
+
+<!-- _class: figure -->
+# EXP-011 — S-curve pair across methods
+
+![h:500](../../figures/011-isomap_baselines/runs/20261019T061001Z-full/s_curve_pair_embeddings.png)
+
+**Original executed figure · 20261019T061001Z-full**
+
+---
+
+<!-- _class: figure -->
+# EXP-011 — Torus across methods
+
+![h:500](../../figures/011-isomap_baselines/runs/20261019T061001Z-full/torus_embeddings.png)
+
+**Original executed figure · 20261019T061001Z-full**
+
+---
+
+<!-- _class: figure -->
+# EXP-011 — Intrinsic-distance stress
+
+![h:500](../../figures/011-isomap_baselines/runs/20261019T061001Z-full/intrinsic_stress.png)
+
+**Original executed figure · 20261019T061001Z-full**
+
+---
+
+<!-- _class: figure -->
+# EXP-011 — Local-neighborhood trustworthiness
+
+![h:500](../../figures/011-isomap_baselines/runs/20261019T061001Z-full/trustworthiness_8.png)
+
+**Original executed figure · 20261019T061001Z-full**
+
+---
+
+<!-- _class: figure -->
+# EXP-011 — Relative centroid placement distortion
+
+![h:500](../../figures/011-isomap_baselines/runs/20261019T061001Z-full/centroid_stress.png)
+
+**Original executed figure · 20261019T061001Z-full**
+
+---
+
 # Figure atlas
 
 **Backup slides for professor discussion**
 
-Every PNG from the versioned EXP-001–009 runs appears in the following atlas, then each original historical summary SVG.
+The remaining atlas contains versioned EXP-001–009 runs and older historical summary SVGs. The executed EXP-010/011 panels appear immediately before this section.
 
 **Caution:** historical summary plots describe distinct earlier runs, not exactly the rebuilt-run numbers.
 
