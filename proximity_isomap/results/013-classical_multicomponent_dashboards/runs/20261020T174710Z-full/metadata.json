@@ -1,0 +1,82 @@
+{
+  "experiment": "EXP-013",
+  "run_id": "20261020T174710Z-full",
+  "seed": 20261019,
+  "quick": false,
+  "generated_utc": "2026-10-20T17:48:01.233426+00:00",
+  "families": [
+    "rings",
+    "springs",
+    "swiss_rolls",
+    "s_curves",
+    "planes",
+    "tori",
+    "cylinder_and_ring"
+  ],
+  "regimes": [
+    "far",
+    "near"
+  ],
+  "n_per_component": 100,
+  "dashboard_isomap": [
+    "PCA",
+    "Classical MDS",
+    "Global kNN Isomap",
+    "Global radius Isomap",
+    "Componentwise kNN Isomap",
+    "Componentwise radius Isomap",
+    "MST cut + kNN Isomap (oracle K)",
+    "t-SNE",
+    "UMAP"
+  ],
+  "dashboard_general": [
+    "PCA",
+    "Classical MDS",
+    "Spectral embedding",
+    "LLE",
+    "Componentwise kNN Isomap",
+    "LTSA",
+    "t-SNE",
+    "UMAP",
+    "Global kNN Isomap"
+  ],
+  "executed_methods": [
+    "PCA",
+    "Classical MDS",
+    "Global kNN Isomap",
+    "Global radius Isomap",
+    "Componentwise kNN Isomap",
+    "Componentwise radius Isomap",
+    "MST cut + kNN Isomap (oracle K)",
+    "t-SNE",
+    "UMAP",
+    "Spectral embedding",
+    "LLE",
+    "LTSA"
+  ],
+  "k_detect": 8,
+  "k_embed": 10,
+  "sweep_k_detect": [
+    3,
+    5,
+    8,
+    12,
+    18,
+    26
+  ],
+  "sweep_k_embed": [
+    6,
+    10,
+    16
+  ],
+  "source_gap_definition": "axis-aligned disjoint x-intervals and matched extremal y/z; closest sampled pairs equal declared gap",
+  "key_caveats": [
+    "synthetic ground-truth labels used for plotting, evaluation and explicitly oracle-K comparator",
+    "single sampling seed unless rerun with new seed",
+    "global Isomap may reconnect disconnected neighbor graphs",
+    "torus analytic intrinsic distances unavailable",
+    "LLE/LTSA or radius Isomap can legitimately fail; failures remain in metrics",
+    "componentwise strips are feasible layout heuristics, NOT the globally optimal constrained placement",
+    "near/far defined by sampled gap relative to median within-support 8-NN distance"
+  ]
+}
